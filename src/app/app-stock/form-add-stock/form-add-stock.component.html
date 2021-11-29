@@ -1,0 +1,50 @@
+<form class="w-50 mx-auto" #f="ngForm">
+    <div class="form-group">
+      <label for="identifiant">Id Stock</label>
+      <input type="text" name="identifiant" id="identifiant" class="form-control"
+             #nt="ngModel" required [(ngModel)]="stock.idStock">
+      <div class="alert alert-danger" *ngIf="nt.touched&&nt.invalid">
+        <div *ngIf="nt.hasError('required')">id is required</div>
+     
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="number">Quantite</label>
+      <input type="number" name="number" id="quantite" class="form-control"
+      #nd="ngModel" required  [(ngModel)]="stock.qte"
+      >
+      <div class="alert alert-danger" *ngIf="nd.touched&&nd.invalid">
+        <div *ngIf="nd.hasError('required')">Quantite required</div>
+      
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="number">Quantite Min</label>
+        <input type="number" name="number" id="quantiteMin" class="form-control"
+        #nqm="ngModel" required  [(ngModel)]="stock.qteMin"
+        >
+        <div class="alert alert-danger" *ngIf="nqm.touched&&nqm.invalid">
+          <div *ngIf="nqm.hasError('required')">Quantite Min required</div>
+        
+        </div>
+      </div>
+    <div class="form-group">
+      <label for="Libelle">Libelle</label>
+      <input type="text" name="Libelle" id="Libelle" class="form-control"
+             #nq="ngModel" required  [(ngModel)]="stock.libelleStock"
+      >
+      <div class="alert alert-danger" *ngIf="nq.touched&&nq.invalid">
+        <div *ngIf="nq.hasError('required')">Libelle required</div>
+      </div>
+    </div>
+  
+ 
+    <br>
+    <button class="btn btn-outline-success" (click)="save()"
+            [disabled]="f.invalid">
+      save
+    </button>
+    &nbsp;
+    <button class="btn btn-outline-warning" (click)="f.reset()">reset</button>
+  </form>

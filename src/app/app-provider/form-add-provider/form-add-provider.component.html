@@ -1,0 +1,50 @@
+<form class="w-50 mx-auto" #f="ngForm">
+    <div class="form-group">
+      <label for="identifiant">Id Provider</label>
+      <input type="text" name="identifiant" id="identifiant" class="form-control"
+             #nt="ngModel" required [(ngModel)]="provider.idProvider">
+      <div class="alert alert-danger" *ngIf="nt.touched&&nt.invalid">
+        <div *ngIf="nt.hasError('required')">id is required</div>
+     
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="Code">Code</label>
+      <input type="code" name="code" id="code" class="form-control"
+      #nd="ngModel" required minlength="3" [(ngModel)]="provider.code"
+      >
+      <div class="alert alert-danger" *ngIf="nd.touched&&nd.invalid">
+        <div *ngIf="nd.hasError('required')">code required</div>
+        <div *ngIf="nd.hasError('minlength')">code min length is 3</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="Libelle">Libelle</label>
+      <input type="text" name="Libelle" id="Libelle" class="form-control"
+             #nq="ngModel" required  [(ngModel)]="provider.libelle"
+      >
+      <div class="alert alert-danger" *ngIf="nq.touched&&nq.invalid">
+        <div *ngIf="nq.hasError('required')">Libelle required</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="Adresse">Adresse</label>
+      <input type="adresse" name="Adresse" id="Adresse" class="form-control"
+             #nadresse="ngModel" required  [(ngModel)]="provider.adresse"
+      >
+      <div class="alert alert-danger" *ngIf="nadresse.touched&&nadresse.invalid">
+        <div *ngIf="nadresse.hasError('required')">price required</div>
+      </div>
+    </div>
+ 
+    <br>
+    <button class="btn btn-outline-success" (click)="save()"
+            [disabled]="f.invalid">
+      save
+    </button>
+    &nbsp;
+    <button class="btn btn-outline-warning" (click)="f.reset()">reset</button>
+  </form>

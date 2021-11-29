@@ -1,0 +1,42 @@
+<div class="container">
+
+    <table class ="table table-hover">
+       <thead>
+        <tr>
+            
+            <th>IdProvider</th> 
+            <th>Code</th>
+            <th>Libelle</th>  
+            <th>Adresse</th>  
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let provider of ListProvider">
+       
+            <td>{{provider.idProvider}}</td>
+            <td>{{provider.code}}</td>
+            <td>{{provider.libelle}}</td>
+            <td>{{provider.adresse}}</td>
+           
+          
+            <td>
+                <button class="btn btn-outline-danger"
+                (click)="deleteProvider(provider)">>Delete</button>
+             
+            </td>
+            <td>
+                <button class="btn btn-warning"
+                (click)="editProvider(provider)" >Update</button>
+             
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    <button class="btn btn-outline-primary" (click)="showForm()">Add new Provider</button>
+    <div *ngIf="showFormTemplate" >
+    <h1>Add new Provider :</h1>
+    <app-form-add-provider  (AddEvent)="save($event)" [provider]="inputProvider"></app-form-add-provider>
+    <!-- </div>
+    <app-form-add-invoice  (AddEvent)="save($event)" ></app-form-add-invoice>
+    </div>   -->
+  </div>

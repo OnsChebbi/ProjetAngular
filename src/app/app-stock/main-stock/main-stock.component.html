@@ -1,0 +1,43 @@
+<div class="container">
+
+    <table class ="table table-hover">
+       <thead>
+        <tr>
+            
+            <th>IdStock</th> 
+            <th>Quantite</th>
+            <th>Quantite Min</th>
+            <th>Libelle</th>  
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stock of ListStock">
+       
+            <td>{{stock.idStock}}</td>
+            <td>{{stock.qte}}</td>
+            <td>{{stock.qteMin}}</td>
+            <td>{{stock.libelleStock}}</td>
+            
+           
+          
+            <td>
+                <button class="btn btn-outline-danger"
+                (click)="deleteStock(stock)">>Delete</button>
+             
+            </td>
+            <td>
+                <button class="btn btn-warning"
+                (click)="editStock(stock)" >Update</button>
+             
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    <button class="btn btn-outline-primary" (click)="showForm()">Add new Stock</button>
+    <div *ngIf="showFormTemplate" >
+    <h1>Add new Stock :</h1>
+    <app-form-add-stock  (AddEvent)="save($event)" [stock]="inputStock"></app-form-add-stock>
+    
+  </div>
+

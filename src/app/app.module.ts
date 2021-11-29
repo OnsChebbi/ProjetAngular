@@ -10,6 +10,10 @@ import {HttpClientModule} from "@angular/common/http";
 import { AppLivreurComponent } from './app-livreur/app-livreur.component';
 import { SidenavComponent } from './app-shared/sidenav/sidenav.component';
 import { TopnavComponent } from './app-shared/topnav/topnav.component';
+import { MainProviderComponent } from './app-provider/main-provider/main-provider.component';
+import { FormAddProviderComponent } from './app-provider/form-add-provider/form-add-provider.component';
+import { MainStockComponent } from './app-stock/main-stock/main-stock.component';
+import { FormAddStockComponent } from './app-stock/form-add-stock/form-add-stock.component';
 
 
 
@@ -19,6 +23,10 @@ import { TopnavComponent } from './app-shared/topnav/topnav.component';
     AppLivreurComponent,
     SidenavComponent,
     TopnavComponent,
+    MainProviderComponent,
+    FormAddProviderComponent,
+    MainStockComponent,
+    FormAddStockComponent,
     
   ],
   imports: [

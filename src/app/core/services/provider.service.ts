@@ -8,7 +8,7 @@ import {
   providedIn: 'root'
 })
 export class ProviderService {
-  url=environment.url+"providers/"
+  url=environment.url+"provider"
   constructor(private http: HttpClient) { }
 
   getListProviderService(){

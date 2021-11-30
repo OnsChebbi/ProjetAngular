@@ -1,0 +1,35 @@
+{"provider": [
+    {
+      "idProvider": "1",
+      "nom": "Dell",
+      "code": "F-1970",
+      "libelle": "PC",
+      "adresse": "Kef",
+      "picture": ""
+
+    },
+    {
+      "idProvider": "2",
+      "code": "F-1978",
+      "nom": "Samsung",
+      "libelle": "TV",
+      "adresse": "Ariana",
+      "picture": ""
+    },
+    {
+      "idProvider": "3",
+      "code": "F-1985",
+      "nom": "Sotufab",
+      "libelle": "Table",
+      "adresse": "Monastir",
+      "picture": ""
+    },
+    {
+      "idProvider": "4",
+      "code": "F-1948",
+      "nom": "Iphone",
+      "libelle": "Telephone",
+      "adresse": "Sokra",
+      "picture": ""
+    }
+  ]}

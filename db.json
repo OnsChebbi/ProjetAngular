@@ -5,7 +5,7 @@
       "code": "F-1970",
       "libelle": "PC",
       "adresse": "Kef",
-      "picture": "/assets/Dell.png"
+      "picture": ""
 
     },
     {
@@ -14,7 +14,7 @@
       "nom": "Samsung",
       "libelle": "TV",
       "adresse": "Ariana",
-      "picture": "/assets/samsung.png"
+      "picture": ""
     },
     {
       "idProvider": "3",
@@ -22,7 +22,7 @@
       "nom": "Sotufab",
       "libelle": "Table",
       "adresse": "Monastir",
-      "picture": "/assets/Sotufab.png"
+      "picture": ""
     },
     {
       "idProvider": "4",
@@ -30,6 +30,6 @@
       "nom": "Iphone",
       "libelle": "Telephone",
       "adresse": "Sokra",
-      "picture": "/assets/iphone.png"
+      "picture": ""
     }
   ]}

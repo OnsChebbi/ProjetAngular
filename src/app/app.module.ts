@@ -14,6 +14,7 @@ import { MainProviderComponent } from './app-provider/main-provider/main-provide
 import { FormAddProviderComponent } from './app-provider/form-add-provider/form-add-provider.component';
 import { MainStockComponent } from './app-stock/main-stock/main-stock.component';
 import { FormAddStockComponent } from './app-stock/form-add-stock/form-add-stock.component';
+import {UserModule} from "./user/user.module";
 
 
 
@@ -27,7 +28,7 @@ import { FormAddStockComponent } from './app-stock/form-add-stock/form-add-stock
     FormAddProviderComponent,
     MainStockComponent,
     FormAddStockComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,8 @@ import { FormAddStockComponent } from './app-stock/form-add-stock/form-add-stock
     AppProductModule,
     AppSharedModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

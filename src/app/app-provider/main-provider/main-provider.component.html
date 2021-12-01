@@ -378,14 +378,14 @@
         <div class="col">
           <div class="card bg-default shadow">
             <div class="card-header bg-transparent border-0">
-              <h3 class="text-white mb-0">Table des fournisseurs</h3>
+              <h3 class="text-white mb-0">Provider table </h3>
             </div>
             <div class="table-responsive">
               <table class="table align-items-center table-dark table-flush">
                 <thead class="thead-dark">
                   <tr >
                     <th scope="col" class="sort" data-sort="name">Id Provider</th>
-                    <th scope="col" class="sort" data-sort="budget">Nom</th>
+                    <th scope="col" class="sort" data-sort="budget">Name</th>
                         
                     <th scope="col" class="sort" data-sort="budget">Code</th>
                     <th scope="col" class="sort" data-sort="status">Libelle</th>
@@ -420,12 +420,12 @@
                       </span>
                     </td>
                      <!-------adresse-->
-                    <td class="budget">
+                    <td class="adresse">
                         {{provider.adresse}}
                       </td>
                       <!-------Image-->
-                    <td class="picture">
-                        {{provider.picture}}
+                      <td>
+                        <img src="{{provider.picture}}">
                       </td>
                    
                     <td class="text-right">
@@ -434,9 +434,9 @@
                           <i class="fas fa-ellipsis-v"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#">voir détail</a>
-                          <a class="dropdown-item" href="#">modifier</a>
-                          <a class="dropdown-item" href="#">supprimer</a>
+                          <a class="dropdown-item" href="#">Detail</a>
+                          <a class="dropdown-item" href="#">Update</a>
+                          <a class="dropdown-item" href="#">Delete</a>
                         </div>
                       </div>
                     </td>
@@ -450,6 +450,13 @@
       </div>
     
     </div>
+
+    <button class="btn btn-outline-primary" (click)="showForm()">Add new Provider</button>
+    <div *ngIf="showFormTemplate" >
+    <h1>Add new Provider :</h1>
+    <app-form-add-provider  (AddEvent)="save($event)" [provider]="inputProvider"></app-form-add-provider>
+
+
   </div>
  
 

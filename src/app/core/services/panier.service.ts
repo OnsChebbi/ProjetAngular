@@ -13,14 +13,13 @@ export class PanierService {
   url=environment.url+"panier/"
   constructor(private http: HttpClient) { }
 
-  getListPanierService(){
+    getListPanierService(){
     return this.http.get<Panier[]>(this.url)
     }
     addPanierService(panier: Panier){
       return this.http.post(this.url, panier)
     }
-    deletePanierService(idPanier:string){
-
+    deletePanierService(idPanier:number){
       return this.http.delete(this.url+idPanier)
     }
     updatePanierService(panier: Panier){

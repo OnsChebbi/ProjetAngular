@@ -1,4 +1,5 @@
-{"provider": [
+{
+  "provider": [
     {
       "idProvider": "1",
       "nom": "Dell",
@@ -6,7 +7,6 @@
       "libelle": "PC",
       "adresse": "Kef",
       "picture": ""
-
     },
     {
       "idProvider": "2",
@@ -32,4 +32,25 @@
       "adresse": "Sokra",
       "picture": ""
     }
-  ]}
+  ],
+  "Panier": [
+    {
+      "idPanier": "1",
+      "prixTotal": "121",
+      "nombreArticle": "7",
+      "montantRemise": "23"
+    },
+    {
+      "idPanier": "2",
+      "prixTotal": "43",
+      "nombreArticle": "2",
+      "montantRemise": "11"
+    },
+    {
+      "idPanier": "3",
+      "prixTotal": "444",
+      "nombreArticle": "4",
+      "montantRemise": "44"
+    }
+  ]
+}

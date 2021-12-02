@@ -5,13 +5,14 @@ import { AppProductRoutingModule} from "./app-product/app-product-routing.module
 import { NotFoundComponent} from "./app-shared/not-found/not-found.component";
 import { AppLivreurComponent } from './app-livreur/app-livreur.component';
 import { MainProviderComponent } from './app-provider/main-provider/main-provider.component';
+import { MainPanierComponent } from './app-panier/main-panier/main-panier.component';
 
 const routes: Routes = [
   {path: '',redirectTo:'user', pathMatch: 'full' },
   {path: 'livreur',component: AppLivreurComponent },
   {path: 'provider',component: MainProviderComponent },
+  {path:'panier',component:MainPanierComponent},
   {path: '**',component: NotFoundComponent },
-  
 ];
 
 @NgModule({

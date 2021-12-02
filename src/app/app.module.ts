@@ -14,6 +14,8 @@ import { MainProviderComponent } from './app-provider/main-provider/main-provide
 import { FormAddProviderComponent } from './app-provider/form-add-provider/form-add-provider.component';
 import { MainStockComponent } from './app-stock/main-stock/main-stock.component';
 import { FormAddStockComponent } from './app-stock/form-add-stock/form-add-stock.component';
+import { MainPanierComponent } from './app-panier/main-panier/main-panier.component';
+import { PanierComponent } from './app-panier/panier/panier.component';
 
 
 
@@ -27,6 +29,8 @@ import { FormAddStockComponent } from './app-stock/form-add-stock/form-add-stock
     FormAddProviderComponent,
     MainStockComponent,
     FormAddStockComponent,
+    MainPanierComponent,
+    PanierComponent,
     
   ],
   imports: [

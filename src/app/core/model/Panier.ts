@@ -1,5 +1,5 @@
 export class Panier{
-    idPanier: string;
+    idPanier: number;
     prixTotal: number;
     nombreArticle: number;
     montantRemise:number;

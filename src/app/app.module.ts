@@ -15,6 +15,8 @@ import { MainStockComponent } from './app-stock/main-stock/main-stock.component'
 import { FormAddStockComponent } from './app-stock/form-add-stock/form-add-stock.component';
 import {UserModule} from "./user/user.module";
 import {LandingPageModule} from "./landing-page/landing-page.module";
+import { CommonModule } from '@angular/common';
+import { MainPanierComponent } from './app-panier/main-panier/main-panier.component';
 
 
 
@@ -28,9 +30,12 @@ import {LandingPageModule} from "./landing-page/landing-page.module";
     FormAddProviderComponent,
     MainStockComponent,
     FormAddStockComponent,
+    MainPanierComponent
+
 
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     AppProductModule,

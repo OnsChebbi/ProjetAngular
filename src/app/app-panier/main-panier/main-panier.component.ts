@@ -21,11 +21,22 @@ export class MainPanierComponent implements OnInit {
 
   deletePanier(panier : Panier): void{
     
-    let i = this.listPanier.indexOf(panier);
+    /*let i = this.listPanier.indexOf(panier);
                                                                                                       
     this.servicePanier.deletePanierService(panier.idPanier).subscribe(
       ( )=>this.listPanier.splice(i,1)  
-    )
+    )*/
+    console.log(panier);
+    console.log(this.listPanier);
+    
+    
+    this.servicePanier.deletePanierService(panier.idPanier);
+    let i = this.listPanier.indexOf(panier);
+    console.log(i);
+    this.servicePanier.deletePanierService(panier.idPanier).subscribe(
+      
+      )
+    
   }
 
 }

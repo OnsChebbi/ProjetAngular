@@ -6,11 +6,13 @@ import { AppLivreurComponent } from './app-livreur/app-livreur.component';
 import { MainProviderComponent } from './app-provider/main-provider/main-provider.component';
 import {UserRoutingModule} from "./user/user-routing.module";
 import {LandingPageRoutingModule} from "./landing-page/landing-page-routing.module";
+import { MainPanierComponent } from './app-panier/main-panier/main-panier.component';
 
 const routes: Routes = [
   {path: '',redirectTo:'home', pathMatch: 'full' },
   {path: 'livreur',component: AppLivreurComponent },
   {path: 'provider',component: MainProviderComponent },
+  {path: 'panier',component:MainPanierComponent},
   {path: '**',component: NotFoundComponent },
 
 ];

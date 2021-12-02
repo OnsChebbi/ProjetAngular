@@ -6,7 +6,6 @@ import {AppProductModule} from "./app-product/app-product.module";
 import {AppSharedModule} from "./app-shared/app-shared.module";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { AppLivreurComponent } from './app-livreur/app-livreur.component';
 import { SidenavComponent } from './app-shared/sidenav/sidenav.component';
 import { TopnavComponent } from './app-shared/topnav/topnav.component';
 import { MainProviderComponent } from './app-provider/main-provider/main-provider.component';
@@ -15,19 +14,24 @@ import { MainStockComponent } from './app-stock/main-stock/main-stock.component'
 import { FormAddStockComponent } from './app-stock/form-add-stock/form-add-stock.component';
 import {UserModule} from "./user/user.module";
 import {LandingPageModule} from "./landing-page/landing-page.module";
+import { LivreurComponent } from './app-livreur/livreur/livreur.component';
+import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
+import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppLivreurComponent,
     SidenavComponent,
     TopnavComponent,
     MainProviderComponent,
     FormAddProviderComponent,
     MainStockComponent,
     FormAddStockComponent,
+    LivreurComponent,
+    MainLivreurComponent,
+    FormLivreurComponent,
 
   ],
   imports: [

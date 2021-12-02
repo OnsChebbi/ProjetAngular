@@ -1,5 +1,5 @@
 export class Livreur{
-    idLiv: string;
+    idLiv: number;
     NomLiv: string;
     PrenomLiv: string;
     VilleLiv: string;

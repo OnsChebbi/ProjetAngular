@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {AppUserModule} from "./app-user/app-user.module";
 import {AppProductModule} from "./app-product/app-product.module";
 import {AppSharedModule} from "./app-shared/app-shared.module";
 import {FormsModule} from "@angular/forms";
@@ -14,8 +13,8 @@ import { MainProviderComponent } from './app-provider/main-provider/main-provide
 import { FormAddProviderComponent } from './app-provider/form-add-provider/form-add-provider.component';
 import { MainStockComponent } from './app-stock/main-stock/main-stock.component';
 import { FormAddStockComponent } from './app-stock/form-add-stock/form-add-stock.component';
-import { MainPanierComponent } from './app-panier/main-panier/main-panier.component';
-import { PanierComponent } from './app-panier/panier/panier.component';
+import {UserModule} from "./user/user.module";
+import {LandingPageModule} from "./landing-page/landing-page.module";
 
 
 
@@ -29,18 +28,17 @@ import { PanierComponent } from './app-panier/panier/panier.component';
     FormAddProviderComponent,
     MainStockComponent,
     FormAddStockComponent,
-    MainPanierComponent,
-    PanierComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppUserModule,
     AppProductModule,
     AppSharedModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    UserModule,
+    LandingPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,7 +6,7 @@
       "code": "F-1970",
       "libelle": "PC",
       "adresse": "Kef",
-      "picture": ""
+      "picture": "/assets/dell"
     },
     {
       "idProvider": "2",
@@ -14,7 +14,7 @@
       "nom": "Samsung",
       "libelle": "TV",
       "adresse": "Ariana",
-      "picture": ""
+      "picture": "/assets/samsung"
     },
     {
       "idProvider": "3",
@@ -22,7 +22,7 @@
       "nom": "Sotufab",
       "libelle": "Table",
       "adresse": "Monastir",
-      "picture": ""
+      "picture": "/assets/sotufab"
     },
     {
       "idProvider": "4",
@@ -30,27 +30,97 @@
       "nom": "Iphone",
       "libelle": "Telephone",
       "adresse": "Sokra",
-      "picture": ""
+      "picture": "/assets/iphone"
     }
   ],
-  "Panier": [
+  "users": [
     {
-      "idPanier": "1",
-      "prixTotal": "121",
-      "nombreArticle": "7",
-      "montantRemise": "23"
+      "id": 2,
+      "firstName": "GeorgeFluidAAAAA",
+      "lastName": "Clooney",
+      "birthDate": "10-02-1981",
+      "accountCategory": "Customer",
+      "email": "marlon@brando.com",
+      "password": "test",
+      "picture": "https://bootdey.com/img/Content/avatar/avatar2.png",
+      "profession": "Software Engineer"
     },
     {
-      "idPanier": "2",
-      "prixTotal": "43",
-      "nombreArticle": "2",
-      "montantRemise": "11"
+      "id": 3,
+      "firstName": "George",
+      "lastName": "Clooney",
+      "birthDate": "10-02-1981",
+      "accountCategory": "Customer",
+      "email": "marlon@brando.com",
+      "password": "test",
+      "picture": "https://bootdey.com/img/Content/avatar/avatar1.png",
+      "profession": "Software Engineer"
     },
     {
-      "idPanier": "3",
-      "prixTotal": "444",
-      "nombreArticle": "4",
-      "montantRemise": "44"
+      "id": 4,
+      "firstName": "Ryan",
+      "lastName": "Gossling",
+      "birthDate": "05-03-1987",
+      "accountCategory": "Golden",
+      "email": "Ryan@nicholson.com",
+      "password": "test",
+      "picture": "https://bootdey.com/img/Content/avatar/avatar4.png",
+      "profession": "Software Engineer"
+    },
+    {
+      "id": 4,
+      "firstName": "Robert",
+      "lastName": "Downey",
+      "birthDate": "05-03-2002",
+      "accountCategory": "Blocked Account",
+      "email": "robert@nicholson.com",
+      "password": "test",
+      "picture": "https://bootdey.com/img/Content/avatar/avatar5.png",
+      "profession": "Software Engineer"
+    },
+    {
+      "id": 12,
+      "firstName": "Ahmed",
+      "lastName": "ben Foulen",
+      "accountCategory": "Admin",
+      "birthDate": "10-10-1988",
+      "email": "ahmed@gmail.com",
+      "password": "test",
+      "profession": "Teacher",
+      "picture": "https://bootdey.com/img/Content/avatar/avatar5.png"
+    },
+    {
+      "id": 13,
+      "firstName": "Amina",
+      "lastName": "ben Foulen",
+      "accountCategory": "Customer",
+      "birthDate": "10-10-1988",
+      "email": "ahmed@gmail.com",
+      "password": "test",
+      "profession": "Teacher",
+      "picture": "https://bootdey.com/img/Content/avatar/avatar5.png"
+    },
+    {
+      "firstName": "Dhieb",
+      "lastName": "JesserTa7foun",
+      "email": "jesserdhieb234@gmail.com",
+      "password": "adzdaazd",
+      "profession": "aaaze",
+      "picture": "https://yt3.ggpht.com/ytc/AKedOLQCkYHOSBdJlBVIZIMDKM-p9iu3hCxQMNa5P4tXtg=s900-c-k-c0x00ffffff-no-rj",
+      "birthDate": "2021-11-10",
+      "accountCategory": "Customer",
+      "id": 14
+    },
+    {
+      "firstName": "Dhieb",
+      "lastName": "JesserRojla",
+      "email": "jesserdhieb234@gmail.com",
+      "password": "adazazd",
+      "profession": "azdazd",
+      "picture": "https://yt3.ggpht.com/ytc/AKedOLQCkYHOSBdJlBVIZIMDKM-p9iu3hCxQMNa5P4tXtg=s900-c-k-c0x00ffffff-no-rj",
+      "birthDate": "2021-11-11",
+      "accountCategory": "Customer",
+      "id": 15
     }
   ]
 }

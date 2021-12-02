@@ -22,7 +22,7 @@ export class AuthService {
     this.userService.list.forEach((user)=>{
       if((user.email===email) && (user.password===password)){
         this.validUser= true;
-        localStorage.setItem('loggedUserid',String(user.idUser));
+        localStorage.setItem('loggedUserid',String(user.id));
         localStorage.setItem('loggedUserFirstName',user.firstName);
         //console.log(localStorage.getItem('loggedUserFirstName'))
         localStorage.setItem('loggedUserLastName',user.lastName);

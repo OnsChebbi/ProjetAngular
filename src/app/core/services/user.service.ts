@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {User} from "../model/user";
+import {environment} from "../../../environments/environment";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ export class UserService {
   list: User[]=
     [
       {
-        idUser: 1,
+        id: 1,
         firstName: "Mila",
         lastName: " Kunis",
         birthDate: "30-06-1999",
@@ -19,7 +21,7 @@ export class UserService {
         profession: "Software Engineer"
       },
       {
-        idUser: 2,
+        id: 2,
         firstName: "George",
         lastName: "Clooney",
         birthDate: "10-02-1981",
@@ -30,7 +32,7 @@ export class UserService {
         profession: "Software Engineer"
       },
       {
-        idUser: 3,
+        id: 3,
         firstName: "George",
         lastName:  "Clooney",
         birthDate: "10-02-1981",
@@ -41,7 +43,7 @@ export class UserService {
         profession: "Software Engineer"
       },
       {
-        idUser: 4,
+        id: 4,
         firstName: "Ryan",
         lastName:  "Gossling",
         birthDate: "05-03-1987",
@@ -52,7 +54,7 @@ export class UserService {
         profession: "Software Engineer"
       },
       {
-        idUser: 4,
+        id: 4,
         firstName: "Robert",
         lastName:  "Downey",
         birthDate: "05-03-2002",
@@ -62,7 +64,7 @@ export class UserService {
         picture: "https://bootdey.com/img/Content/avatar/avatar5.png",
         profession: "Software Engineer"
       },
-      { idUser: 12,
+      { id: 12,
         firstName: "Ahmed",
         lastName:"ben Foulen",
         accountCategory:"Admin",
@@ -72,7 +74,7 @@ export class UserService {
         profession:"Teacher",
         picture:"https://bootdey.com/img/Content/avatar/avatar5.png"},
 
-      {idUser: 13,
+      {id: 13,
         firstName: "Amina",
         lastName:"ben Foulen",
         accountCategory:"Customer",
@@ -82,5 +84,31 @@ export class UserService {
         profession:"Teacher",
         picture:"https://bootdey.com/img/Content/avatar/avatar5.png"}
     ];
-  constructor() { }
+  CurrentUser:User;
+  status:boolean=false;
+  MODUSer(user:User){
+    this.CurrentUser=user;
+  }
+  UpdateUSer(user:User){
+    this.CurrentUser=user;
+    this.status=true;
+  }
+  url=environment.url+"users/";
+  constructor(private http:HttpClient) { }
+  getListUserService(){
+    return this.http.get<User[]>(this.url);
+  }
+  addUserService(user:User){
+    return this.http.post(this.url,user);
+  }
+  deleteUserService(id:number){
+    return this.http.delete(this.url+id);
+  }
+  getUserServiceById(id:any){
+    return this.http.get<User>(this.url+id);
+  }
+  updateUserService(id:number,user:User){
+    return this.http.put(this.url+"/"+id,user);
+  }
+
 }

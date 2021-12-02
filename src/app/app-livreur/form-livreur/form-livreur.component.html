@@ -1,0 +1,67 @@
+
+<div class="container-fluid px-1 py-2 mx-auto">
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+      <button class="btn btn-success" (click)="return()">Return</button>
+
+
+      <div class="card">
+        <h5 class="text-center mb-4">Ajouter Livreur</h5>
+        <form class="form-card" #f="ngForm">
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Nom<span class="text-danger"> *</span></label>
+              <input type="text" name="nom"  id="nom" class="form-control" [(ngModel)]="livreur.NomLiv" required minlength="3"  #fn="ngModel">
+              <div class="alert alert-danger" *ngIf="fn.invalid && fn.touched">
+                <div *ngIf="fn.hasError('required')"> Nom is a required field</div>
+                <div *ngIf="fn.hasError('minlength')"> Nom minlength ies equal to 3</div>
+              </div>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Prénom<span class="text-danger"> *</span></label>
+              <input type="text" id="lname" name="lname" [(ngModel)]="livreur.PrenomLiv" required minlength="3"  #ln="ngModel">
+              <div class="alert alert-danger" *ngIf="ln.invalid && ln.touched">
+                <div *ngIf="ln.hasError('required')"> last name is a required field</div>
+                <div *ngIf="ln.hasError('minlength')"> last name minlength ies equal to 3</div>
+              </div>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Ville<span class="text-danger"> *</span></label>
+              <input type="text" name="ville"  id="ville" class="form-control" [(ngModel)]="livreur.VilleLiv" required minlength="3"  #fn="ngModel">
+              <div class="alert alert-danger" *ngIf="fn.invalid && fn.touched">
+                <div *ngIf="fn.hasError('required')"> Ville is a required field</div>
+                <div *ngIf="fn.hasError('minlength')"> Ville minlength ies equal to 3</div>
+              </div>
+            </div>
+            
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Adresse e-mail<span class="text-danger"> *</span></label>
+              <input type="email" name="adresse"  id="adresse" class="form-control" [(ngModel)]="livreur.AdresseLiv" required minlength="3"  #fn="ngModel">
+              <div class="alert alert-danger" *ngIf="fn.invalid && fn.touched">
+                <div *ngIf="fn.hasError('required')"> Adresse is a required field</div>
+                <div *ngIf="fn.hasError('minlength')"> Adresse minlength ies equal to 3</div>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Mot de passe<span class="text-danger"> *</span></label>
+              <input type="password" name="mdp"  id="mdp" class="form-control" [(ngModel)]="livreur.AdresseLiv" required minlength="3"  #fn="ngModel">
+              <div class="alert alert-danger" *ngIf="fn.invalid && fn.touched">
+                <div *ngIf="fn.hasError('required')"> Mot de passe is a required field</div>
+                <div *ngIf="fn.hasError('minlength')"> Mot de passe minlength ies equal to 3</div>
+              </div>
+            </div>
+            
+          </div>
+
+          
+          <div class="row justify-content-end">
+            <div class="form-group col-auto"> <button  class="btn-primary" (click)="f.reset()">Reset</button> </div>
+            <div class="form-group col-auto"> <button type="submit" class="btn-primary" (click)="save()"  [disabled]="f.invalid">Register</button> </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

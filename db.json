@@ -77,19 +77,21 @@
       "password": "test",
       "profession": "Teacher",
       "picture": "https://bootdey.com/img/Content/avatar/avatar5.png"
+    }
+  ],
+  "livreur": [
+    {
+      "idLiv": 1,
+      "NomLiv": "Chebbi",
+      "PrenomLiv": "Ons",
+      "VilleLiv": "Ariana",
+      "AdresseLiv": "ons.chebbi@esprit.tn",
+      "MdpLiv": "1234",
+      "LngLiv": 223.55,
+      "LatLiv": 55.22
     },
     {
-      "firstName": "Dhieb",
-      "lastName": "JesserTa7foun",
-      "email": "jesserdhieb234@gmail.com",
-      "password": "adzdaazd",
-      "profession": "aaaze",
-      "picture": "https://yt3.ggpht.com/ytc/AKedOLQCkYHOSBdJlBVIZIMDKM-p9iu3hCxQMNa5P4tXtg=s900-c-k-c0x00ffffff-no-rj",
-      "birthDate": "2021-11-10",
-      "accountCategory": "Customer",
-      "id": 14
-    },
-    {
+
       "firstName": "Dhieb",
       "lastName": "JesserRojla",
       "email": "jesserdhieb234@gmail.com",
@@ -142,6 +144,16 @@
       "prixTotal": "45",
       "nombreArticle": "3",
       "montantRemise": "3"
+
+      "idLiv": 2,
+      "NomLiv": "Amri",
+      "PrenomLiv": "Adam",
+      "VilleLiv": "Kef",
+      "AdresseLiv": "Adam.ElAmri@esprit.tn",
+      "MdpLiv": "UIH",
+      "LngLiv": 223.55,
+      "LatLiv": 55.22
+
     }
   ]
 }

@@ -1,0 +1,42 @@
+         <!--------------------------------------------->
+    <br>
+          <table class="table mb-0 text-nowrap" >
+            <thead>
+              <tr >
+                <th scope="col" class="border-0" style="font-weight: bold" >Id panier</th>
+                <th scope="col" class="border-0" style="font-weight: bold">Prix total</th>
+                <th scope="col" class="border-0" style="font-weight: bold" >Nombre des articles</th>
+                <th scope="col" class="border-0" style="font-weight: bold" >montantRemise</th>
+                <th scope="col" class="border-0" style="font-weight: bold" >Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let panier of listPanier" >
+                <td class="border-top-0">{{panier.idPanier}}</td>
+                <td class="border-top-0">{{panier.prixTotal}}</td>
+                <td class="border-top-0">{{panier.nombreArticle}}</td>
+                <td class="border-top-0">{{panier.montantRemise}}</td>
+                <td class="align-middle border-top-0">
+                  <button  class="btn btn-success btn-sm" style="font-weight: bold;color: aliceblue;">Update</button>
+                  <button (click)="deletePanier(panier)" 
+                          class="btn btn-danger btn-sm"  style="font-weight: bold;color: aliceblue;">Delete</button>
+                  <button  class="btn btn-info btn-sm" style="font-weight: bold;color: aliceblue;" >Details</button>
+                </td>
+
+                
+                <!-- <td class="text-right">
+                  <div class="dropdown">
+                    <a class="btn btn-sm btn-icon-only text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                      <a class="dropdown-item" href="#">voir détail</a>
+                      <a class="dropdown-item" href="#">modifier</a>
+                      <a class="dropdown-item" (click)="deletePanier(panier)">supprimer</a>
+                    </div>
+                  </div>
+                </td> -->
+              </tr>
+              
+            </tbody>
+          </table>

@@ -8,15 +8,22 @@ import {LivreurRoutingModule} from "./app-livreur/livreur-routing.module";
 import {LandingPageRoutingModule} from "./landing-page/landing-page-routing.module";
 
 import { MainPanierComponent } from './app-panier/main-panier/main-panier.component';
-
 import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
+
 import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.component';
+
+import { AppProviderRoutingModule } from './app-provider/app-provider-routing.module';
+import { AppStockRoutingModule } from './app-stock/app-stock-routing.module';
+import { MainStockComponent } from './app-stock/main-stock/main-stock.component';
+import { AppLivraisonRoutingModule } from './app-livraison/app-livraison-routing.module';
+
 
 
 const routes: Routes = [
   {path: '',redirectTo:'home', pathMatch: 'full' },
   {path: 'provider',component: MainProviderComponent },
+  {path: 'stock',component: MainStockComponent },
   {path: 'panier',component:MainPanierComponent},
   {path:'panier/detail-panier/:id',component:DetailPanierComponent},
   {path: '**',component: NotFoundComponent },
@@ -27,9 +34,12 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     AppProductRoutingModule,
+    AppProviderRoutingModule,
+    AppStockRoutingModule,
     UserRoutingModule,
     LivreurRoutingModule,
-    LandingPageRoutingModule
+    LandingPageRoutingModule,
+    AppLivraisonRoutingModule
   ],
   exports: [RouterModule]
 })

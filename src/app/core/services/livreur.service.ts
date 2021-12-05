@@ -7,8 +7,6 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class LivreurService {
-
-  
   url=environment.url+"livreur/";
   constructor(private http: HttpClient) { }
   currentLivreur:Livreur;
@@ -17,20 +15,23 @@ export class LivreurService {
     return this.http.get<Livreur[]>(this.url)
     
     }
-    addListService(livreur: Livreur){
+    getById(idLiv:number){
+      return this.http.get<Livreur>(`${this.url}/${idLiv}`)
+    }
+    addListLivreurService(livreur: Livreur){
       return this.http.post(this.url+"add-livreur/", livreur)
     }
-    deleteListService(id:number){
-      return this.http.delete(this.url+id)
+
+    deleteListLivreurService(idLiv:number){
+      return this.http.delete(this.url+idLiv)
     }
    
-    updateListService(livreur: Livreur){
+    updateListLivreurService(livreur: Livreur){
       return this.http.put(this.url+livreur.idLiv,livreur)
     }
 
     getLivreurServiceById(id:string){
-     
+         return this.http.get<Livreur>("http://localhost:3000/livreur/1")
+
     }
 }
-
-

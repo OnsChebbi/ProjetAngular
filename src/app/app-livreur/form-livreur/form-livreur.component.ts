@@ -25,12 +25,12 @@ export class FormLivreurComponent implements OnInit {
 
   save(){
     if (this.status){
-      this.livreurService.updateListService(this.livreur).subscribe(
+      this.livreurService.updateListLivreurService(this.livreur).subscribe(
         ()=>this.router.navigate(['/retrieve-all-livreurs'])
       )
     }
     else {
-      this.livreurService.addListService(this.livreur).subscribe(
+      this.livreurService.addListLivreurService(this.livreur).subscribe(
         ()=>this.router.navigate(['/retrieve-all-livreurs'])
       )
     }

@@ -25,7 +25,7 @@
         <td>{{currentLivreur.PrenomLiv}}</td>
         <td>{{currentLivreur.AdresseLiv}}</td>
         <td>{{currentLivreur.VilleLiv}}</td>
-        <td><button class="btn btn-danger" (click)="delete(currentLivreur)">Delete</button></td>
+        <td><button class="btn btn-danger" (click)="delete(currentLivreur.idLiv)">Delete</button></td>
         <td><button class="btn btn-success" (click)="update(currentLivreur)">Update</button></td>
         <td><a class="btn btn-warning" [routerLink]="['/livreur',currentLivreur.idLiv]" >view More</a></td>
       </tr>

@@ -14,13 +14,18 @@ import { MainStockComponent } from './app-stock/main-stock/main-stock.component'
 import { FormAddStockComponent } from './app-stock/form-add-stock/form-add-stock.component';
 import {UserModule} from "./user/user.module";
 import {LandingPageModule} from "./landing-page/landing-page.module";
-
 import { CommonModule } from '@angular/common';
 import { MainPanierComponent } from './app-panier/main-panier/main-panier.component';
 import { LivreurComponent } from './app-livreur/livreur/livreur.component';
 import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
+
 import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.component';
+
+import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
+import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
+import { AppLivraisonModule } from './app-livraison/app-livraison.module';
+
 
 
 @NgModule({
@@ -40,6 +45,14 @@ import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.
     FormLivreurComponent,
     DetailPanierComponent,
 
+    MainPanierComponent,
+    LivreurComponent,
+    MainLivreurComponent,
+    FormLivreurComponent,
+    MainLivraisonComponent,
+  
+
+
   ],
   imports: [
     CommonModule,
@@ -50,7 +63,8 @@ import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.
     FormsModule,
     HttpClientModule,
     UserModule,
-    LandingPageModule
+    LandingPageModule,
+    AppLivraisonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,23 +1,35 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from "@angular/forms";
+
 import {HttpClientModule} from "@angular/common/http";
-import { MainStockComponent } from './main-stock/main-stock.component';
-import { FormAddStockComponent } from './form-add-stock/form-add-stock.component';
+import { AppStockRoutingModule } from "./app-stock-routing.module";
+
+
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BrowserModule} from "@angular/platform-browser";
+import { MainStockComponent } from "./main-stock/main-stock.component";
+import { FormAddStockComponent} from './form-add-stock/form-add-stock.component'
+import { ShowOneStockComponent } from "./show-one-stock/show-one-stock.component";
 
 @NgModule({
     declarations: [
      
       MainStockComponent,
       FormAddStockComponent,
+      ShowOneStockComponent,
       
     ],
     imports: [
-        BrowserModule,
-        FormsModule,
+      CommonModule,
+      BrowserModule,
+      AppStockRoutingModule,
+      FormsModule,
+      ReactiveFormsModule,
         HttpClientModule
-      ],
-      providers: [],
-      bootstrap: []
+      ]
     })
     export class AppStockModule { }
+    
+        

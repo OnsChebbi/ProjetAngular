@@ -2,49 +2,42 @@
   "provider": [
     {
       "idProvider": "1",
-      "nom": "Dell",
+      "name": "Dell",
+      "email": "dell@gmail.com",
       "code": "F-1970",
       "libelle": "PC",
       "adresse": "Kef",
-      "picture": "/assets/dell"
+      "logo": "/assets/dell.png"
     },
     {
       "idProvider": "2",
       "code": "F-1978",
-      "nom": "Samsung",
+      "email": "samsung@gmail.com",
+      "name": "Samsung",
       "libelle": "TV",
       "adresse": "Ariana",
-      "picture": "/assets/samsung"
+      "logo": "/assets/samsung.png"
     },
     {
       "idProvider": "3",
       "code": "F-1985",
-      "nom": "Sotufab",
+      "email": "sotufab@gmail.com",
+      "name": "Sotufab",
       "libelle": "Table",
       "adresse": "Monastir",
-      "picture": "/assets/sotufab"
+      "logo": "/assets/sotufab.png"
     },
     {
       "idProvider": "4",
       "code": "F-1948",
-      "nom": "Iphone",
+      "email": "iphone@gmail.com",
+      "name": "Iphone",
       "libelle": "Telephone",
       "adresse": "Sokra",
-      "picture": "/assets/iphone"
+      "logo": "/assets/iphone.jpg"
     }
   ],
   "users": [
-    {
-      "id": 4,
-      "firstName": "Ryan",
-      "lastName": "Gossling",
-      "birthDate": "05-03-1987",
-      "accountCategory": "Golden",
-      "email": "Ryan@nicholson.com",
-      "password": "test",
-      "picture": "https://bootdey.com/img/Content/avatar/avatar4.png",
-      "profession": "Software Engineer"
-    },
     {
       "id": 4,
       "firstName": "Robert",
@@ -91,7 +84,6 @@
       "LatLiv": 55.22
     },
     {
-
       "firstName": "Dhieb",
       "lastName": "JesserRojla",
       "email": "jesserdhieb234@gmail.com",
@@ -144,7 +136,10 @@
       "prixTotal": "45",
       "nombreArticle": "3",
       "montantRemise": "3"
-
+    }
+  ],
+  "Livreurs": [
+    {
       "idLiv": 2,
       "NomLiv": "Amri",
       "PrenomLiv": "Adam",
@@ -153,7 +148,33 @@
       "MdpLiv": "UIH",
       "LngLiv": 223.55,
       "LatLiv": 55.22
-
+    }
+  ]
+  ,
+  "Stocks": [
+    {
+      "idStock": "1",
+      "Name": "Zara",
+      "qte": "15",
+      "qteMin": "5",
+      "libelleStock": "Robe",
+      "logo":"/assets/zara.jpg"
+      
+    },  {
+      "idStock": "2",
+      "Name": "Sephora",
+      "qte": "45",
+      "qteMin": "10",
+      "libelleStock": "rouge à levre",
+      "logo":"/assets/sephora.jpg"
+      
+    },  {
+      "idStock": "3",
+      "Name": "J'adore",
+      "qte": "25",
+      "qteMin": "5",
+      "libelleStock": "parfum",
+      "logo":"/assets/jadore.png"
     }
   ]
 }

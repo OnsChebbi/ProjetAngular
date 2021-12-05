@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Stock } from 'src/app/core/model/stock';
 import { StockService } from 'src/app/core/services/stock.service';
-
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-main-stock',
   templateUrl: './main-stock.component.html',
@@ -12,7 +12,7 @@ export class MainStockComponent implements OnInit {
   ListStock: Stock[];
   showFormTemplate: boolean;
   msg: string;
-  constructor(private serviceStock: StockService) { }
+  constructor(private serviceStock: StockService,private router: Router) { }
 
   ngOnInit(): void {
     this.showFormTemplate = false;
@@ -20,21 +20,31 @@ export class MainStockComponent implements OnInit {
       (data: Stock[]) => this.ListStock= data
     )
   }
-  deleteStock(stock: Stock): void{
+  delete(stock: Stock): void{
     let i = this.ListStock.indexOf(stock);
     this.serviceStock.deleteStockService(stock.idStock).subscribe(
       ( )=>this.ListStock.splice(i,1)
     )
   }
-  editStock(stock: Stock): void{
-    this.inputStock = stock;
-    this.showFormTemplate =true;
+  update(stock: Stock){
+    this.serviceStock.UpdateProvider(stock);
+    this.router.navigate(['/add-stock']);
   }
+  AddProvider(){
+    this.router.navigate(['/add-stock'])
+  }
+  ShowMore(stock: Stock){
+    this.serviceStock.getStockServiceById(stock.idStock).subscribe(
+      (stockF:Stock)=>[this.serviceStock.MODProvider(stockF),this.router.navigate(['/show-stock'])]
+    )
+  }
+
+
   save(stock: Stock){
     let i = this.ListStock.indexOf(stock);
     if(i!=-1){
       //update Stock
-      this.serviceStock.updateStockService(stock).subscribe(
+      this.serviceStock.updateStockService(stock,stock.idStock).subscribe(
       () => {this.ListStock[i]=stock
         this.showFormTemplate =false}
       )

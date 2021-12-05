@@ -3,9 +3,15 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import { MainProviderComponent } from './main-provider/main-provider.component';
 import { FormAddProviderComponent } from './form-add-provider/form-add-provider.component';
-const routes: Routes = [
-    {path: 'provider', component: MainProviderComponent
-      }
+import { ShowOneProviderComponent } from './show-one-provider/show-one-provider.component';
+
+  const routes: Routes = [
+    {path:'show-all-provider', component: MainProviderComponent},
+    {path:'show-provider', component: ShowOneProviderComponent},
+    {path:'add-provider', component:FormAddProviderComponent},
+    {path:'provider/:id', component: ShowOneProviderComponent},
+  
+  
   ];
   
   @NgModule({

@@ -27,10 +27,9 @@ import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.co
     AppComponent,
     SidenavComponent,
     TopnavComponent,
-    MainProviderComponent,
-    FormAddProviderComponent,
-    MainStockComponent,
-    FormAddStockComponent,
+
+    
+
 
     MainPanierComponent,
 

@@ -1,8 +1,9 @@
 export class Provider {
     idProvider: string;
-    nom: string;
+    name: string;
+    email: string;
     code: string;
     libelle: string;
     adresse: string;
-    picture: string;
+   logo  :string;
     }

@@ -17,40 +17,8 @@ export class MainProductComponent implements OnInit {
   ngOnInit(): void {
     this.showFormTemplate = false;
     this.buttonValue="add new Product";
-    this.listProduct = [
-      { id: '12',
-        title: 'T-Shirt 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
-        quantity: 10,
-        price: 15,
-        nbrLike: 0,
-        picture: 'assets/t shirt 1.jpg'
-      },
-      { id: '12',
-        title: 'T-Shirt 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
-        quantity: 10,
-        price: 25,
-        nbrLike: 0,
-        picture: 'assets/t shirt 2.jpg'
-      },
-      { id: '12',
-        title: 'T-Shirt 3',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
-        quantity: 0,
-        price: 100,
-        nbrLike: 0,
-        picture: 'assets/t shirt 1.jpg'
-      },
-      { id: '12',
-        title: 'T-Shirt 4',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
-        quantity: 100,
-        price: 45,
-        nbrLike: 5,
-        picture: 'assets/t shirt 2.jpg'
-      }
-    ]
+
+
   }
 
   like(product: Product): void{

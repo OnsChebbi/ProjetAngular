@@ -1,43 +1,48 @@
-<div class="container">
 
-    <table class ="table table-hover">
-       <thead>
-        <tr>
-            
-            <th>IdStock</th> 
-            <th>Quantite</th>
-            <th>Quantite Min</th>
-            <th>Libelle</th>  
-           
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let stock of ListStock">
-       
-            <td>{{stock.idStock}}</td>
-            <td>{{stock.qte}}</td>
-            <td>{{stock.qteMin}}</td>
-            <td>{{stock.libelleStock}}</td>
-            
-           
+
+
+<div class="container mt-5 px-2">
+    <div class="mb-2 d-flex justify-content-between align-items-center">
+      <button class="btn btn-success" (click)="AddProvider()">Add Stock</button>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-responsive table-striped table-hover table-bordered">
+        <thead>
+        <tr class="bg-light">
+          <th scope="col" width="5%">Logo</th>
+          <th scope="col" >Id Stock</th>
+          <th scope="col" >Name</th>
+          <th scope="col" >Quantité</th>
+          <th scope="col" >Quantité Min</th>
           
-            <td>
-                <button class="btn btn-outline-danger"
-                (click)="deleteStock(stock)">>Delete</button>
-             
-            </td>
-            <td>
-                <button class="btn btn-warning"
-                (click)="editStock(stock)" >Update</button>
-             
-            </td>
+          <th scope="col"  >Libelle</th>
+        
+        
+          <th scope="col" >delete</th>
+          <th scope="col"  >Update</th>
+          <th scope="col"  >view more</th>
         </tr>
-    </tbody>
-    </table>
-    <button class="btn btn-outline-primary" (click)="showForm()">Add new Stock</button>
-    <div *ngIf="showFormTemplate" >
-    <h1>Add new Stock :</h1>
-    <app-form-add-stock  (AddEvent)="save($event)" [stock]="inputStock"></app-form-add-stock>
-    
+        </thead>
+        <tbody>
+        <tr *ngFor="let stock of ListStock">
+          <td><img class="img-fluid" src="{{stock.logo}}"></td>
+          <td>{{stock.idStock}}</td>
+          <td>{{stock.name}}</td>
+          <td>{{stock.qte}}</td>
+          <td>{{stock.qteMin}}</td>
+      
+          <td>{{stock.libelleStock}}</td>
+         
+          
+          <td><button class="btn btn-danger" (click)="delete(stock)">Delete</button></td>
+          <td><button class="btn btn-success" (click)="update(stock)">Update</button></td>
+          <td><a class="btn btn-warning" [routerLink]="['/stock',stock.idStock]" >view More</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  
   </div>
-
+  
+  
+  

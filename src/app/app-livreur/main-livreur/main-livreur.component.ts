@@ -23,15 +23,15 @@ export class MainLivreurComponent implements OnInit {
     console.log(this.listLivreur)
   }
  
-  delete(livreur: Livreur){
-
+  delete(id: number){
+/* 
   let i = this.listLivreur.indexOf(livreur);
-    console.log("the i is:"+i)
+    console.log("the i is:"+i) */
   
-   this.livreurService.deleteListLivreurService(livreur.idLiv).subscribe(
-     ()=>this.listLivreur.splice(i,1)
+   this.livreurService.deleteListLivreurService(id).subscribe(
    )
-   console.log(this.listLivreur) 
+   console.log(id)     //  ()=>this.listLivreur.splice(i,1)
+
    }
 
 update(livreur: Livreur){

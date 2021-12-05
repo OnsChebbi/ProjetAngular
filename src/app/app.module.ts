@@ -32,7 +32,7 @@ import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.co
     MainStockComponent,
     FormAddStockComponent,
 
-    MainPanierComponent
+    MainPanierComponent,
 
     LivreurComponent,
     MainLivreurComponent,

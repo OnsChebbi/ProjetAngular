@@ -11,9 +11,9 @@ import { LivreurService } from 'src/app/core/services/livreur.service';
 export class MainLivreurComponent implements OnInit {
 
   listLivreur: Livreur[];
-
+  currentLivreur: Livreur;
   constructor(private livreurService: LivreurService,private router: Router) { }
-
+   
 
   ngOnInit(): void {
     this.livreurService.getListLivreurService().subscribe(
@@ -24,17 +24,18 @@ export class MainLivreurComponent implements OnInit {
   }
  
   delete(livreur: Livreur){
+
   let i = this.listLivreur.indexOf(livreur);
-  console.log(i)
-   this.livreurService.deleteListService(livreur.idLiv).subscribe(
+    console.log("the i is:"+i)
+  
+   this.livreurService.deleteListLivreurService(livreur.idLiv).subscribe(
      ()=>this.listLivreur.splice(i,1)
    )
-   console.log(this.listLivreur)
-  } 
-
+   console.log(this.listLivreur) 
+   }
 
 update(livreur: Livreur){
-  this.livreurService.updateListService(livreur);
+  this.livreurService.updateListLivreurService(livreur);
   this.router.navigate(['/add-livreur']);
 }
 }

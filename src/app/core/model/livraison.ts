@@ -1,11 +1,6 @@
 export class Livraison{
-    idLiv: string;
-    NomLiv: string;
-    PrenomLiv: string;
-    VilleLiv: string;
-    AdresseLiv: string;
-    MdpLiv : string;
-    LngLiv: number;
-    LatLiv: number;
+    idLvr: number;
+    dateLivraisonDate: Date;
+    adresseLvr: String;
   }
   

@@ -10,21 +10,23 @@ import {
 })
 export class PanierService {
 
-  url=environment.url+"panier/"
+  url=environment.url+"panier"
   constructor(private http: HttpClient) { }
 
     getListPanierService(){
-    return this.http.get<Panier[]>(this.url)
+    return this.http.get<Panier[]>(`${this.url}/retrieve-all-paniers`)
     }
     addPanierService(panier: Panier){
       return this.http.post(this.url, panier)
     }
     deletePanierService(idPanier:number){
-      return this.http.delete(this.url+idPanier)
+      return this.http.delete(`${this.url}/remove-panier/${idPanier}`)
     }
     updatePanierService(panier: Panier){
       return this.http.put(this.url+panier.idPanier,panier)
     }
-
+    getPanierById(idPanier:number){
+      return this.http.get(`${this.url}/retrieve-panier/${idPanier}`)
+    }
 
 }

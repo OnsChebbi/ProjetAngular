@@ -11,12 +11,14 @@ import { MainPanierComponent } from './app-panier/main-panier/main-panier.compon
 
 import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
+import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.component';
 
 
 const routes: Routes = [
   {path: '',redirectTo:'home', pathMatch: 'full' },
   {path: 'provider',component: MainProviderComponent },
   {path: 'panier',component:MainPanierComponent},
+  {path:'panier/detail-panier/:id',component:DetailPanierComponent},
   {path: '**',component: NotFoundComponent },
 
 ];

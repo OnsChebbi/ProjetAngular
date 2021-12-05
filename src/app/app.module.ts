@@ -20,6 +20,7 @@ import { MainPanierComponent } from './app-panier/main-panier/main-panier.compon
 import { LivreurComponent } from './app-livreur/livreur/livreur.component';
 import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
+import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.component';
 
 
 @NgModule({
@@ -32,11 +33,12 @@ import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.co
     MainStockComponent,
     FormAddStockComponent,
 
-    MainPanierComponent
+    MainPanierComponent,
 
     LivreurComponent,
     MainLivreurComponent,
     FormLivreurComponent,
+    DetailPanierComponent,
 
   ],
   imports: [

@@ -14,18 +14,17 @@ export class MainPanierComponent implements OnInit {
 
 
   ngOnInit(): void {
+    
     this.servicePanier.getListPanierService().subscribe(
-      (data: Panier[]) => this.listPanier= data
+      (data: Panier[]) => {
+        this.listPanier= data
+      }
     )
   }
 
   deletePanier(panier : Panier): void{
     
-    /*let i = this.listPanier.indexOf(panier);
-                                                                                                      
-    this.servicePanier.deletePanierService(panier.idPanier).subscribe(
-      ( )=>this.listPanier.splice(i,1)  
-    )*/
+    
     console.log(panier);
     console.log(this.listPanier);
     
@@ -34,9 +33,15 @@ export class MainPanierComponent implements OnInit {
     let i = this.listPanier.indexOf(panier);
     console.log(i);
     this.servicePanier.deletePanierService(panier.idPanier).subscribe(
-      
+      ()=>this.listPanier.splice(i,1)
       )
     
+  }
+
+  detailPanier(panier:Panier):void{
+    console.log(panier.u);
+    
+
   }
 
 }

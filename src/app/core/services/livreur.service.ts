@@ -15,11 +15,15 @@ export class LivreurService {
     return this.http.get<Livreur[]>(this.url)
     
     }
+    getById(idLiv:number){
+      return this.http.get<Livreur>(`${this.url}/${idLiv}`)
+    }
     addListLivreurService(livreur: Livreur){
       return this.http.post(this.url+"add-livreur/", livreur)
     }
-    deleteListLivreurService(id:number){
-      return this.http.delete(this.url+id)
+
+    deleteListLivreurService(idLiv:number){
+      return this.http.delete(this.url+idLiv)
     }
    
     updateListLivreurService(livreur: Livreur){
@@ -27,6 +31,7 @@ export class LivreurService {
     }
 
     getLivreurServiceById(id:string){
-     
+         return this.http.get<Livreur>("http://localhost:3000/livreur/1")
+
     }
 }

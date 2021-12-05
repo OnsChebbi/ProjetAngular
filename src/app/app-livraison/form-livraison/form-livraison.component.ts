@@ -1,10 +1,7 @@
-<<<<<<< Updated upstream
-import { Component, OnInit } from '@angular/core';
-=======
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Livraison } from 'src/app/core/model/livraison';
 import { LivraisonService } from 'src/app/core/services/livraison.service';
->>>>>>> Stashed changes
 
 @Component({
   selector: 'app-form-livraison',
@@ -12,24 +9,15 @@ import { LivraisonService } from 'src/app/core/services/livraison.service';
   styleUrls: ['./form-livraison.component.css']
 })
 export class FormLivraisonComponent implements OnInit {
-<<<<<<< Updated upstream
-
-  constructor() { }
 
   ngOnInit(): void {
   }
+  livraison: Livraison;
 
-=======
-  @Input() livraison = { dateLivraisonDate: '', adresseLvr: '', status: false }
   constructor(private livraisonService: LivraisonService,public router: Router) { }
 
-  ngOnInit(): void {
-
-  }
   save() {
-    this.livraisonService.addLivraisonService(this.livraison).subscribe((data: {}) => {
-      this.router.navigate(['/livraison'])
-    })
+    this.livraisonService.addLivraisonService(this.livraison)
   }
 
   return()
@@ -37,5 +25,4 @@ export class FormLivraisonComponent implements OnInit {
     this.router.navigate(['/livraison'])
 
   }
->>>>>>> Stashed changes
 }

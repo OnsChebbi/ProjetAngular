@@ -1,4 +1,5 @@
-"product": [
+{
+  "product": [
     {
       "title": "test",
       "description": "test",
@@ -84,42 +85,39 @@
       "picture": "/assets/iphone"
     }
   ],
-  "users": [
-    {
-      "id": 5,
-      "firstName": "Robert",
-      "lastName": "Downey",
-      "birthDate": "05-03-2002",
-      "accountCategory": "Blocked Account",
-      "email": "robert@nicholson.com",
-      "password": "test",
-      "picture": "https://bootdey.com/img/Content/avatar/avatar5.png",
-      "profession": "Software Engineer"
-    }
-  ],
+  "users": [    {
+    "id": 5,
+    "firstName": "Robert",
+    "lastName": "Downey",
+    "birthDate": "05-03-2002",
+    "accountCategory": "Blocked Account",
+    "email": "robert@nicholson.com",
+    "password": "test",
+    "picture": "https://bootdey.com/img/Content/avatar/avatar5.png",
+    "profession": "Software Engineer"
+  }],
   "livreur": [
     {
       "idLiv": 1,
-      "NomLiv": "Chebbi",
-      "PrenomLiv": "Ons",
-      "VilleLiv": "Ariana",
-      "AdresseLiv": "ons.chebbi@esprit.tn",
-      "MdpLiv": "1234",
+      "NomLiv": "Ahmed",
+      "PrenomLiv": "Chebbi",
+      "VilleLiv": "Tunis",
+      "AdresseLiv": "ahmed@esprit.tn",
+      "MdpLiv": "UIH",
       "LngLiv": 223.55,
       "LatLiv": 55.22
     },
     {
       "idLiv": 2,
       "NomLiv": "Chebbi",
-      "PrenomLiv": "Ahmed",
-      "VilleLiv": "Ariana",
-      "AdresseLiv": "ahmed@gmail.com",
-      "MdpLiv": "1234",
+      "PrenomLiv": "Ons",
+      "VilleLiv": "ariana",
+      "AdresseLiv": "ons.chebbi@esprit.tn",
+      "MdpLiv": "UIH",
       "LngLiv": 223.55,
       "LatLiv": 55.22
     }
   ],
-
   "Panier": [
     {
       "idPanier": 1,
@@ -150,29 +148,6 @@
       "prixTotal": "45",
       "nombreArticle": "3",
       "montantRemise": "3"
-    }
-
-  ],
-  "livreur": [
-    {
-      "idLiv": 1,
-      "NomLiv": "Ahmed",
-      "PrenomLiv": "Chebbi",
-      "VilleLiv": "Tunis",
-      "AdresseLiv": "ahmed@esprit.tn",
-      "MdpLiv": "UIH",
-      "LngLiv": 223.55,
-      "LatLiv": 55.22
-    },
-    {
-      "idLiv": 2,
-      "NomLiv": "Chebbi",
-      "PrenomLiv": "Ons",
-      "VilleLiv": "ariana",
-      "AdresseLiv": "ons.chebbi@esprit.tn",
-      "MdpLiv": "UIH",
-      "LngLiv": 223.55,
-      "LatLiv": 55.22
     }
   ],
   "Stocks": [

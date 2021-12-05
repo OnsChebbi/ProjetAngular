@@ -1,4 +1,55 @@
-{
+"product": [
+    {
+      "title": "test",
+      "description": "test",
+      "quantity": 55,
+      "price": 1233,
+      "picture": "assets/femme.jpeg",
+      "nbrLike": 0,
+      "id": 13,
+      "category": "Vestimentaire"
+    },
+    {
+      "title": "t shirt",
+      "picture": "assets/t shirt 1.jpg",
+      "quantity": 2,
+      "price": 3,
+      "description": "ffgfghjhjhhj",
+      "nbrLike": 0,
+      "id": 17,
+      "category": "Vestimentaire"
+    },
+    {
+      "picture": "assets/regentlogo.jpg",
+      "title": "new",
+      "quantity": 7,
+      "price": 88,
+      "description": "new newxcf vbvb",
+      "nbrLike": 0,
+      "id": 18,
+      "category": "Vestimentaire"
+    },
+    {
+      "title": "okujh",
+      "picture": "assets/10034515C255_81_G.jpg",
+      "quantity": 20,
+      "price": 33,
+      "description": "aqqd dvsvs c dvs  xvsxv g gn",
+      "nbrLike": 0,
+      "id": 19,
+      "category": "Vestimentaire"
+    },
+    {
+      "title": "women t shirt",
+      "picture": "assets/10034595C056_83_G.jpg",
+      "quantity": 1,
+      "price": 100,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam itaque quas modi sunt aspernatur assumenda autem pariatur!",
+      "nbrLike": 0,
+      "id": 20,
+      "category": "Vestimentaire"
+    }
+  ],
   "provider": [
     {
       "idProvider": "1",
@@ -68,6 +119,7 @@
       "LatLiv": 55.22
     }
   ],
+
   "Panier": [
     {
       "idPanier": 1,
@@ -98,6 +150,63 @@
       "prixTotal": "45",
       "nombreArticle": "3",
       "montantRemise": "3"
+    }
+
+  ],
+  "livreur": [
+    {
+      "idLiv": 1,
+      "NomLiv": "Ahmed",
+      "PrenomLiv": "Chebbi",
+      "VilleLiv": "Tunis",
+      "AdresseLiv": "ahmed@esprit.tn",
+      "MdpLiv": "UIH",
+      "LngLiv": 223.55,
+      "LatLiv": 55.22
+    },
+    {
+      "idLiv": 2,
+      "NomLiv": "Chebbi",
+      "PrenomLiv": "Ons",
+      "VilleLiv": "ariana",
+      "AdresseLiv": "ons.chebbi@esprit.tn",
+      "MdpLiv": "UIH",
+      "LngLiv": 223.55,
+      "LatLiv": 55.22
+    }
+  ],
+  "Stocks": [
+    {
+      "idStock": "1",
+      "Name": "Zara",
+      "qte": "15",
+      "qteMin": "5",
+      "libelleStock": "Robe",
+      "logo": "/assets/zara.jpg"
+    },
+    {
+      "idStock": "2",
+      "Name": "Sephora",
+      "qte": "45",
+      "qteMin": "10",
+      "libelleStock": "rouge à levre",
+      "logo": "/assets/sephora.jpg"
+    },
+    {
+      "idStock": "3",
+      "Name": "J'adore",
+      "qte": "25",
+      "qteMin": "5",
+      "libelleStock": "parfum",
+      "logo": "/assets/jadore.png"
+    }
+  ],
+  "livraison": [
+    {
+      "idLvr": 1,
+      "dateLivraisonDate": "21/03/1999",
+      "adresseLvr": "tunis",
+      "status": false
     }
   ]
 }

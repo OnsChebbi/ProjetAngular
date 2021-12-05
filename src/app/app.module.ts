@@ -21,6 +21,7 @@ import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.co
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
 import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
 import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
+import { LivreurRoutingModule } from './app-livreur/livreur-routing.module';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livr
     FormsModule,
     HttpClientModule,
     UserModule,
+    LivreurRoutingModule,
     LandingPageModule
   ],
   providers: [],

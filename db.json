@@ -1,5 +1,4 @@
-{
-  "product": [
+"product": [
     {
       "title": "test",
       "description": "test",
@@ -49,59 +48,45 @@
       "nbrLike": 0,
       "id": 20,
       "category": "Vestimentaire"
-    },
-    {
-      "picture": "assets/pc-gamer-rayzen-5.jpg",
-      "title": "laptop",
-      "quantity": 5,
-      "price": 10000,
-      "description": "Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java",
-      "nbrLike": 0,
-      "id": 21,
-      "category": "Electromenager"
     }
   ],
   "provider": [
     {
       "idProvider": "1",
-      "name": "Dell",
-      "email": "dell@gmail.com",
+      "nom": "Dell",
       "code": "F-1970",
       "libelle": "PC",
       "adresse": "Kef",
-      "logo": "/assets/dell.png"
+      "picture": "/assets/dell"
     },
     {
       "idProvider": "2",
       "code": "F-1978",
-      "email": "samsung@gmail.com",
-      "name": "Samsung",
+      "nom": "Samsung",
       "libelle": "TV",
       "adresse": "Ariana",
-      "logo": "/assets/samsung.png"
+      "picture": "/assets/samsung"
     },
     {
       "idProvider": "3",
       "code": "F-1985",
-      "email": "sotufab@gmail.com",
-      "name": "Sotufab",
+      "nom": "Sotufab",
       "libelle": "Table",
       "adresse": "Monastir",
-      "logo": "/assets/sotufab.png"
+      "picture": "/assets/sotufab"
     },
     {
       "idProvider": "4",
       "code": "F-1948",
-      "email": "iphone@gmail.com",
-      "name": "Iphone",
+      "nom": "Iphone",
       "libelle": "Telephone",
       "adresse": "Sokra",
-      "logo": "/assets/iphone.jpg"
+      "picture": "/assets/iphone"
     }
   ],
   "users": [
     {
-      "id": 4,
+      "id": 5,
       "firstName": "Robert",
       "lastName": "Downey",
       "birthDate": "05-03-2002",
@@ -110,28 +95,6 @@
       "password": "test",
       "picture": "https://bootdey.com/img/Content/avatar/avatar5.png",
       "profession": "Software Engineer"
-    },
-    {
-      "id": 12,
-      "firstName": "Ahmed",
-      "lastName": "ben Foulen",
-      "accountCategory": "Admin",
-      "birthDate": "10-10-1988",
-      "email": "ahmed@gmail.com",
-      "password": "test",
-      "profession": "Teacher",
-      "picture": "https://bootdey.com/img/Content/avatar/avatar5.png"
-    },
-    {
-      "id": 13,
-      "firstName": "Amina",
-      "lastName": "ben Foulen",
-      "accountCategory": "Customer",
-      "birthDate": "10-10-1988",
-      "email": "ahmed@gmail.com",
-      "password": "test",
-      "profession": "Teacher",
-      "picture": "https://bootdey.com/img/Content/avatar/avatar5.png"
     }
   ],
   "livreur": [
@@ -146,28 +109,17 @@
       "LatLiv": 55.22
     },
     {
-      "firstName": "Dhieb",
-      "lastName": "JesserRojla",
-      "email": "jesserdhieb234@gmail.com",
-      "password": "adazazd",
-      "profession": "azdazd",
-      "picture": "https://yt3.ggpht.com/ytc/AKedOLQCkYHOSBdJlBVIZIMDKM-p9iu3hCxQMNa5P4tXtg=s900-c-k-c0x00ffffff-no-rj",
-      "birthDate": "2021-11-11",
-      "accountCategory": "Customer",
-      "id": 15
-    },
-    {
-      "firstName": "adam",
-      "lastName": "amri",
-      "email": "adam.elamri@esprit.tn",
-      "password": "bkvjhvhgc",
-      "profession": "fighter",
-      "picture": "kjbhvgcftde",
-      "birthDate": "2022-01-01",
-      "accountCategory": "Customer",
-      "id": 16
+      "idLiv": 2,
+      "NomLiv": "Chebbi",
+      "PrenomLiv": "Ahmed",
+      "VilleLiv": "Ariana",
+      "AdresseLiv": "ahmed@gmail.com",
+      "MdpLiv": "1234",
+      "LngLiv": 223.55,
+      "LatLiv": 55.22
     }
   ],
+
   "Panier": [
     {
       "idPanier": 1,
@@ -199,14 +151,25 @@
       "nombreArticle": "3",
       "montantRemise": "3"
     }
+
   ],
-  "Livreurs": [
+  "livreur": [
+    {
+      "idLiv": 1,
+      "NomLiv": "Ahmed",
+      "PrenomLiv": "Chebbi",
+      "VilleLiv": "Tunis",
+      "AdresseLiv": "ahmed@esprit.tn",
+      "MdpLiv": "UIH",
+      "LngLiv": 223.55,
+      "LatLiv": 55.22
+    },
     {
       "idLiv": 2,
-      "NomLiv": "Amri",
-      "PrenomLiv": "Adam",
-      "VilleLiv": "Kef",
-      "AdresseLiv": "Adam.ElAmri@esprit.tn",
+      "NomLiv": "Chebbi",
+      "PrenomLiv": "Ons",
+      "VilleLiv": "ariana",
+      "AdresseLiv": "ons.chebbi@esprit.tn",
       "MdpLiv": "UIH",
       "LngLiv": 223.55,
       "LatLiv": 55.22
@@ -236,6 +199,14 @@
       "qteMin": "5",
       "libelleStock": "parfum",
       "logo": "/assets/jadore.png"
+    }
+  ],
+  "livraison": [
+    {
+      "idLvr": 1,
+      "dateLivraisonDate": "21/03/1999",
+      "adresseLvr": "tunis",
+      "status": false
     }
   ]
 }

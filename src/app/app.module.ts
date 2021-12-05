@@ -10,12 +10,14 @@ import { SidenavComponent } from './app-shared/sidenav/sidenav.component';
 import { TopnavComponent } from './app-shared/topnav/topnav.component';
 import {UserModule} from "./user/user.module";
 import {LandingPageModule} from "./landing-page/landing-page.module";
-
 import { CommonModule } from '@angular/common';
 import { MainPanierComponent } from './app-panier/main-panier/main-panier.component';
 import { LivreurComponent } from './app-livreur/livreur/livreur.component';
 import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
+import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
+import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
+import { LivreurRoutingModule } from './app-livreur/livreur-routing.module';
 import { AppProviderModule } from './app-provider/app-provider.module';
 import { AppStockModule } from './app-stock/app-stock.module';
 
@@ -25,10 +27,16 @@ import { AppStockModule } from './app-stock/app-stock.module';
     AppComponent,
     SidenavComponent,
     TopnavComponent,
+    MainProviderComponent,
+    FormAddProviderComponent,
+    MainStockComponent,
+    FormAddStockComponent,
     MainPanierComponent,
     LivreurComponent,
     MainLivreurComponent,
     FormLivreurComponent,
+    MainLivraisonComponent,
+    FormLivraisonComponent,
 
   ],
   imports: [
@@ -42,6 +50,7 @@ import { AppStockModule } from './app-stock/app-stock.module';
     FormsModule,
     HttpClientModule,
     UserModule,
+    LivreurRoutingModule,
     LandingPageModule
   ],
   providers: [],

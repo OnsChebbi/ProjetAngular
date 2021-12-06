@@ -56,7 +56,8 @@ import { AppLivraisonModule } from './app-livraison/app-livraison.module';
 
 
   ],
-  imports: [
+  imports: [   
+  
     CommonModule,
     BrowserModule,
     AppRoutingModule,
@@ -67,6 +68,7 @@ import { AppLivraisonModule } from './app-livraison/app-livraison.module';
     UserModule,
     LandingPageModule,
     AppLivraisonModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

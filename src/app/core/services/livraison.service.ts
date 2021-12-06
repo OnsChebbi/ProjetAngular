@@ -31,11 +31,8 @@ url=environment.url+"livraison/";
 
  getListLivraisonService(): Observable<Livraison>
  {
-  return this.http.get<Livraison>(this.url)
-  .pipe(
-    retry(1),
-    catchError(this.handleError)
-  );
+  return this.http.get<Livraison>(this.url+"retrieve-all-livraisons")
+
 
 }
  deleteLivraisonService(id:any)

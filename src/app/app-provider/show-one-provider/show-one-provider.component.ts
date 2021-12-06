@@ -8,9 +8,9 @@ import { Provider } from 'src/app/core/model/provider';
   styleUrls: ['./show-one-provider.component.css']
 })
 export class ShowOneProviderComponent implements OnInit {
-  provider:Provider;
+  
   constructor(private ServiceProvider: ProviderService,private router: Router,private activated:ActivatedRoute) { }
- 
+  provider:Provider;
   ngOnInit(): void {
     this.provider=this.ServiceProvider.CurrentProvider;
     this.activated.paramMap.subscribe(

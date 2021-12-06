@@ -20,7 +20,7 @@ export class MainProviderComponent implements OnInit {
       (data: Provider[]) => this.ListProvider= data
     )
   }
-  delete(provider: Provider): void{
+  delete(provider: Provider){
     let i = this.ListProvider.indexOf(provider);
     this.serviceProvider.deleteProviderService(provider.idProvider).subscribe(
       ( )=>this.ListProvider.splice(i,1)

@@ -85,18 +85,20 @@
       "picture": "/assets/iphone"
     }
   ],
-  "users": [    {
-    "id": 5,
-    "firstName": "Robert",
-    "lastName": "Downey",
-    "birthDate": "05-03-2002",
-    "accountCategory": "Blocked Account",
-    "email": "robert@nicholson.com",
-    "password": "test",
-    "picture": "https://bootdey.com/img/Content/avatar/avatar5.png",
-    "profession": "Software Engineer"
-  }],
-  "livreur": [
+  "users": [
+    {
+      "id": 5,
+      "firstName": "Robert",
+      "lastName": "Downey",
+      "birthDate": "05-03-2002",
+      "accountCategory": "Blocked Account",
+      "email": "robert@nicholson.com",
+      "password": "test",
+      "picture": "https://bootdey.com/img/Content/avatar/avatar5.png",
+      "profession": "Software Engineer"
+    }
+  ],
+  "livreurs": [
     {
       "idLiv": 1,
       "NomLiv": "Ahmed",
@@ -106,16 +108,44 @@
       "MdpLiv": "UIH",
       "LngLiv": 223.55,
       "LatLiv": 55.22
+    }
+  ],
+  "livreur": [
+    {
+      "NomLiv": "kjze",
+      "PrenomLiv": "ezij",
+      "VilleLiv": "eezez",
+      "AdresseLiv": "ezeeezez",
+      "id": 1
     },
     {
-      "idLiv": 2,
-      "NomLiv": "Chebbi",
-      "PrenomLiv": "Ons",
-      "VilleLiv": "ariana",
-      "AdresseLiv": "ons.chebbi@esprit.tn",
-      "MdpLiv": "UIH",
-      "LngLiv": 223.55,
-      "LatLiv": 55.22
+      "NomLiv": "the champion of angularrrrr",
+      "PrenomLiv": "erre",
+      "VilleLiv": "errerere",
+      "AdresseLiv": "ezezezez",
+      "id": 2
+    },
+    {
+      "NomLiv": "sqsqqs",
+      "AdresseLiv": "sqqssq",
+      "VilleLiv": "sqsqsq",
+      "PrenomLiv": "sqsqqsqs",
+      "id": 3
+    },
+    {
+      "NomLiv": "khlifi",
+      "PrenomLiv": "Mohamed Sahbi",
+      "VilleLiv": "Borj Cedria",
+      "AdresseLiv": "mohamedsahbi.khlifi@esprit.tn",
+      "id": 4
+    },
+    {
+      "NomLiv": "jkzejkjezjkjkdeez",
+      "PrenomLiv": "ezezezez",
+      "VilleLiv": "ezkjjkez",
+      "AdresseLiv": "ezedzez",
+      "MdpLiv": "ezezezez",
+      "id": 5
     }
   ],
   "Panier": [
@@ -178,10 +208,16 @@
   ],
   "livraison": [
     {
-      "idLvr": 1,
-      "dateLivraisonDate": "21/03/1999",
+      "id": 1,
+      "dateLivraisonDate": "2021-12-28",
       "adresseLvr": "tunis",
       "status": false
+    },
+    {
+      "dateLivraisonDate": "2021-12-10",
+      "adresseLvr": "vfdfdfdfd",
+      "status": false,
+      "id": 5
     }
   ]
 }

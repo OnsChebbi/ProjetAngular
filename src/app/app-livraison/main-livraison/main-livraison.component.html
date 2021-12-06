@@ -18,12 +18,12 @@
         </thead>
         <tbody>
         <tr *ngFor="let livraison of Livraison">
-          <td>{{livraison.idLvr}}</td>
+          <td>{{livraison.id}}</td>
           <td>{{livraison.dateLivraisonDate}}</td>
           <td>{{livraison.adresseLvr}}</td>
           <td>{{livraison.status}}</td>
-          <td><button class="btn btn-danger" (click)="delete(livraison.idLvr)" >Delete</button></td>
-          <td><button class="btn btn-success" >Update</button></td>
+          <td><button class="btn btn-danger" (click)="delete(livraison)" >Delete</button></td>
+          <td><button class="btn btn-success" (click)="update(livraison)" >Update</button></td>
           <td><a class="btn btn-warning"  >view More</a></td>
         </tr>
         </tbody>

@@ -10,14 +10,33 @@ import { LivraisonService } from 'src/app/core/services/livraison.service';
 })
 export class FormLivraisonComponent implements OnInit {
 
-  ngOnInit(): void {
-  }
   livraison: Livraison;
-
+  listLivraison: Livraison[]
+  status: boolean
+  ngOnInit(): void {
+    this.status=this.livraisonService.status;
+    if (this.livraisonService.status){
+      this.livraison =  this.livraisonService.CurrentLivraison;
+    }else {
+      this.livraison =  new Livraison();
+    }
+  }
   constructor(private livraisonService: LivraisonService,public router: Router) { }
-
+ 
   save() {
-    this.livraisonService.addLivraisonService(this.livraison)
+    
+    if (this.status){
+      this.livraison.status=false;
+      this.livraisonService.updateLivraisonService(this.livraison).subscribe(
+        ()=>this.router.navigate(['/livraison'])
+      )
+    }
+    else {
+      this.livraison.status=false;
+      this.livraisonService.addLivraisonService(this.livraison).subscribe(
+        ()=>this.router.navigate(['/livraison'])
+      )
+    }
   }
 
   return()

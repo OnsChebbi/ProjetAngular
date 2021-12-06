@@ -19,12 +19,12 @@ import { AppProviderRoutingModule } from './app-provider/app-provider-routing.mo
 import { AppStockRoutingModule } from './app-stock/app-stock-routing.module';
 import { MainStockComponent } from './app-stock/main-stock/main-stock.component';
 import { AppLivraisonRoutingModule } from './app-livraison/app-livraison-routing.module';
+import { PanierRoutingModule } from './app-panier/panier-routing.module';
 
 const routes: Routes = [
   {path: '',redirectTo:'home', pathMatch: 'full' },
   {path: 'provider',component: MainProviderComponent },
   {path: 'stock',component: MainStockComponent },
-  {path: 'panier',component:MainPanierComponent},
   {path: '**',component: NotFoundComponent },
 
 ];
@@ -38,7 +38,8 @@ const routes: Routes = [
     UserRoutingModule,
     LivreurRoutingModule,
     LandingPageRoutingModule,
-    AppLivraisonRoutingModule
+    AppLivraisonRoutingModule,
+    PanierRoutingModule
   ],
   exports: [RouterModule]
 })

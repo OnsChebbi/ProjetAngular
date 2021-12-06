@@ -11,16 +11,6 @@
       "category": "Vestimentaire"
     },
     {
-      "title": "t shirt",
-      "picture": "assets/t shirt 1.jpg",
-      "quantity": 2,
-      "price": 3,
-      "description": "ffgfghjhjhhj",
-      "nbrLike": 0,
-      "id": 17,
-      "category": "Vestimentaire"
-    },
-    {
       "picture": "assets/regentlogo.jpg",
       "title": "new",
       "quantity": 7,
@@ -58,7 +48,7 @@
       "code": "F-1970",
       "libelle": "PC",
       "adresse": "Kef",
-      "picture": "/assets/dell"
+      "logo": "/assets/dell.png"
     },
     {
       "idProvider": "2",
@@ -66,7 +56,7 @@
       "nom": "Samsung",
       "libelle": "TV",
       "adresse": "Ariana",
-      "picture": "/assets/samsung"
+      "logo": "/assets/samsung.png"
     },
     {
       "idProvider": "3",
@@ -74,7 +64,7 @@
       "nom": "Sotufab",
       "libelle": "Table",
       "adresse": "Monastir",
-      "picture": "/assets/sotufab"
+      "logo": "/assets/sotufab.png"
     },
     {
       "idProvider": "4",
@@ -82,7 +72,7 @@
       "nom": "Iphone",
       "libelle": "Telephone",
       "adresse": "Sokra",
-      "picture": "/assets/iphone"
+      "logo": "/assets/iphone.jpg"
     }
   ],
   "users": [

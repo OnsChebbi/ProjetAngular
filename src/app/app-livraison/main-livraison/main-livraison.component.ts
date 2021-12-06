@@ -1,6 +1,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Livraison } from 'src/app/core/model/livraison';
 import { LivraisonService } from 'src/app/core/services/livraison.service';
 
@@ -16,7 +17,7 @@ export class MainLivraisonComponent implements OnInit {
 Livraison: any= [];
 http: HttpClient;
 
-  constructor(private livraisonService: LivraisonService) { }
+  constructor(private livraisonService: LivraisonService, private router: Router) { }
  
   ngOnInit(): void { 
     this.loadLivraisons()
@@ -31,7 +32,14 @@ http: HttpClient;
 
    // Delete livraison
    delete(livraison:Livraison) {
-  
+    this.livraisonService.deleteLivraisonService(livraison.id).subscribe()
+   this.loadLivraisons()
   }  
+  
 
+  //update
+  update(livraison: Livraison){
+    this.livraisonService.UpdateLivraison(livraison);
+    this.router.navigate(['/add-livraison']);
+  }
 }

@@ -10,28 +10,29 @@ import { LivreurService } from 'src/app/core/services/livreur.service';
 })
 export class FormLivreurComponent implements OnInit {
 
-  livreur: Livreur;
+  livreur: Livreur[];
+  lvr: Livreur;
   status:boolean;
   constructor(private livreurService : LivreurService,private router: Router) { }
 
   ngOnInit(): void {
     this.status=this.livreurService.status;
     if (this.livreurService.status){
-      this.livreur =  this.livreurService.currentLivreur;
+      this.lvr =  this.livreurService.currentLivreur;
     }else {
-      this.livreur =  new Livreur();
+      this.lvr =  new Livreur();
     }
   }
 
   save(){
     if (this.status){
-      this.livreurService.updateListLivreurService(this.livreur).subscribe(
-        ()=>this.router.navigate(['/retrieve-all-livreurs'])
+      this.livreurService.updateListLivreurService(this.lvr).subscribe(
+        ()=>this.router.navigate(['/livreur'])
       )
     }
     else {
-      this.livreurService.addListLivreurService(this.livreur).subscribe(
-        ()=>this.router.navigate(['/retrieve-all-livreurs'])
+      this.livreurService.addListLivreurService(this.lvr).subscribe(
+        ()=>this.router.navigate(['/livreur'])
       )
     }
   }

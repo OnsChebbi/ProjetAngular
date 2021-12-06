@@ -21,6 +21,7 @@ export class AddFormComponent implements OnInit {
       this.user =  new User();
     }
   }
+  
   save(){
     if (this.status){
       this.userService.updateUserService(this.user.id,this.user).subscribe(

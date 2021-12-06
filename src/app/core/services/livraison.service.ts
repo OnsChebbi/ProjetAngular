@@ -38,15 +38,19 @@ url=environment.url+"livraison/";
   );
 
 }
+ deleteLivraisonService(id:any)
+ {
+  return this.http.delete(this.url+id)
+ }
  addLivraisonService(livraison:Livraison)
  {
-
+   return this.http.post(this.url,livraison)
  }
   getLivraisonServiceById(id:any){
     return this.http.get<Livraison>(this.url+id);
   }
-  updateLivraisonService(id:number,livraison:Livraison){
-    return this.http.put(this.url+"/"+id,livraison);
+  updateLivraisonService(livraison:Livraison){
+    return this.http.put(this.url+livraison.id,livraison);
   }
   CurrentLivraison:Livraison;
   status:boolean=false;

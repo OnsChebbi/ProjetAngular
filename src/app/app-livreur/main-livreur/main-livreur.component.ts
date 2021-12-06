@@ -28,14 +28,24 @@ export class MainLivreurComponent implements OnInit {
   let i = this.listLivreur.indexOf(livreur);
     console.log("the i is:"+i) */
   
-   this.livreurService.deleteListLivreurService(id).subscribe(
-   )
-   console.log(id)     //  ()=>this.listLivreur.splice(i,1)
+   this.livreurService.deleteListLivreurService(id).subscribe()
+   console.log(id)    
+   this.load()
 
    }
+  load()
+  {
+    return this.livreurService.getListLivreurService().subscribe()
+  }
 
-update(livreur: Livreur){
-  this.livreurService.updateListLivreurService(livreur);
+  update(livreur: Livreur){
+  this.livreurService.UpdateLivreur(livreur);
   this.router.navigate(['/add-livreur']);
-}
+  }
+
+  ShowMore(livreur:Livreur){
+    this.livreurService.getLivreurServiceById(livreur.id).subscribe(
+      (livreurD:Livreur)=>[this.livreurService.MODLivreur(livreurD),this.router.navigate(['/livreur/:id'])]
+    )
+  }
 }

@@ -9,9 +9,6 @@ import { BrowserModule } from '@angular/platform-browser';
 const routes: Routes = [
   {path:'livraison', component: MainLivraisonComponent},
   {path:'add-livraison', component: FormLivraisonComponent}
-
-
-
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 export class Livraison{
-    idLvr: number;
-    dateLivraisonDate: Date;
+    id: number;
+    dateLivraisonDate: any;
     adresseLvr: String;
+    status: boolean
 
 }

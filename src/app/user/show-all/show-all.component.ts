@@ -14,7 +14,7 @@ export class ShowAllComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getListUserService().subscribe(
-      (data:User[])=>this.list=data 
+      (data:User[])=>this.list=data
     )
   }
   delete(user:User){
@@ -30,7 +30,7 @@ export class ShowAllComponent implements OnInit {
   }
   update(user:User){
     this.userService.UpdateUSer(user);
-    this.router.navigate(['/add-user']);
+    this.router.navigate(['/add-user/']);
   }
 
   AddUSer(){

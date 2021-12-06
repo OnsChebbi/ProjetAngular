@@ -6,7 +6,7 @@
     <table class="table table-responsive table-striped table-hover table-bordered">
       <thead>
       <tr class="bg-light">
-        <th scope="col" width="5%">picture</th>
+        <th scope="col" style="width:5%;">picture</th>
         <th scope="col" >id</th>
         <th scope="col" >First Name</th>
         <th scope="col" >Last Name</th>
@@ -20,7 +20,7 @@
       </thead>
       <tbody>
       <tr *ngFor="let user of list">
-        <td><img class="img-fluid" src="{{user.picture}}"></td>
+        <td><img class="img-fluid" src="{{user.picture}}" alt="pdp"></td>
         <td>{{user.id}}</td>
         <td>{{user.firstName}}</td>
         <td>{{user.lastName}}</td>

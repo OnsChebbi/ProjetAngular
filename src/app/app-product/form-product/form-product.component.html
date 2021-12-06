@@ -13,7 +13,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group"><label for="Title">Title of the Product</label>
-                      <input type="text" name="Title" id="Titlee" class="form-control"
+                      <input type="text" name="title" id="Titlee" class="form-control"
                              #nt="ngModel" required minlength="3" [(ngModel)]="product.title">
                       <div class="alert alert-danger" *ngIf="nt.touched&&nt.invalid">
                         <div *ngIf="nt.hasError('required')">Title is required</div>

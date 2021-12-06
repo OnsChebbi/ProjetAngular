@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../../core/model/product";
+import {ProductService} from "../../core/services/product.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-product',
@@ -12,7 +14,7 @@ export class MainProductComponent implements OnInit {
   showFormTemplate: boolean;
   buttonValue: string;
   inputProduct: Product // the parent component will send this input to the child (formProduct)
-  constructor() { }
+  constructor(private productService: ProductService,private router: Router) { }
 
   ngOnInit(): void {
     this.showFormTemplate = false;
@@ -32,9 +34,13 @@ export class MainProductComponent implements OnInit {
     if(i!= -1){
       this.listProduct[i]= product
     }
-    else this.listProduct.push(product);
+    else {
+      this.productService.addProductService(product).subscribe((data)=>{
+        this.listProduct.push(product);
+      });
+
     this.showFormTemplate = false
-  }
+  }}
   showForm(){
     if (this.showFormTemplate ===false){
       this.showFormTemplate = true

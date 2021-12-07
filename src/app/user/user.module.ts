@@ -6,6 +6,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ShowAllComponent } from './show-all/show-all.component';
 import {BrowserModule} from "@angular/platform-browser";
 import { ShowOneComponent } from './show-one/show-one.component';
+import { ShowComponent } from './show/show.component';
 
 
 
@@ -13,7 +14,8 @@ import { ShowOneComponent } from './show-one/show-one.component';
   declarations: [
     UpdateFormComponent,
     ShowAllComponent,
-    ShowOneComponent
+    ShowOneComponent,
+    ShowComponent
   ],
     imports: [
         BrowserModule,

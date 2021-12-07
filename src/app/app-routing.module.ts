@@ -22,7 +22,7 @@ import { AppLivraisonRoutingModule } from './app-livraison/app-livraison-routing
 import { PanierRoutingModule } from './app-panier/panier-routing.module';
 
 const routes: Routes = [
-  {path: '',redirectTo:'home', pathMatch: 'full' },
+  {path: '',redirectTo:'Dashbord', pathMatch: 'full' },
   {path: 'provider',component: MainProviderComponent },
   {path: 'stock',component: MainStockComponent },
   {path: '**',component: NotFoundComponent },

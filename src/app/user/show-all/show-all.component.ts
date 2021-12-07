@@ -11,11 +11,11 @@ import {Router} from "@angular/router";
 export class ShowAllComponent implements OnInit {
   list: User[];
   new_list:User[];
+  role:string='All Users';
   constructor(private userService: UserService,private router: Router) { }
-  role:string='Simple';
   ngOnInit(): void {
     this.userService.getListUserService().subscribe(
-      (data:User[])=>this.list=data
+      (data:User[])=>[this.list=data,this.new_list=data]
     )
   }
   delete(user:User){
@@ -33,17 +33,16 @@ export class ShowAllComponent implements OnInit {
     this.router.navigate(['/add-user/']);
   }*/
 
-  AddUSer(){
-    this.router.navigate(['/add-user'])
-  }
-
   TargetSimpleUser(){
+    this.role='Simple Users';
     this.new_list=this.list.filter(user=>user.role==='Simple_User'||user.role==='Client'||user.role==='Blocked');
   }
   TargetAdminUser(){
+    this.role='Admin Users';
     this.new_list=this.list.filter(user=>user.role==='Super_Admin'||user.role==='Admin');
   }
   TargetAll(){
+    this.role='All Users';
     this.new_list=this.list;
   }
 }

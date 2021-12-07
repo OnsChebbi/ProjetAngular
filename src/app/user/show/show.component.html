@@ -31,8 +31,8 @@
       <td>{{user.categorieUser}}</td>
       <td>{{user.profession}}</td>
       <td *ngIf="role=='Simple Users'">
-        <button class="btn btn-primary" *ngIf="user.role!='Blocked'"><i class="bi bi-unlock-fill"></i> Block</button>
-        <button class="btn  bg-orange" *ngIf="user.role=='Blocked'"><i class="bi bi-lock-fill"></i> UnBlock</button>
+        <button class="btn btn-primary" *ngIf="user.role!='Blocked'" (click)="Block_UnBlock(user,'Blocked')"><i class="bi bi-unlock-fill"></i> Block</button>
+        <button class="btn  bg-orange" *ngIf="user.role=='Blocked'" (click)="Block_UnBlock(user,'Client')"><i class="bi bi-lock-fill"></i> UnBlock</button>
       </td>
       <td><button class="btn btn-danger" (click)="delete(user)">Delete</button></td>
       <td><button class="btn btn-success" [routerLink]="['/update-user',user.idUser]">Update</button></td>

@@ -7,7 +7,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class UserService {
-  list: User[]=
+  /*list: User[]=
     [
       {
         id: 1,
@@ -83,7 +83,7 @@ export class UserService {
         password:"test",
         profession:"Teacher",
         picture:"https://bootdey.com/img/Content/avatar/avatar5.png"}
-    ];
+    ];*/
   CurrentUser:User;
   status:boolean=false;
   MODUSer(user:User){
@@ -93,19 +93,19 @@ export class UserService {
     this.CurrentUser=user;
     this.status=true;
   }
-  url=environment.url+"users/";
+  url="http://localhost:8090/SpringMVC/user/";
   constructor(private http:HttpClient) { }
   getListUserService(){
-    return this.http.get<User[]>(this.url);
+    return this.http.get<User[]>(this.url+'/retrive-all-users');
   }
   addUserService(user:User){
-    return this.http.post(this.url,user);
+    return this.http.post(this.url+'add-user',user);
   }
   deleteUserService(id:number){
     return this.http.delete(this.url+id);
   }
   getUserServiceById(id:any){
-    return this.http.get<User>(this.url+id);
+    return this.http.get<User>(this.url+'retrive-user/'+id);
   }
   updateUserService(id:number,user:User){
     return this.http.put(this.url+"/"+id,user);

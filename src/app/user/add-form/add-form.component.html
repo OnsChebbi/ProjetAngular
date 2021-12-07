@@ -10,7 +10,7 @@
           <div class="row justify-content-between text-left">
             <div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">First name<span class="text-danger"> *</span></label>
-              <input type="text" name="fname"  id="fname" class="form-control" [(ngModel)]="user.firstName" required minlength="3"  #fn="ngModel">
+              <input type="text" name="fname"  id="fname" class="form-control" [(ngModel)]="user.nom" required minlength="3"  #fn="ngModel">
               <div class="alert alert-danger" *ngIf="fn.invalid && fn.touched">
                 <div *ngIf="fn.hasError('required')"> first name is a required field</div>
                 <div *ngIf="fn.hasError('minlength')"> first name minlength ies equal to 3</div>
@@ -18,7 +18,7 @@
             </div>
             <div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label>
-              <input type="text" id="lname" name="lname" [(ngModel)]="user.lastName" required minlength="3"  #ln="ngModel">
+              <input type="text" id="lname" name="lname" [(ngModel)]="user.prenom" required minlength="3"  #ln="ngModel">
               <div class="alert alert-danger" *ngIf="ln.invalid && ln.touched">
                 <div *ngIf="ln.hasError('required')"> last name is a required field</div>
                 <div *ngIf="ln.hasError('minlength')"> last name minlength ies equal to 3</div>
@@ -54,14 +54,14 @@
             </div>
             <div class="form-group col-6 flex-column d-flex">
               <label class="form-control-label px-3">picture URL</label>
-              <input type="text" id="picture" name="picture" [(ngModel)]="user.picture">
+              <input type="text" id="picture" name="picture" value="https://yt3.ggpht.com/ytc/AKedOLQCkYHOSBdJlBVIZIMDKM-p9iu3hCxQMNa5P4tXtg=s900-c-k-c0x00ffffff-no-rj">
             </div>
           </div>
 
           <div class="row justify-content-between text-left">
             <div class="form-group col-12 flex-column d-flex">
               <label class="form-control-label px-3">Date of Birth<span class="text-danger"> *</span></label>
-              <input type="date" id="dob" name="dob"  [(ngModel)]="user.birthDate" required  #dob="ngModel">
+              <input type="date" id="dob" name="dob"  [(ngModel)]="user.dateNaissance" required  #dob="ngModel">
               <div class="alert alert-danger" *ngIf="dob.invalid && dob.touched">
                 <div *ngIf="dob.hasError('required')"> Date of birth is a required field</div>
               </div>

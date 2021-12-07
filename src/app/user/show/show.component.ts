@@ -14,4 +14,6 @@ export class ShowComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  delete(user:User){}
+
 }

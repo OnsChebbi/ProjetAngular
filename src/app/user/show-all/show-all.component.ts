@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from "../../core/services/user.service";
 import {User} from "../../core/model/user";
 import {Router} from "@angular/router";
-import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-show-all',
@@ -26,17 +25,14 @@ export class ShowAllComponent implements OnInit {
       ()=>this.list.splice(i,1)
     )
   }
-  ShowMore(){
-    this.stauts='showMore';
 
-  }
-  update(user:User){
+ /* update(user:User){
     //this.stauts='update';
-    localStorage.setItem('statusUser','update');
+    localStorage.setItem('statusUpdateUser','update');
     localStorage.setItem('IdUser',String(user.idUser))
     //this.userService.UpdateUSer(user);
     this.router.navigate(['/add-user/']);
-  }
+  }*/
 
   AddUSer(){
     this.router.navigate(['/add-user'])

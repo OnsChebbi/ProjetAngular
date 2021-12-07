@@ -99,8 +99,8 @@ export class UserService {
   getUserServiceById(id:any){
     return this.http.get<User>(this.url+'retrive-user/'+id);
   }
-  updateUserService(id:number,user:User){
-    return this.http.put(this.url+"/"+id,user);
+  updateUserService(user:User){
+    return this.http.put(this.url+"modify-user",user);
   }
 
 }

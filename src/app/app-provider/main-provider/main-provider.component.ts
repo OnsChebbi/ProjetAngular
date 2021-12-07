@@ -22,7 +22,7 @@ export class MainProviderComponent implements OnInit {
   }
   delete(provider: Provider){
     let i = this.ListProvider.indexOf(provider);
-    this.serviceProvider.deleteProviderService(provider.idProvider).subscribe(
+    this.serviceProvider.deleteProviderService(provider.id).subscribe(
       ( )=>this.ListProvider.splice(i,1)
     )
   }
@@ -36,7 +36,7 @@ export class MainProviderComponent implements OnInit {
   }
 
   ShowMore(provider: Provider){
-    this.serviceProvider.getProviderServiceById(provider.idProvider).subscribe(
+    this.serviceProvider.getProviderServiceById(provider.id).subscribe(
       (providerF:Provider)=>[this.serviceProvider.MODProvider(providerF),this.router.navigate(['/show-provider'])]
     )
   }
@@ -47,7 +47,7 @@ export class MainProviderComponent implements OnInit {
     let i = this.ListProvider.indexOf(provider);
     if(i!=-1){
       //update Provider
-      this.serviceProvider.updateProviderService(provider,provider.idProvider).subscribe(
+      this.serviceProvider.updateProviderService(provider,provider.id).subscribe(
       () => {this.ListProvider[i]=provider
         this.showFormTemplate =false}
       )

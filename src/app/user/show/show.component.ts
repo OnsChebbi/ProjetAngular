@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {User} from "../../core/model/user";
 
 @Component({
   selector: 'app-show',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowComponent implements OnInit {
 
+@Input()listOfUsers:User[];
   constructor() { }
 
   ngOnInit(): void {

@@ -7,39 +7,6 @@
     <button type="button" class="btn btn-primary" (click)="TargetSimpleUser()">Simple Users</button>
     <button type="button" class="btn btn-primary" (click)="TargetAdminUser()">Administration User</button>
   </div>
-  <div class="table-responsive">
-    <table class="table table-responsive table-striped table-hover table-bordered">
-      <thead>
-      <tr class="bg-light">
-        <th scope="col" style="width:5%;">picture</th>
-        <th scope="col" >id</th>
-        <th scope="col" >First Name</th>
-        <th scope="col" >Last Name</th>
-        <th scope="col" >Birthdate</th>
-        <th scope="col" >Category</th>
-        <th scope="col"  >Job</th>
-        <th scope="col" >delete</th>
-        <th scope="col"  >Update</th>
-        <th scope="col"  >view more</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let user of list">
-        <td><img class="img-fluid" src="{{user.picture}}" alt="pdp"></td>
-        <td>{{user.idUser}}</td>
-        <td>{{user.nom}}</td>
-        <td>{{user.prenom}}</td>
-        <td>{{user.dateNaissance}}</td>
-        <td>{{user.categorieUser}}</td>
-        <td>{{user.profession}}</td>
-        <td><button class="btn btn-danger" (click)="delete(user)">Delete</button></td>
-        <td><button class="btn btn-success" [routerLink]="['/update-user',user.idUser]">Update</button></td>
-        <td><a class="btn btn-warning" [routerLink]="['/user',user.idUser]" >view More</a></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-
 </div>
-<app-show [listOfUsers]="new_list"></app-show>
+<app-show [listOfUsers]="new_list" [role]="role" ></app-show>
 

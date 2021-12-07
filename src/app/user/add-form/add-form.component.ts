@@ -10,13 +10,17 @@ import {Router} from "@angular/router";
 })
 export class AddFormComponent implements OnInit {
   user: User;
-  status:boolean;
+  status:string;
   constructor(private userService : UserService,private router: Router) {  }
 
   ngOnInit(): void {
-    this.status=this.userService.status;
-    if (this.userService.status){
-      this.user =  this.userService.CurrentUser;
+    //this.status=this.userService.status;
+    if (localStorage.getItem('statusUser')=='update'){
+      this.userService.getUserServiceById(Number(localStorage.getItem('IdUser'))).subscribe(
+        (data:User)=>this.user=data
+      )
+      localStorage.setItem('statusUser','');
+      localStorage.setItem('IdUser','');
     }else {
       this.user =  new User();
     }

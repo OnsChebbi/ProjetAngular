@@ -4,7 +4,7 @@ import {MainProviderComponent} from "../app-provider/main-provider/main-provider
 import {HomePageComponent} from "./home-page/home-page.component";
 
 const routes: Routes = [
-  {path: 'home',component: HomePageComponent }
+  {path: 'Dashbord',component: HomePageComponent }
 ];
 
 @NgModule({

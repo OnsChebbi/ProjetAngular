@@ -8,7 +8,7 @@ import {
   providedIn: 'root'
 })
 export class ProviderService {
-  url=environment.url+"provider/"
+  url="http://localhost:8090/SpringMVC/fournisseur/"
   constructor(private http: HttpClient) { }
   CurrentProvider:Provider;
   status:boolean=false;
@@ -20,19 +20,19 @@ export class ProviderService {
     this.status=true;
   }
   getListProviderService(){
-    return this.http.get<Provider[]>(this.url)
+    return this.http.get<Provider[]>(this.url+'retrieve-all-fournisseurs')
     
     }
     addProviderService(provider: Provider){
-      return this.http.post(this.url, provider)
+      return this.http.post(this.url+'add-fournisseur', provider)
     }
     deleteProviderService(id:string){
-      return this.http.delete(this.url+id)
+      return this.http.delete(this.url+'remove-fournisseur/'+id)
     }
     updateProviderService(provider:Provider, id:string){
-      return this.http.put(this.url+id,provider)
+      return this.http.put(this.url+'modify-fournisseur/'+id,provider)
     }
     getProviderServiceById(id:any){
-      return this.http.get<Provider>(this.url+id);
+      return this.http.get<Provider>(this.url+'retrouver-fournisseur-parLibelle/'+id);
     }
 }

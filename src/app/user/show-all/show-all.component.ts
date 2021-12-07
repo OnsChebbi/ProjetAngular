@@ -10,7 +10,6 @@ import {Router} from "@angular/router";
 })
 export class ShowAllComponent implements OnInit {
   list: User[];
-  stauts:string;
   constructor(private userService: UserService,private router: Router) { }
 
   ngOnInit(): void {
@@ -20,7 +19,6 @@ export class ShowAllComponent implements OnInit {
   }
   delete(user:User){
     let i =this.list.indexOf(user);
-
     this.userService.deleteUserService(user.idUser).subscribe(
       ()=>this.list.splice(i,1)
     )

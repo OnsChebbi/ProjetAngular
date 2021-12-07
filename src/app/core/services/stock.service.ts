@@ -30,14 +30,14 @@ export class StockService {
     addStockService(stock: Stock){
       return this.http.post(this.url, stock)
     }
-    deleteStockService(idStock:number){
-      return this.http.delete(this.url+idStock)
+    deleteStockService(id:string){
+      return this.http.delete(this.url+id)
     }
-    updateStockService(stock: Stock, idStock:number){
-      return this.http.put(this.url+idStock,stock)
+    updateStockService(stock: Stock, id:string){
+      return this.http.put(this.url+id,stock)
     }
-    getStockServiceById(idStock:any){
-      return this.http.get<Stock>(this.url+idStock);
+    getStockServiceById(id:any){
+      return this.http.get<Stock>(this.url+id);
     }
 
 }

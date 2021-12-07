@@ -11,7 +11,7 @@
           <div class="row justify-content-between text-left">
             <div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">Id Stock<span class="text-danger"> *</span></label>
-              <input type="number" name="number"  id="fname" class="form-control" [(ngModel)]="stock.idStock" required  #fn="ngModel">
+              <input type="number" name="number"  id="fname" class="form-control" [(ngModel)]="stock.id" required  #fn="ngModel">
               <div class="alert alert-danger" *ngIf="fn.invalid && fn.touched">
                 <div *ngIf="fn.hasError('required')"> id Stock is a required field</div>
            

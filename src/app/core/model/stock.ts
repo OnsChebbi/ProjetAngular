@@ -1,5 +1,5 @@
 export class Stock {
-    idStock:number;
+    id:any;
     name: string;
     qte: number;
 	qteMin: number;

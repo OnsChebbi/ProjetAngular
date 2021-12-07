@@ -22,7 +22,7 @@ export class FormAddStockComponent implements OnInit {
   }
   save(){
     if (this.status){
-      this.ServiceStock.updateStockService(this.stock,this.stock.idStock).subscribe(
+      this.ServiceStock.updateStockService(this.stock,this.stock.id).subscribe(
         ()=>this.router.navigate(['/show-all-stock'])
       )
     }

@@ -27,7 +27,7 @@ export class MainStockComponent implements OnInit {
     )
   }
   update(stock: Stock){
-    this.serviceStock.UpdateProvider(stock);
+    this.serviceStock.UpdateStock(stock);
     this.router.navigate(['/add-stock']);
   }
   AddStock(){

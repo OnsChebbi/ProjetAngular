@@ -28,7 +28,7 @@
         <td>{{user.categorieUser}}</td>
         <td>{{user.profession}}</td>
         <td><button class="btn btn-danger" (click)="delete(user)">Delete</button></td>
-        <td><button class="btn btn-success" (click)="update(user)">Update</button></td>
+        <td><button class="btn btn-success" [routerLink]="['/update-user',user.idUser]">Update</button></td>
         <td><a class="btn btn-warning" [routerLink]="['/user',user.idUser]" >view More</a></td>
       </tr>
       </tbody>

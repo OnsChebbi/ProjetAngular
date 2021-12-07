@@ -20,16 +20,16 @@
       </thead>
       <tbody>
       <tr *ngFor="let user of list">
-        <td><img class="img-fluid" src="{{user.picture}}" alt="pdp"></td>
-        <td>{{user.id}}</td>
-        <td>{{user.firstName}}</td>
-        <td>{{user.lastName}}</td>
-        <td>{{user.birthDate}}</td>
-        <td>{{user.accountCategory}}</td>
+        <td><img class="img-fluid" src="https://yt3.ggpht.com/ytc/AKedOLQCkYHOSBdJlBVIZIMDKM-p9iu3hCxQMNa5P4tXtg=s900-c-k-c0x00ffffff-no-rj" alt="pdp"></td>
+        <td>{{user.idUser}}</td>
+        <td>{{user.nom}}</td>
+        <td>{{user.prenom}}</td>
+        <td>{{user.dateNaissance}}</td>
+        <td>{{user.categorieUser}}</td>
         <td>{{user.profession}}</td>
         <td><button class="btn btn-danger" (click)="delete(user)">Delete</button></td>
         <td><button class="btn btn-success" (click)="update(user)">Update</button></td>
-        <td><a class="btn btn-warning" [routerLink]="['/user',user.id]" >view More</a></td>
+        <td><a class="btn btn-warning" [routerLink]="['/user',user.idUser]" >view More</a></td>
       </tr>
       </tbody>
     </table>

@@ -21,20 +21,22 @@ export class AddFormComponent implements OnInit {
       this.user =  new User();
     }
   }
-  
+
   save(){
-    if (this.status){
-      this.userService.updateUserService(this.user.id,this.user).subscribe(
+    /*if (this.status){
+      this.userService.updateUserService(this.user.idUser,this.user).subscribe(
         ()=>this.router.navigate(['/show-all-user'])
       )
-    }
-    else {
-      this.user.accountCategory='Customer';
+    }*/
+
+      this.user.categorieUser='Fidele';
+      this.user.role='Super_Admin';
+      this.user.facture=[];
+      this.user.avisUser=[];
       this.userService.addUserService(this.user).subscribe(
         ()=>this.router.navigate(['/show-all-user'])
-      )
-    }
-  }
+      )}
+ 
   return(){
     this.router.navigate(['/show-all-user']);
   }

@@ -1,11 +1,15 @@
+import {Facture} from "./Facture";
+
 export class User{
-  id: number;
-  firstName: string;
-  lastName: string;
-  birthDate: any;
+  idUser: number;
+  nom: string;
+  prenom: string;
+  dateNaissance: any;
   email: string;
   password: string;
+  role:string;
+  facture:any[];
+  avisUser:any[];
+  categorieUser:string;
   profession: string;
-  accountCategory: string;
-  picture: string;
 }

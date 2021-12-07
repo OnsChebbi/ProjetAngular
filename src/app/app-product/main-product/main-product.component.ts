@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../../core/model/product";
+import {ProductService} from "../../core/services/product.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-product',
@@ -12,45 +14,13 @@ export class MainProductComponent implements OnInit {
   showFormTemplate: boolean;
   buttonValue: string;
   inputProduct: Product // the parent component will send this input to the child (formProduct)
-  constructor() { }
+  constructor(private productService: ProductService,private router: Router) { }
 
   ngOnInit(): void {
     this.showFormTemplate = false;
     this.buttonValue="add new Product";
-    this.listProduct = [
-      { id: '12',
-        title: 'T-Shirt 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
-        quantity: 10,
-        price: 15,
-        nbrLike: 0,
-        picture: 'assets/t shirt 1.jpg'
-      },
-      { id: '12',
-        title: 'T-Shirt 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
-        quantity: 10,
-        price: 25,
-        nbrLike: 0,
-        picture: 'assets/t shirt 2.jpg'
-      },
-      { id: '12',
-        title: 'T-Shirt 3',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
-        quantity: 0,
-        price: 100,
-        nbrLike: 0,
-        picture: 'assets/t shirt 1.jpg'
-      },
-      { id: '12',
-        title: 'T-Shirt 4',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
-        quantity: 100,
-        price: 45,
-        nbrLike: 5,
-        picture: 'assets/t shirt 2.jpg'
-      }
-    ]
+
+
   }
 
   like(product: Product): void{
@@ -64,9 +34,13 @@ export class MainProductComponent implements OnInit {
     if(i!= -1){
       this.listProduct[i]= product
     }
-    else this.listProduct.push(product);
+    else {
+      this.productService.addProductService(product).subscribe((data)=>{
+        this.listProduct.push(product);
+      });
+
     this.showFormTemplate = false
-  }
+  }}
   showForm(){
     if (this.showFormTemplate ===false){
       this.showFormTemplate = true

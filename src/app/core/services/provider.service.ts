@@ -8,9 +8,17 @@ import {
   providedIn: 'root'
 })
 export class ProviderService {
-  url=environment.url+"provider"
+  url=environment.url+"provider/"
   constructor(private http: HttpClient) { }
-
+  CurrentProvider:Provider;
+  status:boolean=false;
+  MODProvider(provider:Provider){
+    this.CurrentProvider=provider;
+  }
+  UpdateProvider(provider:Provider){
+    this.CurrentProvider=provider;
+    this.status=true;
+  }
   getListProviderService(){
     return this.http.get<Provider[]>(this.url)
     
@@ -21,7 +29,10 @@ export class ProviderService {
     deleteProviderService(id:string){
       return this.http.delete(this.url+id)
     }
-    updateProviderService(provider:Provider){
-      return this.http.put(this.url+provider.idProvider,provider)
+    updateProviderService(provider:Provider, id:string){
+      return this.http.put(this.url+"/"+id,provider)
+    }
+    getProviderServiceById(id:any){
+      return this.http.get<Provider>(this.url+id);
     }
 }

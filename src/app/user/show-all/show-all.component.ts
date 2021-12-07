@@ -19,6 +19,7 @@ export class ShowAllComponent implements OnInit {
   }
   delete(user:User){
     let i =this.list.indexOf(user);
+
     this.userService.deleteUserService(user.id).subscribe(
       ()=>this.list.splice(i,1)
     )

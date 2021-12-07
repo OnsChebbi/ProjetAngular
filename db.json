@@ -1,4 +1,46 @@
 {
+  "product": [
+    {
+      "title": "test",
+      "description": "test",
+      "quantity": 55,
+      "price": 1233,
+      "picture": "assets/femme.jpeg",
+      "nbrLike": 0,
+      "id": 13,
+      "category": "Vestimentaire"
+    },
+    {
+      "picture": "assets/regentlogo.jpg",
+      "title": "new",
+      "quantity": 7,
+      "price": 88,
+      "description": "new newxcf vbvb",
+      "nbrLike": 0,
+      "id": 18,
+      "category": "Vestimentaire"
+    },
+    {
+      "title": "okujh",
+      "picture": "assets/10034515C255_81_G.jpg",
+      "quantity": 20,
+      "price": 33,
+      "description": "aqqd dvsvs c dvs  xvsxv g gn",
+      "nbrLike": 0,
+      "id": 19,
+      "category": "Vestimentaire"
+    },
+    {
+      "title": "women t shirt",
+      "picture": "assets/10034595C056_83_G.jpg",
+      "quantity": 1,
+      "price": 100,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam itaque quas modi sunt aspernatur assumenda autem pariatur!",
+      "nbrLike": 0,
+      "id": 20,
+      "category": "Vestimentaire"
+    }
+  ],
   "provider": [
     {
       "idProvider": "1",
@@ -6,7 +48,7 @@
       "code": "F-1970",
       "libelle": "PC",
       "adresse": "Kef",
-      "picture": "/assets/dell"
+      "logo": "/assets/dell.png"
     },
     {
       "idProvider": "2",
@@ -14,7 +56,7 @@
       "nom": "Samsung",
       "libelle": "TV",
       "adresse": "Ariana",
-      "picture": "/assets/samsung"
+      "logo": "/assets/samsung.png"
     },
     {
       "idProvider": "3",
@@ -22,7 +64,7 @@
       "nom": "Sotufab",
       "libelle": "Table",
       "adresse": "Monastir",
-      "picture": "/assets/sotufab"
+      "logo": "/assets/sotufab.png"
     },
     {
       "idProvider": "4",
@@ -30,45 +72,12 @@
       "nom": "Iphone",
       "libelle": "Telephone",
       "adresse": "Sokra",
-      "picture": "/assets/iphone"
+      "logo": "/assets/iphone.jpg"
     }
   ],
   "users": [
     {
-      "id": 2,
-      "firstName": "GeorgeFluidAAAAA",
-      "lastName": "Clooney",
-      "birthDate": "10-02-1981",
-      "accountCategory": "Customer",
-      "email": "marlon@brando.com",
-      "password": "test",
-      "picture": "https://bootdey.com/img/Content/avatar/avatar2.png",
-      "profession": "Software Engineer"
-    },
-    {
-      "id": 3,
-      "firstName": "George",
-      "lastName": "Clooney",
-      "birthDate": "10-02-1981",
-      "accountCategory": "Customer",
-      "email": "marlon@brando.com",
-      "password": "test",
-      "picture": "https://bootdey.com/img/Content/avatar/avatar1.png",
-      "profession": "Software Engineer"
-    },
-    {
-      "id": 4,
-      "firstName": "Ryan",
-      "lastName": "Gossling",
-      "birthDate": "05-03-1987",
-      "accountCategory": "Golden",
-      "email": "Ryan@nicholson.com",
-      "password": "test",
-      "picture": "https://bootdey.com/img/Content/avatar/avatar4.png",
-      "profession": "Software Engineer"
-    },
-    {
-      "id": 4,
+      "id": 5,
       "firstName": "Robert",
       "lastName": "Downey",
       "birthDate": "05-03-2002",
@@ -77,50 +86,128 @@
       "password": "test",
       "picture": "https://bootdey.com/img/Content/avatar/avatar5.png",
       "profession": "Software Engineer"
+    }
+  ],
+  "livreurs": [
+    {
+      "idLiv": 1,
+      "NomLiv": "Ahmed",
+      "PrenomLiv": "Chebbi",
+      "VilleLiv": "Tunis",
+      "AdresseLiv": "ahmed@esprit.tn",
+      "MdpLiv": "UIH",
+      "LngLiv": 223.55,
+      "LatLiv": 55.22
+    }
+  ],
+  "livreur": [
+    {
+      "NomLiv": "kjze",
+      "PrenomLiv": "ezij",
+      "VilleLiv": "eezez",
+      "AdresseLiv": "ezeeezez",
+      "id": 1
     },
     {
-      "id": 12,
-      "firstName": "Ahmed",
-      "lastName": "ben Foulen",
-      "accountCategory": "Admin",
-      "birthDate": "10-10-1988",
-      "email": "ahmed@gmail.com",
-      "password": "test",
-      "profession": "Teacher",
-      "picture": "https://bootdey.com/img/Content/avatar/avatar5.png"
+      "NomLiv": "the champion of angularrrrr",
+      "PrenomLiv": "erre",
+      "VilleLiv": "errerere",
+      "AdresseLiv": "ezezezez",
+      "id": 2
     },
     {
-      "id": 13,
-      "firstName": "Amina",
-      "lastName": "ben Foulen",
-      "accountCategory": "Customer",
-      "birthDate": "10-10-1988",
-      "email": "ahmed@gmail.com",
-      "password": "test",
-      "profession": "Teacher",
-      "picture": "https://bootdey.com/img/Content/avatar/avatar5.png"
+      "NomLiv": "sqsqqs",
+      "AdresseLiv": "sqqssq",
+      "VilleLiv": "sqsqsq",
+      "PrenomLiv": "sqsqqsqs",
+      "id": 3
     },
     {
-      "firstName": "Dhieb",
-      "lastName": "JesserTa7foun",
-      "email": "jesserdhieb234@gmail.com",
-      "password": "adzdaazd",
-      "profession": "aaaze",
-      "picture": "https://yt3.ggpht.com/ytc/AKedOLQCkYHOSBdJlBVIZIMDKM-p9iu3hCxQMNa5P4tXtg=s900-c-k-c0x00ffffff-no-rj",
-      "birthDate": "2021-11-10",
-      "accountCategory": "Customer",
-      "id": 14
+      "NomLiv": "khlifi",
+      "PrenomLiv": "Mohamed Sahbi",
+      "VilleLiv": "Borj Cedria",
+      "AdresseLiv": "mohamedsahbi.khlifi@esprit.tn",
+      "id": 4
     },
     {
-      "firstName": "Dhieb",
-      "lastName": "JesserRojla",
-      "email": "jesserdhieb234@gmail.com",
-      "password": "adazazd",
-      "profession": "azdazd",
-      "picture": "https://yt3.ggpht.com/ytc/AKedOLQCkYHOSBdJlBVIZIMDKM-p9iu3hCxQMNa5P4tXtg=s900-c-k-c0x00ffffff-no-rj",
-      "birthDate": "2021-11-11",
-      "accountCategory": "Customer",
-      "id": 15
+      "NomLiv": "jkzejkjezjkjkdeez",
+      "PrenomLiv": "ezezezez",
+      "VilleLiv": "ezkjjkez",
+      "AdresseLiv": "ezedzez",
+      "MdpLiv": "ezezezez",
+      "id": 5
+    }
+  ],
+  "Panier": [
+    {
+      "idPanier": 1,
+      "prixTotal": "45",
+      "nombreArticle": "3",
+      "montantRemise": "3"
+    },
+    {
+      "idPanier": 2,
+      "prixTotal": "45",
+      "nombreArticle": "3",
+      "montantRemise": "3"
+    },
+    {
+      "idPanier": 3,
+      "prixTotal": "45",
+      "nombreArticle": "3",
+      "montantRemise": "3"
+    },
+    {
+      "idPanier": 4,
+      "prixTotal": "45",
+      "nombreArticle": "3",
+      "montantRemise": "3"
+    },
+    {
+      "idPanier": 5,
+      "prixTotal": "45",
+      "nombreArticle": "3",
+      "montantRemise": "3"
+    }
+  ],
+  "Stocks": [
+    {
+      "idStock": "1",
+      "Name": "Zara",
+      "qte": "15",
+      "qteMin": "5",
+      "libelleStock": "Robe",
+      "logo": "/assets/zara.jpg"
+    },
+    {
+      "idStock": "2",
+      "Name": "Sephora",
+      "qte": "45",
+      "qteMin": "10",
+      "libelleStock": "rouge à levre",
+      "logo": "/assets/sephora.jpg"
+    },
+    {
+      "idStock": "3",
+      "Name": "J'adore",
+      "qte": "25",
+      "qteMin": "5",
+      "libelleStock": "parfum",
+      "logo": "/assets/jadore.png"
+    }
+  ],
+  "livraison": [
+    {
+      "id": 1,
+      "dateLivraisonDate": "2021-12-28",
+      "adresseLvr": "tunis",
+      "status": false
+    },
+    {
+      "dateLivraisonDate": "2021-12-10",
+      "adresseLvr": "vfdfdfdfd",
+      "status": false,
+      "id": 5
     }
   ]
 }

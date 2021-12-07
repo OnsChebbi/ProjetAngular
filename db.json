@@ -167,15 +167,15 @@
   ],
   "Stocks": [
     {
-      "idStock": 1,
+      "id": "1",
       "name": "Zara",
-      "qte": 15,
+      "qte": 10,
       "qteMin": 5,
       "libelleStock": "Robe",
       "logo": "/assets/zara.jpg"
     },
     {
-      "idStock": 2,
+      "id": "2",
       "name": "Sephora",
       "qte": 45,
       "qteMin": 10,
@@ -183,12 +183,20 @@
       "logo": "/assets/sephora.jpg"
     },
     {
-      "idStock": 3,
+      "id": "3",
       "name": "J'adore",
       "qte": 25,
       "qteMin": 5,
       "libelleStock": "parfum",
       "logo": "/assets/jadore.png"
+    },
+    {
+      "id": 4,
+      "name": "Guess",
+      "qte": 10,
+      "qteMin": 2,
+      "libelleStock": "ceinture",
+      "logo": "assets/guess.jpg"
     }
   ],
   "livraison": [

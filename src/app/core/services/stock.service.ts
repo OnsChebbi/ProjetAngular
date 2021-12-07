@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import {
   HttpClient
 } from '@angular/common/http';
+import { NumberSymbol } from '@angular/common';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,14 +30,14 @@ export class StockService {
     addStockService(stock: Stock){
       return this.http.post(this.url, stock)
     }
-    deleteStockService(id:string){
-      return this.http.delete(this.url+id)
+    deleteStockService(idStock:number){
+      return this.http.delete(this.url+idStock)
     }
-    updateStockService(stock: Stock, id:string){
-      return this.http.put(this.url+id,stock)
+    updateStockService(stock: Stock, idStock:number){
+      return this.http.put(this.url+idStock,stock)
     }
-    getStockServiceById(id:any){
-      return this.http.get<Stock>(this.url+id);
+    getStockServiceById(idStock:any){
+      return this.http.get<Stock>(this.url+idStock);
     }
 
 }

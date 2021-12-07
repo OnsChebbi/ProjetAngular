@@ -22,7 +22,7 @@ export class FormAddProviderComponent implements OnInit {
   }
   save(){
     if (this.status){
-      this.ServiceProvider.updateProviderService(this.provider,this.provider.idProvider).subscribe(
+      this.ServiceProvider.updateProviderService(this.provider,this.provider.id).subscribe(
         ()=>this.router.navigate(['/show-all-provider'])
       )
     }

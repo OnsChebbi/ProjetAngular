@@ -1,5 +1,8 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Product} from "../../core/model/product";
+import {Provider} from "../../core/model/provider";
+import {ProductService} from "../../core/services/product.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-form-product',
@@ -9,13 +12,39 @@ import {Product} from "../../core/model/product";
 export class FormProductComponent implements OnInit {
   @Input() product:Product;
   @Output() addEvent=new EventEmitter<Product>();
-  constructor() { }
+  status:boolean;
+  constructor(private productService:ProductService,private router: Router,private activated:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.status=this.productService.status;
+    if (this.productService.status){
+      this.product=  this.productService.currentProduct;
+    }else {
+      this.product =  new Product();
+    }
+  }
+
+
+
+  fixProduct(){
+    this.router.navigate(['/product']);
   }
   save(){
-    this.addEvent.emit(this.product);
-    this.product = new Product();
+    if (this.status){
+      this.productService.updateProductService(this.product.id,this.product).subscribe(
+        ()=>this.router.navigate(['/product'])
+      )
+    }
+    else {
+      this.product.nbrLike=0;
+
+      this.productService.addProductService(this.product).subscribe(
+        ()=>this.router.navigate(['/product'])
+      )
+    }
+  }
+  return(){
+    this.router.navigate(['/product']);
   }
 
 }

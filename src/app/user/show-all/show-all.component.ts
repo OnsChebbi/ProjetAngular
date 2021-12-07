@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 })
 export class ShowAllComponent implements OnInit {
   list: User[];
+  stauts:string;
   constructor(private userService: UserService,private router: Router) { }
 
   ngOnInit(): void {

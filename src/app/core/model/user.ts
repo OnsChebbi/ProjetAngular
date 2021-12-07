@@ -12,4 +12,7 @@ export class User{
   avisUser:any[];
   categorieUser:string;
   profession: string;
+  phone_number:number;
+  picture:string;
+  adresse:string;
 }

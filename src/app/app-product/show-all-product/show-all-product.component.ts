@@ -13,8 +13,10 @@ import swal from "sweetalert";
   styleUrls: ['./show-all-product.component.css']
 })
 export class ShowAllProductComponent implements OnInit {
-
+  buttonValue: string;
+  inputProduct: Product;
   listProduct: Product[];
+  showFormTemplate: boolean;
   constructor(private productService: ProductService,private router: Router) { }
 
   ngOnInit(): void {
@@ -63,6 +65,18 @@ export class ShowAllProductComponent implements OnInit {
     this.router.navigate(['/add-product']);
   }
 /////////
+  save(product: Product): void{
+    let i = this.listProduct.indexOf(product);
+    if(i!= -1){
+      this.listProduct[i]= product
+    }
+    else {
+      this.productService.addProductService(product).subscribe((data)=>{
+        this.listProduct.push(product);
+      });
+
+      this.showFormTemplate = false
+    }}
 
 
 }

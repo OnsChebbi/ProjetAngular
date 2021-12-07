@@ -25,7 +25,7 @@ export class ShowOneProductComponent implements OnInit {
     )
   }
   fixProduct(){
-    this.router.navigate(['/show-all-product']);
+    this.router.navigate(['/product']);
   }
 
 }

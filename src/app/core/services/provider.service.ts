@@ -30,7 +30,7 @@ export class ProviderService {
       return this.http.delete(this.url+id)
     }
     updateProviderService(provider:Provider, id:string){
-      return this.http.put(this.url+"/"+id,provider)
+      return this.http.put(this.url+id,provider)
     }
     getProviderServiceById(id:any){
       return this.http.get<Provider>(this.url+id);

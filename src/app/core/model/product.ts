@@ -1,10 +1,18 @@
 export class Product{
   id: number;
-  title: string;
+  libelle: string;
+  code: string;
   description: string;
-  quantity: number;
-  price: number;
+  quantite: number;
+  prixUnitaire: number;
   picture : string;
   nbrLike: number;
   category : any;
+  detailFacture:any[];
+  rayon:any;
+  s:any;
+  fornisseur:any[];
+  avisProduit:any[];
+  detailproduit:any;
+
 }

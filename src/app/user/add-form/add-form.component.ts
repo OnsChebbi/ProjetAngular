@@ -36,7 +36,7 @@ export class AddFormComponent implements OnInit {
       this.userService.addUserService(this.user).subscribe(
         ()=>this.router.navigate(['/show-all-user'])
       )}
-
+ 
   return(){
     this.router.navigate(['/show-all-user']);
   }

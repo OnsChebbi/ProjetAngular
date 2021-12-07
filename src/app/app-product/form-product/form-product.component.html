@@ -8,18 +8,15 @@
       <div class="card mt-2 mx-auto p-4 bg-light">
         <div class="card-body bg-light">
           <div class="container">
-            <form id="contact-form" role="form"  #f="ngForm">
+            <form id="contact-form" role="form"  #f="ngForm" [formGroup]="myForm" >
               <div class="controls">
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group"><label for="Title">Title of the Product</label>
                       <input type="text" name="title" id="Title" class="form-control"
-                             #nt="ngModel" required minlength="3" [(ngModel)]="product.title">
-                      <div class="alert alert-danger" *ngIf="nt.touched&&nt.invalid">
-                        <div *ngIf="nt.hasError('required')">Title is required</div>
-                        <div *ngIf="nt.hasError('minlength')">Min Length is 3</div>
-                      </div> </div>
-                    <div class="col-md-12">
+                              [(ngModel)]="product.libelle" formControlName="title">
+                       </div>
+                  <!--  <div class="col-md-12">
                       <div class="form-group">
                         <label for="pictures">Picture</label>
 
@@ -37,7 +34,7 @@
                         <div class="form-group">
                           <label for="quantity">Quantity</label>
                           <input type="number" name="quantity" id="quantity" class="form-control"
-                                 #nq="ngModel" required  [(ngModel)]="product.quantity"
+                                 #nq="ngModel" required  [(ngModel)]="product.quantite"
                           >
                           <div class="alert alert-danger" *ngIf="nq.touched&&nq.invalid">
                             <div *ngIf="nq.hasError('required')">quantity required</div>
@@ -47,7 +44,7 @@
                       <div class="col-md-6">
                         <div class="form-group">  <label for="price">Price</label>
                           <input type="number" name="price" id="price" class="form-control"
-                                 #nprice="ngModel" required  [(ngModel)]="product.price">
+                                 #nprice="ngModel" required  [(ngModel)]="product.prixUnitaire">
                           <div class="alert alert-danger" *ngIf="nprice.touched&&nprice.invalid">
                             <div *ngIf="nprice.hasError('required')">price required</div>
                           </div>
@@ -68,7 +65,7 @@
                   <div class="col-md-12">
                     <div class="form-group"> <label for="forms_message">Description</label> <textarea id="form_description"  input type="text" name="description"  class="form-control"
                                                                                                       #nd="ngModel" required minlength="3" [(ngModel)]="product.description"
-                    ></textarea> </div>
+                    ></textarea> </div>-->
 
                     <br>
                     <br>

@@ -24,7 +24,6 @@ export class UpdateFormComponent implements OnInit {
       )
   }
   save(){
-
       this.userService.updateUserService(this.user).subscribe(
         ()=>this.router.navigate(['/show-all-user'])
       )

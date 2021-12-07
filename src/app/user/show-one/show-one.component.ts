@@ -12,7 +12,7 @@ export class ShowOneComponent implements OnInit {
   constructor(private userService: UserService,private router: Router,private activated:ActivatedRoute) { }
   user:User;
   ngOnInit(): void {
-    this.user=this.userService.CurrentUser;
+    //this.user=this.userService.CurrentUser;
     this.activated.paramMap.subscribe(
       (params)=> {
         let id = params.get('id');

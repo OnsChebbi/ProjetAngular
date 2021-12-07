@@ -84,15 +84,7 @@ export class UserService {
         profession:"Teacher",
         picture:"https://bootdey.com/img/Content/avatar/avatar5.png"}
     ];*/
-/*  CurrentUser:User;
-  status:boolean=false;
-  MODUSer(user:User){
-    this.CurrentUser=user;
-  }
-  UpdateUSer(user:User){
-    this.CurrentUser=user;
-    this.status=true;
-  }*/
+
   url="http://localhost:8090/SpringMVC/user/";
   constructor(private http:HttpClient) { }
   getListUserService(){

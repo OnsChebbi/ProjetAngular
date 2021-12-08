@@ -94,7 +94,7 @@ export class UserService {
     return this.http.post(this.url+'add-user',user);
   }
   deleteUserService(id:number){
-    return this.http.delete(this.url+id);
+    return this.http.delete(this.url+'remove-user/'+id);
   }
   getUserServiceById(id:any){
     return this.http.get<User>(this.url+'retrive-user/'+id);

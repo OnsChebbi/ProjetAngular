@@ -97,7 +97,7 @@ export class UserService {
     return this.http.delete(this.url+'remove-user/'+id);
   }
   getUserServiceById(id:any){
- return this.http.get<User>(this.url+'retrive-user/'+id);
+    return this.http.get<User>(this.url+'retrive-user/'+id);
   }
   updateUserService(user:User){
     return this.http.put(this.url+"modify-user",user);

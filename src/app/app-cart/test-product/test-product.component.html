@@ -1,0 +1,25 @@
+<h5>Available Items</h5>
+<div class="row ">
+	<div id="{{ i }}" class="col-12  " *ngFor="let data of sampleSuggestionsArray; let i = index">
+		<div class="row    ">
+			<div class="col-6">
+				<div class=" ">{{ data.menuName }}</div>
+				<small class=" ">{{ data.desc }}</small>
+			</div>
+			<div class="col-2">
+				<input class="w-100" disabled type="hidden" min="1" value="1" />
+      </div>
+
+      <div class="col-2 ">
+					<div>${{ data.variationCost }}</div>
+      </div>
+      <div class="col-2">
+					<button (click)="addToCart(data)" class="btn btn-secondary mb-1">
+          Add Item
+          <span class="icon-add_circle"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr />

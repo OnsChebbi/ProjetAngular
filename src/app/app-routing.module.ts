@@ -20,6 +20,7 @@ import { AppStockRoutingModule } from './app-stock/app-stock-routing.module';
 import { MainStockComponent } from './app-stock/main-stock/main-stock.component';
 import { AppLivraisonRoutingModule } from './app-livraison/app-livraison-routing.module';
 import { PanierRoutingModule } from './app-panier/panier-routing.module';
+import { AppCartRoutingModule } from './app-cart/app-cart-routing.module';
 
 const routes: Routes = [
   {path: '',redirectTo:'Dashbord', pathMatch: 'full' },
@@ -39,7 +40,8 @@ const routes: Routes = [
     LivreurRoutingModule,
     LandingPageRoutingModule,
     AppLivraisonRoutingModule,
-    PanierRoutingModule
+    PanierRoutingModule,
+    AppCartRoutingModule
   ],
   exports: [RouterModule]
 })

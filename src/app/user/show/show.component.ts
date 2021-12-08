@@ -18,10 +18,10 @@ export class ShowComponent implements OnInit {
   }
 
   delete(user:User){
-    /*let i =this.list.indexOf(user);
+    let i =this.listOfUsers.indexOf(user);
     this.userService.deleteUserService(user.idUser).subscribe(
-      ()=>this.list.splice(i,1)
-    )*/
+      ()=>this.listOfUsers.splice(i,1)
+    )
   }
 
   Block_UnBlock(user:User,role:string){

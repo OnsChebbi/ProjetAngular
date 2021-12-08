@@ -23,7 +23,7 @@
                       <div class="form-group">
                         <label for="picture">Picture</label>
 
-                        <input type="text" name="picture" id="pictures" class="form-control"
+                        <input type="file" name="picture" id="pictures" class="form-control"
                                #np="ngModel" required minlength="3" [(ngModel)]="product.picture"
                         >
                         <div class="alert alert-danger" *ngIf="np.touched&&np.invalid">

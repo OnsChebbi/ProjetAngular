@@ -21,16 +21,15 @@
                               <th scope="col">Product</th>
                               <th scope="col" width="120">Quantity</th>
                               <th scope="col" width="120">Price</th>
-                              <th scope="col" class="text-right d-none d-md-block" width="200"></th>
                           </tr>
                       </thead>
                       <tbody>
                           <tr *ngFor="let df of panier.detailFacture" >
                               <td>
                                   <figure class="itemside align-items-center">
-                                      <div class="aside"><img src="https://i.imgur.com/1eq5kmC.png" class="img-sm"></div>
-                                      <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Tshirt with round nect</a>
-                                          <p class="text-muted small">SIZE: L <br> Brand: MAXTRA</p>
+                                      <div class="aside"><img src="{{df.produit.picture}}" class="img-sm"></div>
+                                      <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">{{df.produit.libelle}}</a>
+                                          <p class="text-muted small">code: {{df.produit.code}} </p>
                                       </figcaption>
                                   </figure>
                               </td>
@@ -66,7 +65,7 @@
               <div class="card-body">
                   <dl class="dlist-align">
                       <dt>Total price:</dt>
-                      <dd class="text-right ml-3">$69.97</dd>
+                      <dd class="text-right ml-3">${{panier.prixTotal}}</dd>
                   </dl>
                   <dl class="dlist-align">
                       <dt>Discount:</dt>
@@ -74,7 +73,7 @@
                   </dl>
                   <dl class="dlist-align">
                       <dt>Total:</dt>
-                      <dd class="text-right text-dark b ml-3"><strong>${{panier.prixTotal}}</strong></dd>
+                      <dd class="text-right text-dark b ml-3"><strong>${{panier.prixTotal - panier.montantRemise}}</strong></dd>
                   </dl>
                   <!-- <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> <a href="#" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a> -->
               </div>

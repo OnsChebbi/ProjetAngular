@@ -48,8 +48,9 @@ export class TestCartComponent implements OnInit {
       (sum, x) => ({
         qtyTotal: 1,
         variationCost: sum.variationCost + x.qtyTotal * x.variationCost
-      }),
-      { qtyTotal: 1, variationCost: 0 }
+      }
+      ),
+      { qtyTotal: 1, variationCost: 0 }//initialisation de qtyTotal et varaitioncost
     ).variationCost;
   }
 

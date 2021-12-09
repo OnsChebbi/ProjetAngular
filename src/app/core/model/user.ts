@@ -1,4 +1,5 @@
 import {Facture} from "./Facture";
+import {Role} from "./Role";
 
 export class User{
   idUser: number;
@@ -7,7 +8,10 @@ export class User{
   dateNaissance: any;
   email: string;
   password: string;
-  role:string;
+  role:{
+    id:number;
+    role:string;
+  };
   facture:any[];
   avisUser:any[];
   categorieUser:string;
@@ -16,3 +20,4 @@ export class User{
   picture:string;
   adresse:string;
 }
+

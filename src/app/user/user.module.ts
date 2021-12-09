@@ -7,13 +7,15 @@ import { ShowAllComponent } from './show-all/show-all.component';
 import {BrowserModule} from "@angular/platform-browser";
 import { ShowOneComponent } from './show-one/show-one.component';
 import { ShowComponent } from './show/show.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     UpdateFormComponent,
     ShowAllComponent,
     ShowOneComponent,
-    ShowComponent
+    ShowComponent,
+    TestComponent
   ],
     imports: [
         BrowserModule,

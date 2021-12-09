@@ -88,7 +88,7 @@ export class UserService {
   url="http://localhost:8090/SpringMVC/user/";
   constructor(private http:HttpClient) { }
   getListUserService(){
-    return this.http.get<User[]>(this.url+'/retrive-all-users');
+    return this.http.get<User[]>(this.url+'retrive-all-users');
   }
   addUserService(user:User){
     return this.http.post(this.url+'add-user',user);

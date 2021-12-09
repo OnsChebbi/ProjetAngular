@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {UserService} from "../../core/services/user.service";
 import {User} from "../../core/model/user";
 import {Router} from "@angular/router";
+import {Role} from "../../core/model/Role";
 
 @Component({
   selector: 'app-show-all',
@@ -12,6 +13,7 @@ export class ShowAllComponent implements OnInit {
   list: User[];
   new_list:User[];
   role:string='All Users';
+  roleUsers:Role[];
   constructor(private userService: UserService,private router: Router) { }
   ngOnInit(): void {
     this.userService.getListUserService().subscribe(
@@ -35,11 +37,11 @@ export class ShowAllComponent implements OnInit {
 
   TargetSimpleUser(){
     this.role='Simple Users';
-    this.new_list=this.list.filter(user=>user.role==='Simple_User'||user.role==='Client'||user.role==='Blocked');
+    this.new_list=this.list.filter(user=>user.role.role=='SIMPLE'||user.role.role==='BLOCKED');
   }
   TargetAdminUser(){
     this.role='Admin Users';
-    this.new_list=this.list.filter(user=>user.role==='Super_Admin'||user.role==='Admin');
+    this.new_list=this.list.filter(user=>user.role.role=='ADMIN');
   }
   TargetAll(){
     this.role='All Users';

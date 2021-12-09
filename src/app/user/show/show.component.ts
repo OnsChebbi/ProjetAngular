@@ -26,7 +26,7 @@ export class ShowComponent implements OnInit {
 
   Block_UnBlock(user:User,role:string){
     let i = this.listOfUsers.indexOf(user);
-    user.role=role;
+    user.role.role=role;
     this.userService.updateUserService(user).subscribe(
       ()=>this.listOfUsers[i]=user
     )

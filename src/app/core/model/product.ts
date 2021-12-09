@@ -14,5 +14,6 @@ export class Product{
   fornisseur:any[];
   avisProduit:any[];
   detailproduit:any;
-
+  qtyTotal:number=0;
+  variationCost:number;
 }

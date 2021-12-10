@@ -18,7 +18,7 @@ export class Produit{
   detailproduit:any;
   qtyTotal:number=0;
   pourcentageRemise:number;
-  variationCost:number;
+  //variationCost:number;
   idDetailProduit:number;
   dateCreation: Date;
   dateDerniereModification :Date;

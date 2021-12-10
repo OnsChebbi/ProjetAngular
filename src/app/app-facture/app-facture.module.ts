@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListeFactureComponent } from './liste-facture/liste-facture.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +11,10 @@ import { ListeFactureComponent } from './liste-facture/liste-facture.component';
     ListeFactureComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AppFactureModule { }

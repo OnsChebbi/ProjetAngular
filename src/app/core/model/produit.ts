@@ -1,6 +1,6 @@
 import {Categories} from "../../enum/categories";
 
-export class Product{
+export class Produit{
   id: number;
   libelle: string;
   code: string;

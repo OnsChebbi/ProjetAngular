@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {User} from "../../core/model/user";
 import {UserService} from "../../core/services/user.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {UserRole} from "../../core/model/UserRole";
 
 @Component({
   selector: 'app-update-form',
@@ -9,7 +10,8 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./update-form.component.css']
 })
 export class UpdateFormComponent implements OnInit {
-  user: User;
+  user: User=new User();
+  //modelUSer:UserRole=new UserRole();
   constructor(private userService : UserService,private router: Router,private activated:ActivatedRoute) {  }
 
   ngOnInit(): void {

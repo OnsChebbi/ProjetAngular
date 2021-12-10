@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {Product} from "../../core/model/product";
+import {Produit} from "../../core/model/produit";
 import {Provider} from "../../core/model/provider";
-import {ProductService} from "../../core/services/product.service";
+import {ProduitService} from "../../core/services/produit.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
 
@@ -11,11 +11,11 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./form-product.component.css']
 })
 export class FormProductComponent implements OnInit {
-  @Input() product:Product;
-  @Output() addEvent=new EventEmitter<Product>();
+  @Input() product:Produit;
+  @Output() addEvent=new EventEmitter<Produit>();
   status:boolean;
   myForm:FormGroup;
-  constructor(private productService:ProductService,private router: Router,private activated:ActivatedRoute) { }
+  constructor(private productService:ProduitService, private router: Router, private activated:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.status=this.productService.status;
@@ -25,7 +25,7 @@ export class FormProductComponent implements OnInit {
     if (this.productService.status){
       this.product=  this.productService.currentProduct;
     }else {
-      this.product =  new Product();
+      this.product =  new Produit();
     }
   }
 

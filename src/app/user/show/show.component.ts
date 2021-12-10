@@ -34,7 +34,7 @@ export class ShowComponent implements OnInit {
     let i = this.listOfUsers.indexOf(user);
     user.role[0].id=id;
     user.role[0].role=role;
-    this.userService.changeRoleUser(user).subscribe(
+    this.userService.changeRoleUser(user,role).subscribe(
       ()=>this.listOfUsers[i]=user
     )
   }

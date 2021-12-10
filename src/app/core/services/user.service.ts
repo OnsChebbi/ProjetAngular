@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {User} from "../model/user";
 import {environment} from "../../../environments/environment";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {Role} from "../model/Role";
+import {RoleUser} from "../model/UserModels/RoleUser";
 
 @Injectable({
   providedIn: 'root'
@@ -101,11 +102,15 @@ export class UserService {
     return this.http.get<User>(this.url+'retrive-user/'+id);
   }
   updateUserService(user:User){
+    console.log(user);
     return this.http.put(this.url+"modify-user",user);
   }
 
-  changeRoleUser(user:User){
-    return this.http.post(this.url+"change-role-user",user);
+  changeRoleUser(user:User,role:string){
+    let roleUser=new RoleUser();
+    roleUser.Role=role;
+    roleUser.idUser=user.idUser;
+    return this.http.post(this.url+"change-role-user",roleUser);
   }
 
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Product} from "../model/product";
+import {User} from "../model/user";
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +25,12 @@ export class ProductService {
     return this.http.get<Product[]>(this.url+"retrieve-all-produits");
   }
   addProductService(product:Product){
-    return this.http.post(this.url+"addProduit",product,{observe:"response"});
+    return this.http.post(this.url+"addProduit",product);
   }
+
+
+
+
   deleteProductService(id:number){
     return this.http.delete(this.url+id);
   }

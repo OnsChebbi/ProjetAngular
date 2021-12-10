@@ -1,4 +1,4 @@
-import { Product } from "./product";
+import { Produit } from "./produit";
 
 export class Stock {
     id:any;
@@ -7,6 +7,6 @@ export class Stock {
 	qteMin: number;
 	libelleStock: string ;
     logo: string;
-    pE:Product[];
+    pE:Produit[];
     
     }

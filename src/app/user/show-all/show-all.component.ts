@@ -37,11 +37,11 @@ export class ShowAllComponent implements OnInit {
 
   TargetSimpleUser(){
     this.role='Simple Users';
-    this.new_list=this.list.filter(user=>user.role.role=='SIMPLE'||user.role.role==='BLOCKED');
+    this.new_list=this.list.filter(user=>user.role[0].role=='SIMPLE'||user.role[0].role==='BLOCKED');
   }
   TargetAdminUser(){
     this.role='Admin Users';
-    this.new_list=this.list.filter(user=>user.role.role=='ADMIN');
+    this.new_list=this.list.filter(user=>user.role[0].role=='ADMIN');
   }
   TargetAll(){
     this.role='All Users';

@@ -21,10 +21,10 @@ import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.co
 
 
 import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
-import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
 import { AppLivraisonModule } from './app-livraison/app-livraison.module';
 import { PanierModule } from './app-panier/panier.module';
 import { AppCartModule } from './app-cart/app-cart.module';
+import { AppFactureModule } from './app-facture/app-facture.module';
 
 
 
@@ -65,7 +65,8 @@ import { AppCartModule } from './app-cart/app-cart.module';
     LandingPageModule,
     AppLivraisonModule,
     PanierModule,
-    AppCartModule  
+    AppCartModule ,
+    AppFactureModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

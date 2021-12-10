@@ -21,6 +21,7 @@ import { MainStockComponent } from './app-stock/main-stock/main-stock.component'
 import { AppLivraisonRoutingModule } from './app-livraison/app-livraison-routing.module';
 import { PanierRoutingModule } from './app-panier/panier-routing.module';
 import { CartRoutingModule } from './app-cart/app-cart-routing.module';
+import { FactureRoutingModule } from './app-facture/app-facture-routing.module';
 
 const routes: Routes = [
   {path: '',redirectTo:'Dashbord', pathMatch: 'full' },
@@ -41,7 +42,8 @@ const routes: Routes = [
     LandingPageRoutingModule,
     AppLivraisonRoutingModule,
     PanierRoutingModule,
-    CartRoutingModule
+    CartRoutingModule,
+    FactureRoutingModule
   ],
   exports: [RouterModule]
 })

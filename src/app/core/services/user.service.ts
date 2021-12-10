@@ -4,6 +4,7 @@ import {environment} from "../../../environments/environment";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {Role} from "../model/Role";
 import {RoleUser} from "../model/UserModels/RoleUser";
+import {UserRole} from "../model/UserRole";
 
 @Injectable({
   providedIn: 'root'
@@ -113,4 +114,8 @@ export class UserService {
     return this.http.post(this.url+"change-role-user",roleUser);
   }
 
+/*  updateUserService1(user:UserRole){
+    console.log(user);
+    return this.http.post(this.url+"modify-user-1",user);
+  }*/
 }

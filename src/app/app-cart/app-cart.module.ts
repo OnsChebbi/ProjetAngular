@@ -5,13 +5,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CartRoutingModule } from './app-cart-routing.module';
 import { ProductTestComponent } from './product-test/product-test.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductDetailTestComponent } from './product-detail-test/product-detail-test.component';
 
 
 
 @NgModule({
   declarations: [
     CartComponent,
-    ProductTestComponent
+    ProductTestComponent,
+    ProductDetailTestComponent,
+    ProductDetailTestComponent
   ],
   imports: [
     CommonModule,

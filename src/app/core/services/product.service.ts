@@ -35,7 +35,10 @@ export class ProductService {
   updateProductService(id:number,product:Product){
     return this.http.put(this.url+"/"+id,product);
   }
-
+//added by adem 
+  getSingleProduct(id:number){
+    return this.http.get(`${this.url}getProduit/${id}`);
+  }
 
 
 }

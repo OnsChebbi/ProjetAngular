@@ -15,5 +15,6 @@ export class Product{
   avisProduit:any[];
   detailproduit:any;
   qtyTotal:number=0;
+  pourcentageRemise:number;
   variationCost:number;
 }

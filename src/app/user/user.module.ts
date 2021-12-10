@@ -8,12 +8,14 @@ import {BrowserModule} from "@angular/platform-browser";
 import { ShowOneComponent } from './show-one/show-one.component';
 import { ShowComponent } from './show/show.component';
 
+
 @NgModule({
   declarations: [
     UpdateFormComponent,
     ShowAllComponent,
     ShowOneComponent,
-    ShowComponent
+    ShowComponent,
+
   ],
     imports: [
         BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit,ElementRef,QueryList,VERSION,ViewChildren } from '@angular/core';
-import { Product } from 'src/app/core/model/product';
+import { Produit } from 'src/app/core/model/produit';
 import { PanierService } from 'src/app/core/services/panier.service';
 // import { CurrencyPipe } from "@angular/common";
 import {FormControl,FormGroup,Validators,FormBuilder} from "@angular/forms";
@@ -13,7 +13,7 @@ import { TestCartService } from 'src/app/core/services/test-cart.service';
 export class TestCartComponent implements OnInit {
   @ViewChildren("subTotalWrap") subTotalItems: QueryList<ElementRef>;
   @ViewChildren("subTotalWrap_existing") subTotalItems_existing: QueryList<ElementRef>;
-  
+
   constructor(private cartService:TestCartService) { }
 
   items = [];
@@ -48,8 +48,9 @@ export class TestCartComponent implements OnInit {
       (sum, x) => ({
         qtyTotal: 1,
         variationCost: sum.variationCost + x.qtyTotal * x.variationCost
-      }),
-      { qtyTotal: 1, variationCost: 0 }
+      }
+      ),
+      { qtyTotal: 1, variationCost: 0 }//initialisation de qtyTotal et varaitioncost
     ).variationCost;
   }
 
@@ -84,7 +85,7 @@ export class TestCartComponent implements OnInit {
       item.qtyTotal = 1;
       this.cartService.addToCart(item); //add items in cart
       this.items = [...this.cartService.getItems()];
-    }else 
+    }else
     {
       let selectedItem=this.items.find((p)=>p.id===item.id);
       selectedItem.qtyTotal+=1;

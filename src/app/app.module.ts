@@ -24,6 +24,7 @@ import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livr
 import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
 import { AppLivraisonModule } from './app-livraison/app-livraison.module';
 import { PanierModule } from './app-panier/panier.module';
+import { AppCartModule } from './app-cart/app-cart.module';
 
 
 
@@ -63,7 +64,8 @@ import { PanierModule } from './app-panier/panier.module';
     UserModule,
     LandingPageModule,
     AppLivraisonModule,
-    PanierModule
+    PanierModule,
+    AppCartModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

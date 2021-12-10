@@ -8,10 +8,7 @@ export class User{
   dateNaissance: any;
   email: string;
   password: string;
-  role:{
-    id:number;
-    role:string;
-  };
+  role:Role[];
   facture:any[];
   avisUser:any[];
   categorieUser:string;

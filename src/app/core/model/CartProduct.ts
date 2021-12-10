@@ -1,6 +1,9 @@
-import { Product } from "./product";
+import { Produit } from "./produit";
 
-export class CartProduct implements Product {
+export class CartProduct implements Produit {
+    idDetailProduit: number;
+    dateCreation: Date;
+    dateDerniereModification: Date;
     pourcentageRemise: number;
     id: number;
     libelle: string;

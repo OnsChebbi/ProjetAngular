@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartProduct } from 'src/app/core/model/CartProduct';
-import { Product } from 'src/app/core/model/product';
+import { Produit } from 'src/app/core/model/produit';
 import { CartService } from 'src/app/core/services/cart-service/cart.service';
-import { ProductService } from 'src/app/core/services/product.service';
+import { ProduitService } from 'src/app/core/services/produit.service';
 
 @Component({
   selector: 'app-product-detail-test',
@@ -12,10 +12,10 @@ import { ProductService } from 'src/app/core/services/product.service';
 })
 export class ProductDetailTestComponent implements OnInit {
 
-  constructor(private productService: ProductService,private activated:ActivatedRoute,private cartService:CartService) { }
+  constructor(private productService: ProduitService,private activated:ActivatedRoute,private cartService:CartService) { }
 
   cartProduct:CartProduct;
-  product:Product;
+  product:Produit;
 
   ngOnInit(): void {
      this.activated.paramMap.subscribe(

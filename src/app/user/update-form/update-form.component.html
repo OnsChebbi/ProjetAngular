@@ -39,15 +39,15 @@
                 <div *ngIf="em.hasError('pattern')"> respect this format test@gmail.com</div>
               </div>
             </div>
-            <div class="form-group col-sm-6 flex-column d-flex">
+            <!--<div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">password<span class="text-danger"> *</span></label>
               <input type="password" id="pass" name="pass" [(ngModel)]="user.password" required  #pw="ngModel">
               <div class="alert alert-danger" *ngIf="pw.invalid && pw.touched">
                 <div *ngIf="pw.hasError('required')"> password is a required field</div>
               </div>
             </div>
+          -->
           </div>
-
           <div class="row justify-content-between text-left">
             <div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">Job<span class="text-danger"> *</span></label>
@@ -88,16 +88,16 @@
               </div>
             </div>
           </div>
-          <div class="row justify-content-between text-left">
+         <!-- <div class="row justify-content-between text-left">
             <div class="form-group col-12 flex-column d-flex">
               <label class="form-control-label px-3">Role<span class="text-danger"> *</span></label>
-              <!--<input type="text" id="role" name="role"  [(ngModel)]="user.role" required  #role="ngModel">-->
+              &lt;!&ndash;<input type="text" id="role" name="role"  [(ngModel)]="user.role" required  #role="ngModel">&ndash;&gt;
               <input  type="text" name="role" id="role" required [(ngModel)]="user.role" #role="ngModel">
               <div class="alert alert-danger" *ngIf="role.invalid && role.touched">
                 <div *ngIf="role.hasError('required')"> Role is a required field</div>
               </div>
             </div>
-          </div>
+          </div>-->
           <div class="row justify-content-end">
             <div class="form-group col-auto"> <button type="submit" class="btn-primary" (click)="save()"  [disabled]="f.invalid">Register</button> </div>
           </div>

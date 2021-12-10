@@ -16,7 +16,7 @@
                       <input type="text" name="title" id="Title" class="form-control"
                               [(ngModel)]="product.libelle" formControlName="title">
                        </div>
-                  <!--  <div class="col-md-12">
+                   <div class="col-md-12">
                       <div class="form-group">
                         <label for="pictures">Picture</label>
 
@@ -65,7 +65,15 @@
                   <div class="col-md-12">
                     <div class="form-group"> <label for="forms_message">Description</label> <textarea id="form_description"  input type="text" name="description"  class="form-control"
                                                                                                       #nd="ngModel" required minlength="3" [(ngModel)]="product.description"
-                    ></textarea> </div>-->
+                    ></textarea> </div>
+                    <div class="col-md-12">
+                      <label for="dateCreation">Start date:</label>
+
+                      <input type="date" id="start" name="trip-start"
+                             [(ngModel)]="product.dateCreation"
+                             min="2021-01-01" max="2030-12-31">
+
+                    </div>
 
                     <br>
                     <br>

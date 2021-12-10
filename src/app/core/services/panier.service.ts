@@ -10,7 +10,7 @@ import { Product } from '../model/product';
   providedIn: 'root'
 })
 export class PanierService {
-
+/*
   products:Product[]=[{
     "title": "test",
     "description": "test",
@@ -50,7 +50,7 @@ export class PanierService {
     "nbrLike": 0,
     "id": 20,
     "category": "Vestimentaire"
-  }];
+  }];*/
 
   url=environment.url+"panier"
   constructor(private http: HttpClient) { }

@@ -21,7 +21,7 @@ export class CartProduct implements Produit {
     avisProduit: any[];
     detailproduit: any;
     qtyTotal: number;
-    variationCost: number;
+    //variationCost: number;
 
     qte:number=0;
 }

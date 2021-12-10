@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/core/model/product';
+import { Produit } from 'src/app/core/model/produit';
 
 @Component({
   selector: 'app-panier',
@@ -10,10 +10,10 @@ export class PanierComponent implements OnInit {
 
   constructor() { }
 
-  panier:Product[];
+  panier:Produit[];
   ngOnInit(): void {
     console.log(localStorage);
-    
+
   }
 
 }

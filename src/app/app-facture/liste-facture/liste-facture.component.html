@@ -1,1 +1,31 @@
-<p>liste-facture works!</p>
+<br>
+<table class="table mb-0 text-nowrap" >
+  <thead>
+    <tr >
+      <th scope="col" class="border-0" style="font-weight: bold" >Id facture</th>
+      <th scope="col" class="border-0" style="font-weight: bold"> Montant Remise</th>
+      <th scope="col" class="border-0" style="font-weight: bold" >Montant Facture</th>
+      <th scope="col" class="border-0" style="font-weight: bold" >Date Facture</th>
+      <th scope="col" class="border-0" style="font-weight: bold" >Status</th>
+      <th scope="col" class="border-0" style="font-weight: bold" >Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let facture of listFacture" >
+      <td class="border-top-0">{{facture.idFacture}}</td>
+      <td class="border-top-0">{{facture.montantRemise}}</td>
+      <td class="border-top-0">{{facture.montantFacture}}</td>
+      <td class="border-top-0">{{facture.dateFacture}}</td>
+      <td class="border-top-0">{{facture.active}}</td>
+      
+      <td class="align-middle border-top-0">
+        <button class="btn btn-danger btn-sm"  style="font-weight: bold;color: aliceblue;">Delete</button>
+        <button class="btn btn-info btn-sm" style="font-weight: bold;color: aliceblue;" >Details</button>
+      </td>
+
+      
+      
+    </tr>
+    
+  </tbody>
+</table>

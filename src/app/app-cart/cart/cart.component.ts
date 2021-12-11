@@ -1,19 +1,27 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CartProduct } from 'src/app/core/model/CartProduct';
+import { Facture } from 'src/app/core/model/Facture';
 import { CartService } from 'src/app/core/services/cart-service/cart.service';
+import { FactureService } from 'src/app/core/services/facture-service/facture.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
+  providers: [DatePipe]
 })
 export class CartComponent implements OnInit {
+  
 
-  constructor(private cartService:CartService) { }
+  constructor(private cartService:CartService,private factureService:FactureService) { 
+    
+  }
 
   cartItems:CartProduct[]=[];
   total:number;
   discount:number;
+
 
   ngOnInit(): void {
 
@@ -64,5 +72,20 @@ export class CartComponent implements OnInit {
         this.total=sub;
         this.discount=disc;
       
+    }
+
+    generateFacture(){
+      let date=new Date()
+      /*let f:Facture={
+        montantRemise: 0,
+        montantFacture: 0,
+        dateFacture: date,
+        active: true, 
+      };      
+      console.log(this.cartItems);
+      console.log(f);
+      
+      this.factureService.addFactureService(1,f);
+      */
     }
 }

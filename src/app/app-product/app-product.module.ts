@@ -4,7 +4,7 @@ import {MainProductComponent} from "./main-product/main-product.component";
 import { AppProductRoutingModule } from './app-product-routing.module';
 import { ProductComponent } from './product/product.component';
 import { FormProductComponent } from './form-product/form-product.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule} from "@angular/forms";
 import { ShowAllProductComponent } from './show-all-product/show-all-product.component';
 import { ShowOneProductComponent } from './show-one-product/show-one-product.component';
 
@@ -19,8 +19,7 @@ import { ShowOneProductComponent } from './show-one-product/show-one-product.com
   imports: [
     CommonModule,
     AppProductRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    FormsModule
   ]
 })
 export class AppProductModule { }

@@ -1,12 +1,8 @@
-import { Produit } from "./produit";
-
 export class Stock {
-    id:any;
+    idStock: string;
     name: string;
     qte: number;
 	qteMin: number;
 	libelleStock: string ;
     logo: string;
-    date:Date;
-    
     }

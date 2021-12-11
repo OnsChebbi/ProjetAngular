@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {Produit} from "../../core/model/produit";
+import {Product} from "../../core/model/product";
 
 @Component({
   selector: 'app-product',
@@ -7,10 +7,10 @@ import {Produit} from "../../core/model/produit";
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  @Input()product : Produit;
-  @Output() notification = new EventEmitter<Produit>();
-  @Output() deleteNotifEvent = new EventEmitter<Produit>();
-  @Output() updateNotifEvent = new EventEmitter<Produit>();
+  @Input()product : Product;
+  @Output() notification = new EventEmitter<Product>();
+  @Output() deleteNotifEvent = new EventEmitter<Product>();
+  @Output() updateNotifEvent = new EventEmitter<Product>();
   constructor() { }
 
   ngOnInit(): void {

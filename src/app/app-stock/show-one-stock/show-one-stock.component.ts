@@ -15,8 +15,8 @@ stock :Stock;
     this.stock=this.ServiceStock.CurrentStock;
     this.activated.paramMap.subscribe(
       (params)=> {
-        let idStock = params.get('idStock');
-        this.ServiceStock.getStockServiceById(idStock).subscribe(
+        let id = params.get('id');
+        this.ServiceStock.getStockServiceById(id).subscribe(
           (data) => this.stock = data
         )
       }

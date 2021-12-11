@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
 import {User} from "../model/user";
 import {environment} from "../../../environments/environment";
-import {HttpClient, HttpParams} from "@angular/common/http";
-import {Role} from "../model/Role";
-import {RoleUser} from "../model/UserModels/RoleUser";
-import {UserRole} from "../model/UserRole";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  /*list: User[]=
+  list: User[]=
     [
       {
         id: 1,
@@ -86,36 +83,32 @@ export class UserService {
         password:"test",
         profession:"Teacher",
         picture:"https://bootdey.com/img/Content/avatar/avatar5.png"}
-    ];*/
-
-  url="http://localhost:8090/SpringMVC/user/";
+    ];
+  CurrentUser:User;
+  status:boolean=false;
+  MODUSer(user:User){
+    this.CurrentUser=user;
+  }
+  UpdateUSer(user:User){
+    this.CurrentUser=user;
+    this.status=true;
+  }
+  url=environment.url+"users/";
   constructor(private http:HttpClient) { }
   getListUserService(){
-    return this.http.get<User[]>(this.url+'retrive-all-users');
+    return this.http.get<User[]>(this.url);
   }
   addUserService(user:User){
-    return this.http.post(this.url+'add-user',user);
+    return this.http.post(this.url,user);
   }
   deleteUserService(id:number){
-    return this.http.delete(this.url+'remove-user/'+id);
+    return this.http.delete(this.url+id);
   }
   getUserServiceById(id:any){
-    return this.http.get<User>(this.url+'retrive-user/'+id);
+    return this.http.get<User>(this.url+id);
   }
-  updateUserService(user:User){
-    console.log(user);
-    return this.http.put(this.url+"modify-user",user);
-  }
-
-  changeRoleUser(user:User,role:string){
-    let roleUser=new RoleUser();
-    roleUser.Role=role;
-    roleUser.idUser=user.idUser;
-    return this.http.post(this.url+"change-role-user",roleUser);
+  updateUserService(id:number,user:User){
+    return this.http.put(this.url+"/"+id,user);
   }
 
-/*  updateUserService1(user:UserRole){
-    console.log(user);
-    return this.http.post(this.url+"modify-user-1",user);
-  }*/
 }

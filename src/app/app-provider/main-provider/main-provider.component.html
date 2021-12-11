@@ -23,7 +23,7 @@
       <tbody>
       <tr *ngFor="let provider of ListProvider">
         <td><img class="img-fluid" src="{{provider.logo}}"></td>
-        <td>{{provider.id}}</td>
+        <td>{{provider.idProvider}}</td>
         <td>{{provider.name}}</td>
         <td>{{provider.email}}</td>
         <td>{{provider.code}}</td>
@@ -32,7 +32,7 @@
         
         <td><button class="btn btn-danger" (click)="delete(provider)">Delete</button></td>
         <td><button class="btn btn-success" (click)="update(provider)">Update</button></td>
-        <td><a class="btn btn-warning" [routerLink]="['/provider',provider.id]" >view More</a></td>
+        <td><a class="btn btn-warning" [routerLink]="['/provider',provider.idProvider]" >view More</a></td>
       </tr>
       </tbody>
     </table>

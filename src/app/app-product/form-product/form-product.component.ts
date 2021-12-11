@@ -13,10 +13,10 @@ import {UserService} from "../../core/services/user.service";
   styleUrls: ['./form-product.component.css']
 })
 export class FormProductComponent implements OnInit {
- /* @Input() product:Produit;
-  @Output() addEvent=new EventEmitter<Produit>();
-  status:boolean;
-  myForm:FormGroup;*/
+  /* @Input() product:Produit;
+   @Output() addEvent=new EventEmitter<Produit>();
+   status:boolean;
+   myForm:FormGroup;*/
   produit: Produit=new Produit();
   constructor(private productService:ProduitService, private router: Router, private activated:ActivatedRoute) { }
 
@@ -42,19 +42,9 @@ export class FormProductComponent implements OnInit {
 
 
   save(){
-    if (this.status){
-      
-      this.productService.updateProductService(this.product.id,this.product).subscribe(
-        ()=>this.router.navigate(['/product'])
-      )
-    }
-    else {
-      this.product.nbrLike=0;
-
-      this.productService.addProductService(this.myForm.value).subscribe(
-        ()=>this.router.navigate(['/product'])
-      )
-    }
+    this.productService.updateProductService(this.produit.id,this.produit).subscribe(
+      ()=>this.router.navigate(['/show-all-user'])
+    )
   }
   return(){
     this.router.navigate(['/product']);

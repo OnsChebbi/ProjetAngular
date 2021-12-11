@@ -15,7 +15,7 @@ export class FactureService {
     return this.http.get<Facture[]>(`${this.url}/retreive-all-factures`)
     }
     addFactureService(id:number,facture: Facture){
-      return this.http.post(`${this.url}/add-facture/${id}/`, facture)
+      return this.http.post(/*`${this.url}/add-facture/${id}/`*/"localhost:8090/SpringMVC/Facture/add-facture/1", facture)
     }
     deletePanierService(idPanier:number){
       return this.http.delete(`${this.url}/remove-panier/${idPanier}`)

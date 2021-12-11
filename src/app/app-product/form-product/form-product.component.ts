@@ -42,9 +42,19 @@ export class FormProductComponent implements OnInit {
 
 
   save(){
-    this.productService.updateProductService(this.produit.id,this.produit).subscribe(
-      ()=>this.router.navigate(['/show-all-user'])
-    )
+    if (this.status){
+      
+      this.productService.updateProductService(this.product.id,this.product).subscribe(
+        ()=>this.router.navigate(['/product'])
+      )
+    }
+    else {
+      this.product.nbrLike=0;
+
+      this.productService.addProductService(this.myForm.value).subscribe(
+        ()=>this.router.navigate(['/product'])
+      )
+    }
   }
   return(){
     this.router.navigate(['/product']);

@@ -37,7 +37,7 @@ export class StockService {
       return this.http.put(this.url+'modify-stock/'+id,stock)
     }
     getStockServiceById(id:any){
-      return this.http.get<Stock>(this.url+id);
+      return this.http.get<Stock>(this.url+'retrieve-stock/'+id);
     }
 
 }

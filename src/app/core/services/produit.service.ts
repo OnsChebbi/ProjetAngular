@@ -10,7 +10,7 @@ import {Stock} from "../model/stock";
   providedIn: 'root'
 })
 export class ProduitService {
-
+  url="http://localhost:8090/SpringMVC/produit/"
 
   currentProduct:Produit;
   status:boolean=false;
@@ -21,13 +21,17 @@ export class ProduitService {
     this.currentProduct=produit;
     this.status=true;
   }
-  url=environment.url+"produit/";
+
   constructor(private http:HttpClient) { }
   getListProductService(){
     return this.http.get<Produit[]>(this.url+"retrieve-all-produits");
   }
+
+
+
+
   addProductService(product:Produit){
-    return this.http.post(this.url+"addProduit/",product);
+    return this.http.post(`${this.url}addProduit`, product);
 
   }
 

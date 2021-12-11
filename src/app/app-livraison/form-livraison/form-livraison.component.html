@@ -1,6 +1,8 @@
 
 <button class="btn btn-success" (click)="return()">Return</button>
+
 <div class="container"><div class=" text-center mt-5 ">
+
 </div>
   <div class="row ">
     <div class="col-lg-7 mx-auto">
@@ -12,31 +14,17 @@
               
               <div class="form-group col-sm-6 flex-column d-flex">
                 <label class="form-control-label px-3">Date de livraison<span class="text-danger"> *</span></label>
-                <input type="date" name="ldate"  id="ldate" class="form-control" [(ngModel)]="livraison.date_livraison_date" required minlength="3"  #ld="ngModel">
+                <input type="date" name="ldate"  id="ldate" class="form-control" [(ngModel)]="livraison.dateLivraisonDate" required minlength="3"  #ld="ngModel">
                 <div class="alert alert-danger" *ngIf="ld.invalid && ld.touched">
                   <div *ngIf="ld.hasError('required')"> Date is a required field</div>
                 </div>
               </div>
               <div class="form-group col-sm-6 flex-column d-flex">
                 <label class="form-control-label px-3">Adresse de livraison<span class="text-danger"> *</span></label>
-                <input type="text" name="lvr"  id="lvr" class="form-control" [(ngModel)]="livraison.adresse_lvr" required minlength="3"  #ld="ngModel">
+                <input type="text" name="lvr"  id="lvr" class="form-control" [(ngModel)]="livraison.adresseLvr" required minlength="3"  #ld="ngModel">
                 <div class="alert alert-danger" *ngIf="ld.invalid && ld.touched">
                   <div *ngIf="ld.hasError('required')"> Adresse is a required field</div>
                   <div *ngIf="ld.hasError('minlength')"> Adresse minlength ies equal to 3</div>
-                </div>
-              </div>
-              <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3">L'identifiant du livreur<span class="text-danger"> *</span></label>
-                <input type="number" name="lid"  id="lid" class="form-control" [(ngModel)]="livraison.l_id" required minlength="3"  #lid="ngModel">
-                <div class="alert alert-danger" *ngIf="lid.invalid && lid.touched">
-                  <div *ngIf="lid.hasError('required')"> Vous devez saisir un identifiant livreur</div>
-                </div>
-              </div>
-              <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3">L'identifiant de la fature<span class="text-danger"> *</span></label>
-                <input type="number" name="fid"  id="fid" class="form-control" [(ngModel)]="livraison.f_id_facture" required minlength="3"  #fid="ngModel">
-                <div class="alert alert-danger" *ngIf="fid.invalid && fid.touched">
-                  <div *ngIf="fid.hasError('required')"> Vous devez saisir un identifiant facture</div>
                 </div>
               </div>
             </div>

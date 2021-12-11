@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter, Input, AfterViewInit} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { Livreur } from 'src/app/core/model/livreur';
 import { LivreurService } from 'src/app/core/services/livreur.service';

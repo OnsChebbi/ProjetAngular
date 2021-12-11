@@ -9,12 +9,6 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class LivraisonService {
-  httpOptions = {
-    headers: new HttpHeaders({
-         'Content-Type': 'application/json',
-         'Access-Control-Allow-Origin':'*',
-   })
- }
 url=environment.url+"livraison/";
 
   constructor(private http:HttpClient) {     console.log("dkhalna l service");
@@ -35,29 +29,28 @@ url=environment.url+"livraison/";
     return throwError(errorMessage);
  }
 
- getListLivraisonService()
+ getListLivraisonService(): Observable<Livraison>
  {
-<<<<<<< HEAD
-  return this.http.get<Livraison>(this.url+"retrieve-all-livraisons", this.httpOptions)
-=======
-  return this.http.get<Livraison>(this.url+"retrieve-all-livraisons")
->>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
-
+  return this.http.get<Livraison>(this.url)
+  .pipe(
+    retry(1),
+    catchError(this.handleError)
+  );
 
 }
  deleteLivraisonService(id:any)
  {
-  return this.http.delete(this.url+"remove-livraison/"+id)
+  return this.http.delete(this.url+id)
  }
  addLivraisonService(livraison:Livraison)
  {
-   return this.http.post(this.url+"add-livraison/"+livraison.l_id+"/"+livraison.f_id_facture,livraison, this.httpOptions)
+   return this.http.post(this.url,livraison)
  }
   getLivraisonServiceById(id:any){
     return this.http.get<Livraison>(this.url+id);
   }
   updateLivraisonService(livraison:Livraison){
-    return this.http.put(this.url+"modify-livraison/",livraison, this.httpOptions);
+    return this.http.put(this.url+livraison.id,livraison);
   }
   CurrentLivraison:Livraison;
   status:boolean=false;

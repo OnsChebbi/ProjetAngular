@@ -18,20 +18,13 @@ import { CommonModule } from '@angular/common';
 import { LivreurComponent } from './app-livreur/livreur/livreur.component';
 import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
-<<<<<<< HEAD
-import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.component';
-import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
-import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
-import { AppLivraisonModule } from './app-livraison/app-livraison.module';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-=======
 
 
 import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
-import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
 import { AppLivraisonModule } from './app-livraison/app-livraison.module';
 import { PanierModule } from './app-panier/panier.module';
->>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
+import { AppCartModule } from './app-cart/app-cart.module';
+import { AppFactureModule } from './app-facture/app-facture.module';
 
 
 
@@ -60,11 +53,9 @@ import { PanierModule } from './app-panier/panier.module';
 
 
   ],
-  imports: [   
-  
+  imports: [
     CommonModule,
     BrowserModule,
-    Ng2SearchPipeModule,
     AppRoutingModule,
     AppProductModule,
     AppSharedModule,
@@ -73,12 +64,9 @@ import { PanierModule } from './app-panier/panier.module';
     UserModule,
     LandingPageModule,
     AppLivraisonModule,
-   
-<<<<<<< HEAD
-=======
-
-    PanierModule
->>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
+    PanierModule,
+    AppCartModule ,
+    AppFactureModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

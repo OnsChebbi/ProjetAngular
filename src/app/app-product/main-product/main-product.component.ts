@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from "../../core/model/product";
-import {ProductService} from "../../core/services/product.service";
+import {Produit} from "../../core/model/produit";
+import {ProduitService} from "../../core/services/produit.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -10,11 +10,11 @@ import {Router} from "@angular/router";
 })
 export class MainProductComponent implements OnInit {
 
-  listProduct: Product[];
+  listProduct: Produit[];
   showFormTemplate: boolean;
   buttonValue: string;
-  inputProduct: Product // the parent component will send this input to the child (formProduct)
-  constructor(private productService: ProductService,private router: Router) { }
+  inputProduct: Produit // the parent component will send this input to the child (formProduct)
+  constructor(private productService: ProduitService, private router: Router) { }
 
   ngOnInit(): void {
     this.showFormTemplate = false;
@@ -23,40 +23,40 @@ export class MainProductComponent implements OnInit {
 
   }
 
-  like(product: Product): void{
+  like(product: Produit): void{
     let i = this.listProduct.indexOf(product);
     this.listProduct[i].nbrLike++
     //console.log(this.listProduct)
   }
   //the method save will check if is an update case or adding a new product case
-  save(product: Product): void{
-    let i = this.listProduct.indexOf(product);
-    if(i!= -1){
-      this.listProduct[i]= product
-    }
-    else {
-      this.productService.addProductService(product).subscribe((data)=>{
-        this.listProduct.push(product);
-      });
-
-    this.showFormTemplate = false
-  }}
+  // save(product: Produit): void{
+  //   let i = this.listProduct.indexOf(product);
+  //   if(i!= -1){
+  //     this.listProduct[i]= product
+  //   }
+  //   else {
+  //     this.productService.addProductService(product).subscribe((data)=>{
+  //       this.listProduct.push(product);
+  //     });
+  //
+  //   this.showFormTemplate = false
+  // }}
   showForm(){
     if (this.showFormTemplate ===false){
       this.showFormTemplate = true
       this.buttonValue= "go Back to the List";
-      this.inputProduct = new Product();
+      this.inputProduct = new Produit();
     }
     else {
       this.buttonValue="add new Product";
       this.showFormTemplate = false
     }
   }
-  delete(product:Product): void{
+  delete(product:Produit): void{
     let i = this.listProduct.indexOf(product);
     this.listProduct.splice(i,1);
   }
-  update(product: Product): void{
+  update(product: Produit): void{
     //in order to update a product, the parent component will change the input value
     //and send it to the child component
     this.inputProduct = product;

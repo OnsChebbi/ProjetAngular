@@ -1,8 +1,10 @@
 
 <div class="container mt-5 px-2">
-    <div class="mb-2 d-flex justify-content-between align-items-center">
+    <div class="mb-2">
       <button class="btn btn-success" [routerLink]="['/add-livraison']">Add livraison</button>
+      <button class="btn btn-success">Trier </button>
     </div>
+ 
     <div class="table-responsive">
       <table class="table table-responsive table-striped table-hover table-bordered">
         <thead>
@@ -26,9 +28,11 @@
               <i class="bg-warning">En cours</i> 
             </span>
           </td>
-          <td *ngIf="livraison.status">
-            <i class="bg-success">Delivrée: Succes</i>        
-          </td>
+          <td *ngIf="livraison.status==1">
+            <span>
+              <i class="bg-success">Deliveé</i> 
+            </span>         
+           </td>
           <td><button class="btn btn-danger" (click)="delete(livraison)" >Delete</button></td>
           <td><button class="btn btn-success" (click)="update(livraison)" >Update</button></td>
           <td><a class="btn btn-warning"  >view More</a></td>

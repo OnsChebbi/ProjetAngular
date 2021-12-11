@@ -4,6 +4,7 @@ import { FormLivreurComponent } from './form-livreur/form-livreur.component';
 import { LivreurComponent } from './livreur/livreur.component';
 import { MainLivreurComponent } from './main-livreur/main-livreur.component';
 
+
 const routes: Routes = [
   {path:'add-livreur', component: FormLivreurComponent},
   {path:'retrieve-all-livreurs', component: MainLivreurComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+  ],
   exports: [RouterModule]
 })
 export class LivreurRoutingModule { }

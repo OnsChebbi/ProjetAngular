@@ -29,18 +29,18 @@ export class MainProductComponent implements OnInit {
     //console.log(this.listProduct)
   }
   //the method save will check if is an update case or adding a new product case
-  save(product: Produit): void{
-    let i = this.listProduct.indexOf(product);
-    if(i!= -1){
-      this.listProduct[i]= product
-    }
-    else {
-      this.productService.addProductService(product).subscribe((data)=>{
-        this.listProduct.push(product);
-      });
-
-    this.showFormTemplate = false
-  }}
+  // save(product: Produit): void{
+  //   let i = this.listProduct.indexOf(product);
+  //   if(i!= -1){
+  //     this.listProduct[i]= product
+  //   }
+  //   else {
+  //     this.productService.addProductService(product).subscribe((data)=>{
+  //       this.listProduct.push(product);
+  //     });
+  //
+  //   this.showFormTemplate = false
+  // }}
   showForm(){
     if (this.showFormTemplate ===false){
       this.showFormTemplate = true

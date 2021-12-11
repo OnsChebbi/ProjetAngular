@@ -23,10 +23,10 @@
       <tr *ngFor="let currentLivreur of listLivreur | filter:searchText">
 
         <td>{{currentLivreur.id}}</td>
-        <td>{{currentLivreur.NomLiv}}</td>
-        <td>{{currentLivreur.PrenomLiv}}</td>
-        <td>{{currentLivreur.AdresseLiv}}</td>
-        <td>{{currentLivreur.VilleLiv}}</td>
+        <td>{{currentLivreur.nomLiv}}</td>
+        <td>{{currentLivreur.prenomLiv}}</td>
+        <td>{{currentLivreur.adresseLiv}}</td>
+        <td>{{currentLivreur.villeLiv}}</td>
         <td><button class="btn btn-danger" (click)="delete(currentLivreur.id)">Delete</button></td>
         <td><button class="btn btn-success" (click)="update(currentLivreur)">Update</button></td>
         <td><a class="btn btn-warning" [routerLink]="['/livreur',currentLivreur.id]" >view More</a></td>

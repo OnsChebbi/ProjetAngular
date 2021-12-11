@@ -13,7 +13,6 @@ export class FormLivreurComponent implements OnInit {
   livreur: Livreur[];
   lvr: Livreur;
   status:boolean;
-  searchText:any;
   constructor(private livreurService : LivreurService,private router: Router) { }
 
   ngOnInit(): void {

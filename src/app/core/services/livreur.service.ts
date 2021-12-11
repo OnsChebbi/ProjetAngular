@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Livreur } from '../model/livreur';
 import { environment } from '../../../environments/environment';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -9,6 +9,12 @@ import { throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class LivreurService {
+  httpOptions = {
+    headers: new HttpHeaders({
+         'Content-Type': 'application/json',
+         'Access-Control-Allow-Origin':'*',
+   })
+ }
   url=environment.url+"livreur/";
   constructor(private http: HttpClient) { }
   currentLivreur:Livreur;

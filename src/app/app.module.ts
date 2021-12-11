@@ -19,12 +19,9 @@ import { LivreurComponent } from './app-livreur/livreur/livreur.component';
 import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
 import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.component';
-import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
 import { AppLivraisonRoutingModule } from './app-livraison/app-livraison-routing.module';
-import { AppFactureModule } from './app-facture/app-facture.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { AppCartModule } from './app-cart/app-cart.module';
-import { PanierModule } from './app-panier/panier.module';
+
 import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
 
 
@@ -49,8 +46,7 @@ import { AppFactureModule } from './app-facture/app-facture.module';
     LivreurComponent,
     MainLivreurComponent,
     FormLivreurComponent,
-    MainLivraisonComponent ,
-    FormLivraisonComponent
+    MainLivraisonComponent 
   
   
 

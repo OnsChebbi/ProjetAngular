@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Livreur } from 'src/app/core/model/livreur';
 import { LivreurService } from 'src/app/core/services/livreur.service';
@@ -32,14 +32,7 @@ export class LivreurComponent implements OnInit {
     this.loadLivraison()
 
   }
-  ngAfterViewInit()
-  {
-    this.map= new google.maps.Map(this.mapElement.nativeElement,
-    {
-      center: {lat:36.8992921 ,lng:10.1915561},
-      zoom:14,
-    });
-  }
+  
   
   return(){
     this.router.navigate(['/livreur']);
@@ -57,5 +50,5 @@ export class LivreurComponent implements OnInit {
     )
   }
 }
-}
+
 

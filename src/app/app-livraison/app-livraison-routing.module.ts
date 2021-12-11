@@ -17,6 +17,9 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
    
 ],
   exports: [RouterModule]

@@ -11,7 +11,7 @@
           <div class="row justify-content-between text-left">
             <div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">Id Stock<span class="text-danger"> *</span></label>
-              <input type="number" name="number"  id="fname" class="form-control" [(ngModel)]="stock.idStock" required  #fn="ngModel">
+              <input type="number" name="number"  id="fname" class="form-control" [(ngModel)]="stock.id" required  #fn="ngModel">
               <div class="alert alert-danger" *ngIf="fn.invalid && fn.touched">
                 <div *ngIf="fn.hasError('required')"> id Stock is a required field</div>
            
@@ -43,6 +43,8 @@
                
               </div>
             </div>
+
+            
            
           </div>
 
@@ -59,9 +61,16 @@
               <label class="form-control-label px-3">Logo URL</label>
               <input type="text" id="picture" name="picture" [(ngModel)]="stock.logo">
             </div>
-           
+            <div class="form-group col-6 flex-column d-flex">
+              <label class="form-control-label px-3">Date:<span class="text-danger"> *</span></label>
+  
+                      <input type="date" id="dateS" name="trip-start"
+                             [(ngModel)]="stock.date"
+                          
+                             min="2020-01-01" max="2030-12-31">
+                             </div>
           </div>
-
+          
           
           
           <div class="row justify-content-end">

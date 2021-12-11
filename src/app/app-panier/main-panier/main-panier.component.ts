@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Panier } from 'src/app/core/model/Panier';
 import { PanierService } from 'src/app/core/services/panier.service';
+import swal from "sweetalert";
 
 @Component({
   selector: 'app-main-panier',
@@ -22,21 +23,46 @@ export class MainPanierComponent implements OnInit {
     )
   }
 
-  deletePanier(panier : Panier): void{
+  // deletePanier(panier : Panier): void{
     
     
-    console.log(panier);
-    console.log(this.listPanier);
     
+  //   this.servicePanier.deletePanierService(panier.idPanier);
+  //   let i = this.listPanier.indexOf(panier);
+  //   this.servicePanier.deletePanierService(panier.idPanier).subscribe(
+  //     ()=>this.listPanier.splice(i,1)
+  //     )
     
-    this.servicePanier.deletePanierService(panier.idPanier);
+  // }
+
+  deletePanier(panier:Panier){
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this cart!",
+      icon: "warning",
+      buttons: ["Cancel","Confirm"],
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+
+        if (willDelete) {
+          this.servicePanier.deletePanierService(panier.idPanier);
     let i = this.listPanier.indexOf(panier);
-    console.log(i);
     this.servicePanier.deletePanierService(panier.idPanier).subscribe(
       ()=>this.listPanier.splice(i,1)
       )
     
-  }
+          swal("Product has been deleted!", {
+            icon: "success",
+          });
+        } /*else {
+          swal("Product  is safe!");
+        }*/
+      });
+    }
+
+
+
 
   detailPanier(panier:Panier):void{
     console.log(panier.u);

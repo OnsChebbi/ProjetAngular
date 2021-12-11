@@ -20,9 +20,11 @@ import { AppStockRoutingModule } from './app-stock/app-stock-routing.module';
 import { MainStockComponent } from './app-stock/main-stock/main-stock.component';
 import { AppLivraisonRoutingModule } from './app-livraison/app-livraison-routing.module';
 import { PanierRoutingModule } from './app-panier/panier-routing.module';
+import { CartRoutingModule } from './app-cart/app-cart-routing.module';
+import { FactureRoutingModule } from './app-facture/app-facture-routing.module';
 
 const routes: Routes = [
-  {path: '',redirectTo:'home', pathMatch: 'full' },
+  {path: '',redirectTo:'Dashbord', pathMatch: 'full' },
   {path: 'provider',component: MainProviderComponent },
   {path: 'stock',component: MainStockComponent },
   {path: '**',component: NotFoundComponent },
@@ -39,7 +41,9 @@ const routes: Routes = [
     LivreurRoutingModule,
     LandingPageRoutingModule,
     AppLivraisonRoutingModule,
-    PanierRoutingModule
+    PanierRoutingModule,
+    CartRoutingModule,
+    FactureRoutingModule
   ],
   exports: [RouterModule]
 })

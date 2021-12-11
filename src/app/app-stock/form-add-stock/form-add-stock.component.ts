@@ -21,8 +21,8 @@ export class FormAddStockComponent implements OnInit {
     }
   }
   save(){
-    if (this.status){
-      this.ServiceStock.updateStockService(this.stock,this.stock.idStock).subscribe(
+   /* if (this.status){
+      this.ServiceStock.updateStockService(this.stock,this.stock.id).subscribe(
         ()=>this.router.navigate(['/show-all-stock'])
       )
     }
@@ -31,7 +31,9 @@ export class FormAddStockComponent implements OnInit {
       this.ServiceStock.addStockService(this.stock).subscribe(
         ()=>this.router.navigate(['/show-all-stock'])
       )
-    }
+    }*/
+    this.ServiceStock.addStockService(this.stock).subscribe(
+      ()=>this.router.navigate(['/show-all-stock']))
   }
   return(){
     this.router.navigate(['/show-all-stock']);

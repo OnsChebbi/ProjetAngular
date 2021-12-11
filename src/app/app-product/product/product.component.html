@@ -3,7 +3,7 @@
 <div class="card" style="width: 18rem;">
   <img src="{{product.picture}}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{product.title}}
+    <h5 class="card-title">{{product.libelle}}
       <div id="action">
         <button class="btn btn-outline-danger" (click)="deleteNotif()">
           delete
@@ -18,7 +18,7 @@
     </button>
     &nbsp;
     <button class="btn btn-warning" style="float: right"
-            [disabled]="product.quantity==0">
+            [disabled]="product.s.qte==0">
       Buy Product
     </button>
 

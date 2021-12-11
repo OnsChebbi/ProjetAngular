@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Livraison } from 'src/app/core/model/livraison';
 import { LivraisonService } from 'src/app/core/services/livraison.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form-livraison',

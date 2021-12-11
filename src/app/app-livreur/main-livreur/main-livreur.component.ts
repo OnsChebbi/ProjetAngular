@@ -13,10 +13,6 @@ export class MainLivreurComponent implements OnInit {
   listLivreur: Livreur[];
   currentLivreur: Livreur;
   searchText: any;
-<<<<<<< Updated upstream
-=======
-  filter:any;
->>>>>>> Stashed changes
   constructor(private livreurService: LivreurService,private router: Router) { }
    
 

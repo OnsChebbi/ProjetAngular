@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainLivraisonComponent } from './main-livraison/main-livraison.component';
 import { FormLivraisonComponent } from './form-livraison/form-livraison.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path:'livraison', component: MainLivraisonComponent},
@@ -15,7 +16,9 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes),
     CommonModule,
     BrowserModule,
-    HttpClientModule],
+    HttpClientModule,
+   
+],
   exports: [RouterModule]
 })
 export class AppLivraisonRoutingModule { }

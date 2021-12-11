@@ -37,15 +37,9 @@ url=environment.url+"livraison/";
 
  getListLivraisonService()
  {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
+
   return this.http.get<Livraison>(this.url+"retrieve-all-livraisons", this.httpOptions)
-=======
-  return this.http.get<Livraison>(this.url+"retrieve-all-livraisons")
->>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
-=======
-  return this.http.get<Livraison>(this.url+"retrieve-all-livraisons", this.httpOptions)
->>>>>>> Stashed changes
+
 
 
 }

@@ -9,7 +9,7 @@
       <table class="table table-responsive table-striped table-hover table-bordered">
         <thead>
         <tr class="bg-light">
-          <th scope="col" >id livraison</th>
+          <th scope="col" >Id livraison</th>
           <th scope="col" >Date de livraison</th>
           <th scope="col" >Adresse de livraison</th>
           <th scope="col" >Statut de la livraison</th>
@@ -21,24 +21,35 @@
         <tbody>
         <tr *ngFor="let livraison of Livraison">
           <td>{{livraison.id}}</td>
+<<<<<<< Updated upstream
           <td>{{livraison.date_livraison_date}}</td>
           <td>{{livraison.adresse_lvr}}</td>
+=======
+          <td>{{livraison.dateLivraisonDate}}</td>
+          <td>{{livraison.adresseLvr}}</td>
+>>>>>>> Stashed changes
             <td *ngIf="!livraison.status">
               <span>
               <i class="bg-warning">En cours</i> 
             </span>
           </td>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
           <td *ngIf="livraison.status==1">
             <span>
               <i class="bg-success">Deliveé</i> 
             </span>         
            </td>
+<<<<<<< Updated upstream
 =======
           <td *ngIf="livraison.status">
             <i class="bg-success">Delivrée</i>        
           </td>
 >>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
+=======
+>>>>>>> Stashed changes
           <td><button class="btn btn-danger" (click)="delete(livraison)" >Delete</button></td>
           <td><button class="btn btn-success" (click)="update(livraison)" >Update</button></td>
           <td><a class="btn btn-warning"  >view More</a></td>

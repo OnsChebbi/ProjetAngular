@@ -31,7 +31,13 @@ import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livr
 import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
 import { AppLivraisonModule } from './app-livraison/app-livraison.module';
 import { PanierModule } from './app-panier/panier.module';
+<<<<<<< Updated upstream
 >>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
+=======
+import { AppCartModule } from './app-cart/app-cart.module';
+import { AppFactureModule } from './app-facture/app-facture.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+>>>>>>> Stashed changes
 
 
 
@@ -73,12 +79,19 @@ import { PanierModule } from './app-panier/panier.module';
     UserModule,
     LandingPageModule,
     AppLivraisonModule,
+<<<<<<< Updated upstream
    
 <<<<<<< HEAD
 =======
 
     PanierModule
 >>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
+=======
+    PanierModule,
+    AppCartModule ,
+    AppFactureModule,
+   Ng2SearchPipeModule
+>>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]

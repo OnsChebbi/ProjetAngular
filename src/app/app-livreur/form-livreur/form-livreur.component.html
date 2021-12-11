@@ -47,11 +47,15 @@
           </div>
           <div class="form-group col-sm-6 flex-column d-flex">
             <label class="form-control-label px-3">Mot de passe<span class="text-danger"> *</span></label>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
             <input type="password" name="mdp"  id="mdp" class="form-control" [(ngModel)]="lvr.mdpLiv" required minlength="3"  #mdp="ngModel">
 =======
             <input type="text" name="mdp"  id="mdp" class="form-control" [(ngModel)]="lvr.mdpLiv" required minlength="3"  #mdp="ngModel">
 >>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
+=======
+            <input type="password" name="mdp"  id="mdp" class="form-control" [(ngModel)]="lvr.mdpLiv" required minlength="3"  #mdp="ngModel">
+>>>>>>> Stashed changes
             <div class="alert alert-danger" *ngIf="mdp.invalid && mdp.touched">
               <div *ngIf="mdp.hasError('required')"> Ville is a required field</div>
               <div *ngIf="mdp.hasError('minlength')"> Ville minlength ies equal to 3</div>

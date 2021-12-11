@@ -13,10 +13,14 @@ export class LivreurComponent implements OnInit, AfterViewInit {
 
   constructor(private livreurService: LivreurService,private router: Router,private activated:ActivatedRoute) { }
   livreur:Livreur;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
    Livraison: any= [];
 =======
 >>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
+=======
+   Livraison: any= [];
+>>>>>>> Stashed changes
   map:any;
   @ViewChild('mapElement') mapElement:any;
 
@@ -32,11 +36,15 @@ export class LivreurComponent implements OnInit, AfterViewInit {
         )
              }
     )
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     this.loadLivraison()
 =======
 
 >>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
+=======
+    this.loadLivraison()
+>>>>>>> Stashed changes
   }
   ngAfterViewInit()
   {
@@ -49,7 +57,10 @@ export class LivreurComponent implements OnInit, AfterViewInit {
   return(){
     this.router.navigate(['/livreur']);
   }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 
   loadLivraison()
   {
@@ -62,7 +73,10 @@ export class LivreurComponent implements OnInit, AfterViewInit {
         }
     )
   }
+<<<<<<< Updated upstream
 }
 =======
+=======
+>>>>>>> Stashed changes
 }
 >>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7

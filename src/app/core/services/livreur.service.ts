@@ -29,24 +29,34 @@ export class LivreurService {
     getListLivreurService(){
     return this.http.get<Livreur[]>(this.url+"retrieve-all-livreurs")
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     getListLivraisonById(id:any){
       return this.http.get<Livreur[]>(this.url+"retrieve-livraisons/"+id)
       }
       //aaa
+<<<<<<< Updated upstream
 =======
 
 >>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
+=======
+>>>>>>> Stashed changes
     getById(id:any){
       return this.http.get<Livreur>(this.url+"retrieve-livreur/"+id)
     }
 
     addListLivreurService(livreur: Livreur){
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       return this.http.post(this.url+"add-livreur", livreur,this.httpOptions)
 =======
       return this.http.post(this.url+"add-livreur", livreur)
 >>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
+=======
+      return this.http.post(this.url+"add-livreur", livreur,this.httpOptions)
+>>>>>>> Stashed changes
     }
 
     deleteListLivreurService(id:number){

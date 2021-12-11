@@ -16,7 +16,7 @@
           <th scope="col" >Quantité Min</th>
           
           <th scope="col"  >Libelle</th>
-        
+          <th scope="col"  >Date</th>
         
           <th scope="col" >delete</th>
           <th scope="col"  >Update</th>
@@ -32,7 +32,7 @@
           <td>{{stock.qteMin}}</td>
       
           <td>{{stock.libelleStock}}</td>
-         
+          <td>{{stock.date}}</td>
           
           <td><button class="btn btn-danger" (click)="delete(stock)">Delete</button></td>
           <td><button class="btn btn-success" (click)="update(stock)">Update</button></td>

@@ -7,6 +7,6 @@ export class Stock {
 	qteMin: number;
 	libelleStock: string ;
     logo: string;
-    pE:Produit[];
+    date:Date;
     
     }

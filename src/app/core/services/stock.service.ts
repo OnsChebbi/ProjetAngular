@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import {
   HttpClient
 } from '@angular/common/http';
+import { NumberSymbol } from '@angular/common';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,32 +12,32 @@ import {
   providedIn: 'root'
 })
 export class StockService {
-  url=environment.url+"stocks/"
+  url="http://localhost:8090/SpringMVC/stock/"
   constructor(private http: HttpClient) { }
   CurrentStock:Stock;
   status:boolean=false;
   MODProvider(stock : Stock){
     this.CurrentStock=stock;
   }
-  UpdateProvider(stock :Stock){
+  UpdateStock(stock :Stock){
     this.CurrentStock=stock;
     this.status=true;
   }
   getListStockService(){
-    return this.http.get<Stock[]>(this.url)
+    return this.http.get<Stock[]>(this.url+'retrieve-all-stocks')
     
     }
     addStockService(stock: Stock){
-      return this.http.post(this.url, stock)
+      return this.http.post(`${this.url}add-stock`, stock)
     }
     deleteStockService(id:string){
-      return this.http.delete(this.url+id)
+      return this.http.delete(this.url+'remove-stock/'+id)
     }
     updateStockService(stock: Stock, id:string){
-      return this.http.put(this.url+id,stock)
+      return this.http.put(this.url+'modify-stock/'+id,stock)
     }
     getStockServiceById(id:any){
-      return this.http.get<Stock>(this.url+id);
+      return this.http.get<Stock>(this.url+'retrieve-stock/'+id);
     }
 
 }

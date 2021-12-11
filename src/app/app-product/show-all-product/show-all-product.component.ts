@@ -56,7 +56,7 @@ export class ShowAllProductComponent implements OnInit {
   }
   update(product:Produit){
     this.productService.UpdateProduct(product);
-    this.router.navigate(['/add-product']);
+    this.router.navigate(['/modifier_produit']);
   }
 
 
@@ -66,10 +66,18 @@ export class ShowAllProductComponent implements OnInit {
   }
 /////////
   save(product: Produit): void{
+
+
     let i = this.listProduct.indexOf(product);
-    if(i!= -1){
-      this.listProduct[i]= product
+    if(i!=-1){
+      //update Provider
+      this.productService.updateProductService(product.id,product).subscribe(
+        () => {this.listProduct[i]=product
+          this.showFormTemplate =false}
+      )
     }
+
+
     else {
       this.productService.addProductService(product).subscribe((data)=>{
         this.listProduct.push(product);

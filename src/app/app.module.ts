@@ -29,6 +29,13 @@ import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livr
 
 
 
+import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
+import { AppLivraisonModule } from './app-livraison/app-livraison.module';
+import { PanierModule } from './app-panier/panier.module';
+import { AppCartModule } from './app-cart/app-cart.module';
+import { AppFactureModule } from './app-facture/app-facture.module';
+
+
 
 @NgModule({
   declarations: [
@@ -49,8 +56,7 @@ import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livr
 
 
   ],
-  imports: [   
-  
+  imports: [
     CommonModule,
     BrowserModule,
     AppRoutingModule,

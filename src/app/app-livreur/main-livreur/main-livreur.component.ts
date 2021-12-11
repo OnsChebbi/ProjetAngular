@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Livreur } from 'src/app/core/model/livreur';
 import { LivreurService } from 'src/app/core/services/livreur.service';
@@ -12,7 +12,6 @@ export class MainLivreurComponent implements OnInit {
 
   listLivreur: Livreur[];
   currentLivreur: Livreur;
-  searchText: any;
   constructor(private livreurService: LivreurService,private router: Router) { }
    
 
@@ -25,9 +24,13 @@ export class MainLivreurComponent implements OnInit {
   }
  
   delete(id: number){
+/* 
+  let i = this.listLivreur.indexOf(livreur);
+    console.log("the i is:"+i) */
+  
    this.livreurService.deleteListLivreurService(id).subscribe()
    console.log(id)    
-   return this.livreurService.getListLivreurService().subscribe()
+   this.load()
 
    }
   load()
@@ -41,9 +44,8 @@ export class MainLivreurComponent implements OnInit {
   }
 
   ShowMore(livreur:Livreur){
-    this.livreurService.getById(livreur.id).subscribe(
+    this.livreurService.getLivreurServiceById(livreur.id).subscribe(
       (livreurD:Livreur)=>[this.livreurService.MODLivreur(livreurD),this.router.navigate(['/livreur/:id'])]
     )
-
   }
 }

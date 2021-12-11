@@ -1,5 +1,3 @@
-import { Livraison } from "./livraison";
-
 export class Livreur{
     id: any;
     nomLiv: string;

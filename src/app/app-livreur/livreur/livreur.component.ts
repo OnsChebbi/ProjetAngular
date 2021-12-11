@@ -1,15 +1,14 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Livraison } from 'src/app/core/model/livraison';
 import { Livreur } from 'src/app/core/model/livreur';
 import { LivreurService } from 'src/app/core/services/livreur.service';
-declare const google: any;
+
 @Component({
   selector: 'app-livreur',
   templateUrl: './livreur.component.html',
   styleUrls: ['./livreur.component.css']
 })
-export class LivreurComponent implements OnInit, AfterViewInit {
+export class LivreurComponent implements OnInit {
 
   constructor(private livreurService: LivreurService,private router: Router,private activated:ActivatedRoute) { }
   livreur:Livreur;
@@ -19,17 +18,15 @@ export class LivreurComponent implements OnInit, AfterViewInit {
   map:any;
   @ViewChild('mapElement') mapElement:any;
 
-
   ngOnInit(): void {
     this.livreur=this.livreurService.currentLivreur;
-    console.log(this.livreur)
     this.activated.paramMap.subscribe(
       (params)=> {
         let id = params.get('id');
-        this.livreurService.getById(id).subscribe(
+        this.livreurService.getLivreurServiceById(id).subscribe(
           (data) => this.livreur = data
         )
-             }
+      }
     )
 
     this.loadLivraison()
@@ -43,6 +40,7 @@ export class LivreurComponent implements OnInit, AfterViewInit {
       zoom:14,
     });
   }
+  
   return(){
     this.router.navigate(['/livreur']);
   }
@@ -59,3 +57,5 @@ export class LivreurComponent implements OnInit, AfterViewInit {
     )
   }
 }
+}
+

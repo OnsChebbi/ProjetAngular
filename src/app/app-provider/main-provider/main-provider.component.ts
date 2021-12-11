@@ -29,7 +29,7 @@ export class MainProviderComponent implements OnInit {
  
   update(provider: Provider){
     this.serviceProvider.UpdateProvider(provider);
-    this.router.navigate(['/add-provider']);
+    this.router.navigate(['/update-provider']);
   }
   AddProvider(){
     this.router.navigate(['/add-provider'])

@@ -34,16 +34,16 @@
                                       </figcaption>
                                   </figure>
                               </td>
-                              <td> <select class="form-control">
+                              <!-- <td> <select class="form-control">
                                       <option>1</option>
                                       <option>2</option>
                                       <option>3</option>
                                       <option>4</option>
-                                  </select> </td>
+                                  </select> </td> -->
+                              <td> {{df.qte}} </td>
                               <td>
-                                  <div class="price-wrap"> <var class="price">$10.00</var> <small class="text-muted"> $9.20 each </small> </div>
+                                  <div class="price-wrap"> <var class="price">${{df.prixTotal}}</var> <small class="text-muted"> ${{df.produit.prixUnitaire}} each </small> </div>
                               </td>
-                              <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light" data-abc="true"> Remove</a> </td>
                           </tr>
                           
                           

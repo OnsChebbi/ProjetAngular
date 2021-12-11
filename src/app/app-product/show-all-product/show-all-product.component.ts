@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {ProductService} from "../../core/services/product.service";
 import {Product} from "../../core/model/product";
 import {Provider} from "../../core/model/provider";
+import swal from "sweetalert";
 
 @Component({
   selector: 'app-show-all-product',
@@ -21,12 +22,31 @@ export class ShowAllProductComponent implements OnInit {
       (data:Product[])=>this.listProduct=data
     )
   }
+
   delete(product:Product){
-    let i =this.listProduct.indexOf(product);
-    this.productService.deleteProductService(product.id).subscribe(
-      ()=>this.listProduct.splice(i,1)
-    )
-  }
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this product!",
+      icon: "warning",
+      buttons: ["Cancel","Confirm"],
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+
+        if (willDelete) {
+          let i =this.listProduct.indexOf(product);
+          this.productService.deleteProductService(product.id).subscribe(
+            ()=>this.listProduct.splice(i,1)
+          );
+          swal("Product has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Product  is safe!");
+        }
+      });
+    }
+
   ShowMore(product:Product){
     this.productService.getProductServiceById(product.id).subscribe(
       (productF:Product)=>[this.productService.modProduct(productF),this.router.navigate(['/show-product'])]

@@ -21,18 +21,24 @@
         <tbody>
         <tr *ngFor="let livraison of Livraison">
           <td>{{livraison.id}}</td>
-          <td>{{livraison.dateLivraisonDate}}</td>
-          <td>{{livraison.adresseLvr}}</td>
+          <td>{{livraison.date_livraison_date}}</td>
+          <td>{{livraison.adresse_lvr}}</td>
             <td *ngIf="!livraison.status">
               <span>
               <i class="bg-warning">En cours</i> 
             </span>
           </td>
+<<<<<<< HEAD
           <td *ngIf="livraison.status==1">
             <span>
               <i class="bg-success">Deliveé</i> 
             </span>         
            </td>
+=======
+          <td *ngIf="livraison.status">
+            <i class="bg-success">Delivrée</i>        
+          </td>
+>>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
           <td><button class="btn btn-danger" (click)="delete(livraison)" >Delete</button></td>
           <td><button class="btn btn-success" (click)="update(livraison)" >Update</button></td>
           <td><a class="btn btn-warning"  >view More</a></td>

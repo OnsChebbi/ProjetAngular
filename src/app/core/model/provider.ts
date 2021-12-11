@@ -5,5 +5,5 @@ export class Provider {
     code: string;
     libelle: string;
     adresse: string;
-   logo  :string;
+   logo: string;
     }

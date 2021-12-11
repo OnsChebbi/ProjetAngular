@@ -29,16 +29,24 @@ export class LivreurService {
     getListLivreurService(){
     return this.http.get<Livreur[]>(this.url+"retrieve-all-livreurs")
     }
+<<<<<<< HEAD
     getListLivraisonById(id:any){
       return this.http.get<Livreur[]>(this.url+"retrieve-livraisons/"+id)
       }
       //aaa
+=======
+
+>>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
     getById(id:any){
       return this.http.get<Livreur>(this.url+"retrieve-livreur/"+id)
     }
 
     addListLivreurService(livreur: Livreur){
+<<<<<<< HEAD
       return this.http.post(this.url+"add-livreur", livreur,this.httpOptions)
+=======
+      return this.http.post(this.url+"add-livreur", livreur)
+>>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
     }
 
     deleteListLivreurService(id:number){

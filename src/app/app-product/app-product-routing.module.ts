@@ -11,6 +11,7 @@ const routes: Routes = [
   {path:'add-product', component: FormProductComponent},
   {path:'product/:id', component: ShowOneProductComponent},
   {path: 'productUser' , component: MainProductComponent},
+  {path:'modifier_produit',component: FormProductComponent}
 
 
 ];

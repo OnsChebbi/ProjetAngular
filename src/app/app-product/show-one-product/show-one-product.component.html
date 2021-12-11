@@ -10,9 +10,9 @@
             <div class="col-sm-4 bg-c-lite-green user-profile">
               <div class="card-block text-center text-white">
                 <div class="m-b-25"> <img src="{{product.picture}}" width="40%" class="img-radius" alt="User-Profile-Image"> </div>
-                <h6 class="f-w-600">{{product.libelle}}</h6>
-              <!--  <p>{{product.quantite}}</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
-              --></div>
+                <h6 class="f-w-600">{{product.title}}</h6>
+                <p>{{product.quantity}}</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+              </div>
             </div>
             <div class="col-sm-8">
               <div class="card-block">
@@ -20,15 +20,11 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <p class="m-b-10 f-w-600">Category</p>
-                    <h6 class="text-muted f-w-400">{{product.detailproduit}}</h6>
+                    <h6 class="text-muted f-w-400">{{product.category}}</h6>
                   </div>
                   <div class="col-sm-6">
                     <p class="m-b-10 f-w-600">Price</p>
-                    <h6 class="text-muted f-w-400">{{product.prixUnitaire}}</h6>
-                  </div>
-                  <div class="col-sm-6">
-                    <p class="m-b-10 f-w-600">Description</p>
-                    <h6 class="text-muted f-w-400">{{product.description}}</h6>
+                    <h6 class="text-muted f-w-400">{{product.price}}</h6>
                   </div>
                 </div>
               </div>

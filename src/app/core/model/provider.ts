@@ -1,5 +1,5 @@
 export class Provider {
-    id:any;
+    idProvider: string;
     name: string;
     email: string;
     code: string;

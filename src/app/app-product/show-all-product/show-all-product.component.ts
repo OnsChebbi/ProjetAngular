@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {User} from "../../core/model/user";
 import {UserService} from "../../core/services/user.service";
 import {Router} from "@angular/router";
-import {ProduitService} from "../../core/services/produit.service";
-import {Produit} from "../../core/model/produit";
+import {ProductService} from "../../core/services/product.service";
+import {Product} from "../../core/model/product";
 import {Provider} from "../../core/model/provider";
 import swal from "sweetalert";
 
@@ -13,19 +13,17 @@ import swal from "sweetalert";
   styleUrls: ['./show-all-product.component.css']
 })
 export class ShowAllProductComponent implements OnInit {
-  buttonValue: string;
-  inputProduct: Produit;
-  listProduct: Produit[];
-  showFormTemplate: boolean;
-  constructor(private productService: ProduitService, private router: Router) { }
+
+  listProduct: Product[];
+  constructor(private productService: ProductService,private router: Router) { }
 
   ngOnInit(): void {
     this.productService.getListProductService().subscribe(
-      (data:Produit[])=>this.listProduct=data
+      (data:Product[])=>this.listProduct=data
     )
   }
 
-  delete(product:Produit){
+  delete(product:Product){
     swal({
       title: "Are you sure?",
       text: "Once deleted, you will not be able to recover this product!",
@@ -49,12 +47,12 @@ export class ShowAllProductComponent implements OnInit {
       });
     }
 
-  ShowMore(product:Produit){
+  ShowMore(product:Product){
     this.productService.getProductServiceById(product.id).subscribe(
-      (productF:Produit)=>[this.productService.modProduct(productF),this.router.navigate(['/show-product'])]
+      (productF:Product)=>[this.productService.modProduct(productF),this.router.navigate(['/show-product'])]
     )
   }
-  update(product:Produit){
+  update(product:Product){
     this.productService.UpdateProduct(product);
     this.router.navigate(['/add-product']);
   }
@@ -65,18 +63,6 @@ export class ShowAllProductComponent implements OnInit {
     this.router.navigate(['/add-product']);
   }
 /////////
-  save(product: Produit): void{
-    let i = this.listProduct.indexOf(product);
-    if(i!= -1){
-      this.listProduct[i]= product
-    }
-    else {
-      this.productService.addProductService(product).subscribe((data)=>{
-        this.listProduct.push(product);
-      });
-
-      this.showFormTemplate = false
-    }}
 
 
 }

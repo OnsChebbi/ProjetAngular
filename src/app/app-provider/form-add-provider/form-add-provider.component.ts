@@ -21,8 +21,8 @@ export class FormAddProviderComponent implements OnInit {
     }
   }
   save(){
-   /* if (this.status){
-      this.ServiceProvider.updateProviderService(this.provider,this.provider.id).subscribe(
+    if (this.status){
+      this.ServiceProvider.updateProviderService(this.provider,this.provider.idProvider).subscribe(
         ()=>this.router.navigate(['/show-all-provider'])
       )
     }
@@ -31,9 +31,7 @@ export class FormAddProviderComponent implements OnInit {
       this.ServiceProvider.addProviderService(this.provider).subscribe(
         ()=>this.router.navigate(['/show-all-provider'])
       )
-    }*/
-    this.ServiceProvider.addProviderService(this.provider).subscribe(
-      ()=>this.router.navigate(['/show-all-provider']))
+    }
   }
   return(){
     this.router.navigate(['/show-all-provider']);

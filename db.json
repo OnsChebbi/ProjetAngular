@@ -39,62 +39,40 @@
       "nbrLike": 0,
       "id": 20,
       "category": "Vestimentaire"
-    },
-    {
-      "title": "ons mozza",
-      "picture": "assets/femme.jpeg",
-      "quantity": 7,
-      "price": 22,
-      "description": "jkhgfg",
-      "id": 22
-    },
-    {
-      "title": "aaaaaaaaaaaa",
-      "picture": "assets/femme.jpeg",
-      "quantity": 1,
-      "price": 12,
-      "description": "nhjhbhbu",
-      "id": 24,
-      "category": "Alimentaire"
-    },
-    {
-      "title": "hiba",
-      "picture": "assets/pc-gamer-rayzen-5.jpg",
-      "quantity": 8,
-      "price": 123,
-      "category": "Electromenager",
-      "description": "aaaaaaaaaaaaaa",
-      "nbrLike": 0,
-      "id": 25
     }
   ],
   "provider": [
     {
-      "id": "1",
-      "name": "Dell",
+      "idProvider": "1",
+      "nom": "Dell",
       "code": "F-1970",
       "libelle": "PC",
       "adresse": "Kef",
-      "logo": "/assets/dell.png",
-      "email": "dell@gmail.com"
+      "logo": "/assets/dell.png"
     },
     {
-      "id": "2",
+      "idProvider": "2",
       "code": "F-1978",
-      "name": "Samsung",
+      "nom": "Samsung",
       "libelle": "TV",
       "adresse": "Ariana",
-      "logo": "/assets/samsung.png",
-      "email": "samsung@gmail.com"
+      "logo": "/assets/samsung.png"
     },
     {
-      "id": "3",
+      "idProvider": "3",
       "code": "F-1985",
-      "name": "Sotufab",
-      "libelle": "ons",
+      "nom": "Sotufab",
+      "libelle": "Table",
       "adresse": "Monastir",
-      "logo": "/assets/sotufab.png",
-      "email": "sotufab@gmail.com"
+      "logo": "/assets/sotufab.png"
+    },
+    {
+      "idProvider": "4",
+      "code": "F-1948",
+      "nom": "Iphone",
+      "libelle": "Telephone",
+      "adresse": "Sokra",
+      "logo": "/assets/iphone.jpg"
     }
   ],
   "users": [
@@ -194,36 +172,28 @@
   ],
   "Stocks": [
     {
-      "id": "1",
-      "name": "Zara",
-      "qte": 10,
-      "qteMin": 5,
+      "idStock": "1",
+      "Name": "Zara",
+      "qte": "15",
+      "qteMin": "5",
       "libelleStock": "Robe",
       "logo": "/assets/zara.jpg"
     },
     {
-      "id": "2",
-      "name": "Sephora",
-      "qte": 45,
-      "qteMin": 10,
+      "idStock": "2",
+      "Name": "Sephora",
+      "qte": "45",
+      "qteMin": "10",
       "libelleStock": "rouge à levre",
       "logo": "/assets/sephora.jpg"
     },
     {
-      "id": "3",
-      "name": "J'adore",
-      "qte": 25,
-      "qteMin": 5,
+      "idStock": "3",
+      "Name": "J'adore",
+      "qte": "25",
+      "qteMin": "5",
       "libelleStock": "parfum",
       "logo": "/assets/jadore.png"
-    },
-    {
-      "id": 4,
-      "name": "Guess",
-      "qte": 10,
-      "qteMin": 2,
-      "libelleStock": "ceinture",
-      "logo": "assets/guess.jpg"
     }
   ],
   "livraison": [

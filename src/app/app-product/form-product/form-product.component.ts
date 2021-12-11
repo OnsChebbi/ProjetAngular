@@ -36,6 +36,7 @@ export class FormProductComponent implements OnInit {
   }
   save(){
     if (this.status){
+      
       this.productService.updateProductService(this.product.id,this.product).subscribe(
         ()=>this.router.navigate(['/product'])
       )

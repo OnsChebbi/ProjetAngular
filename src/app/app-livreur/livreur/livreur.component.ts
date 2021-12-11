@@ -13,10 +13,7 @@ export class LivreurComponent implements OnInit, AfterViewInit {
 
   constructor(private livreurService: LivreurService,private router: Router,private activated:ActivatedRoute) { }
   livreur:Livreur;
-<<<<<<< HEAD
    Livraison: any= [];
-=======
->>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
   map:any;
   @ViewChild('mapElement') mapElement:any;
 
@@ -32,11 +29,7 @@ export class LivreurComponent implements OnInit, AfterViewInit {
         )
              }
     )
-<<<<<<< HEAD
     this.loadLivraison()
-=======
-
->>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7
   }
   ngAfterViewInit()
   {
@@ -49,7 +42,6 @@ export class LivreurComponent implements OnInit, AfterViewInit {
   return(){
     this.router.navigate(['/livreur']);
   }
-<<<<<<< HEAD
 
   loadLivraison()
   {
@@ -63,6 +55,3 @@ export class LivreurComponent implements OnInit, AfterViewInit {
     )
   }
 }
-=======
-}
->>>>>>> a4c8080d7533e3db9c7d4355157913b8745fb1d7

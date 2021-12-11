@@ -1,0 +1,43 @@
+<!--<p>test</p>
+<div *ngFor="let user of listOfUsers">
+  <p>{{user.role}}</p>
+</div>-->
+
+<div class="table-responsive" *ngIf="listOfUsers.length!=0">
+  <h2 class="text-center text-gray">{{role}}</h2>
+  <table class="table table-responsive  table-hover ">
+    <thead>
+    <tr class="bg-light">
+      <th scope="col" style="width:5%;">picture</th>
+      <th scope="col" >id</th>
+      <th scope="col" >First Name</th>
+      <th scope="col" >Last Name</th>
+      <th scope="col" >Birthdate</th>
+      <th scope="col" >Category</th>
+      <th scope="col"  >Job</th>
+      <th scope="col"  *ngIf="role=='Simple Users'">Status</th>
+      <th scope="col" >delete</th>
+      <th scope="col"  >Update</th>
+      <th scope="col"  >view more</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of listOfUsers">
+      <td><img class="img-fluid" src="{{user.picture}}" alt="pdp"></td>
+      <td>{{user.idUser}}</td>
+      <td>{{user.nom}}</td>
+      <td>{{user.prenom}}</td>
+      <td>{{user.dateNaissance}}</td>
+      <td>{{user.categorieUser}}</td>
+      <td>{{user.profession}}</td>
+      <td *ngIf="role=='Simple Users'">
+        <button class="btn btn-primary" *ngIf="user.role[0].role!='BLOCKED'" (click)="Block_UnBlock(user,'BLOCKED')"><i class="bi bi-unlock-fill"></i> Block</button>
+        <button class="btn  bg-orange" *ngIf="user.role[0].role=='BLOCKED'" (click)="Block_UnBlock(user,'SIMPLE')"><i class="bi bi-lock-fill"></i> UnBlock</button>
+      </td>
+      <td><button class="btn btn-danger" (click)="delete(user)">Delete</button></td>
+      <td><button class="btn btn-success" [routerLink]="['/update-user',user.idUser]">Update</button></td>
+      <td><a class="btn btn-warning" [routerLink]="['/user',user.idUser]" >view More</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

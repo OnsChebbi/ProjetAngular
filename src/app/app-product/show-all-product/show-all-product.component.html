@@ -2,16 +2,19 @@
   <div class="mb-2 d-flex justify-content-between align-items-center">
     <button class="btn btn-success" (click)="addProduct()">Add Product</button>
   </div>
+
   <div class="table-responsive" >
     <table class="table table-responsive table-striped table-hover table-bordered" >
       <thead>
       <tr class="bg-light">
         <th scope="col" width="5%">picture</th>
         <th scope="col" >id</th>
-        <th scope="col" >Tittle</th>
+        <th scope="col" >libelle</th>
+        <th scope="col">code</th>
         <th scope="col" >Description</th>
-        <th scope="col" >Quantity</th>
-        <th scope="col" >Price</th>
+
+        <!--<th scope="col" >Quantity</th>-->
+        <th scope="col" >Prix</th>
 
         <th scope="col"  >Category</th>
         <th scope="col"  >nbrLike</th>
@@ -26,11 +29,12 @@
       <tr *ngFor="let product of listProduct">
         <td><img class="img-fluid" src="{{product.picture}}"></td>
         <td>{{product.id}}</td>
-        <td>{{product.title}}</td>
+        <td>{{product.libelle}}</td>
+        <td>{{product.code}}</td>
         <td>{{product.description}}</td>
-        <td>{{product.quantity}}</td>
-        <td>{{product.price}}</td>
-        <td>{{product.category}}</td>
+       <!-- <td>{{product.s.qte}}</td>-->
+        <td>{{product.prixUnitaire}}</td>
+        <td>{{product.detailproduit.CategorieProduit}}</td>
         <td>{{product.nbrLike}}</td>
         <td><button class="btn btn-danger" (click)="delete(product)">Delete</button></td>
         <td><button class="btn btn-success" (click)="update(product)">Update</button></td>

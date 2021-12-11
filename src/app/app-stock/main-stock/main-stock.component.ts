@@ -22,19 +22,19 @@ export class MainStockComponent implements OnInit {
   }
   delete(stock: Stock): void{
     let i = this.ListStock.indexOf(stock);
-    this.serviceStock.deleteStockService(stock.id).subscribe(
+    this.serviceStock.deleteStockService(stock.idStock).subscribe(
       ( )=>this.ListStock.splice(i,1)
     )
   }
   update(stock: Stock){
-    this.serviceStock.UpdateStock(stock);
+    this.serviceStock.UpdateProvider(stock);
     this.router.navigate(['/add-stock']);
   }
-  AddStock(){
+  AddProvider(){
     this.router.navigate(['/add-stock'])
   }
   ShowMore(stock: Stock){
-    this.serviceStock.getStockServiceById(stock.id).subscribe(
+    this.serviceStock.getStockServiceById(stock.idStock).subscribe(
       (stockF:Stock)=>[this.serviceStock.MODProvider(stockF),this.router.navigate(['/show-stock'])]
     )
   }
@@ -44,7 +44,7 @@ export class MainStockComponent implements OnInit {
     let i = this.ListStock.indexOf(stock);
     if(i!=-1){
       //update Stock
-      this.serviceStock.updateStockService(stock,stock.id).subscribe(
+      this.serviceStock.updateStockService(stock,stock.idStock).subscribe(
       () => {this.ListStock[i]=stock
         this.showFormTemplate =false}
       )

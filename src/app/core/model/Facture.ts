@@ -1,11 +1,7 @@
-import { User } from "./user";
-
 export class Facture{
-    idFacture: number;
+    idFacture: string;
     montantRemise: number;
     montantFacture: number;
     dateFacture: Date;
     active : boolean;
-    user:User;
-    detailFacture:any
 }

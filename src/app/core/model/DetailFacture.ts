@@ -1,6 +1,6 @@
 import { Facture } from "./Facture";
 import { Panier } from "./Panier";
-import { Product } from "./produit";
+import { Product } from "./product";
 
 export class DetailFacture{
     idDetailFacture: string;

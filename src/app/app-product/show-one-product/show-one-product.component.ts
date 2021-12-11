@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from "../../core/services/user.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {User} from "../../core/model/user";
-import {ProduitService} from "../../core/services/produit.service";
-import {Produit} from "../../core/model/produit";
+import {ProductService} from "../../core/services/product.service";
+import {Product} from "../../core/model/product";
 
 @Component({
   selector: 'app-show-one-product',
@@ -11,8 +11,8 @@ import {Produit} from "../../core/model/produit";
   styleUrls: ['./show-one-product.component.css']
 })
 export class ShowOneProductComponent implements OnInit {
-  constructor(private productService:ProduitService, private router: Router, private activated:ActivatedRoute) { }
-  product:Produit;
+  constructor(private productService:ProductService,private router: Router,private activated:ActivatedRoute) { }
+  product:Product;
   ngOnInit(): void {
     this.product=this.productService.currentProduct;
     this.activated.paramMap.subscribe(
@@ -25,7 +25,7 @@ export class ShowOneProductComponent implements OnInit {
     )
   }
   fixProduct(){
-    this.router.navigate(['/product']);
+    this.router.navigate(['/show-all-product']);
   }
 
 }

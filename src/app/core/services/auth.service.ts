@@ -15,22 +15,18 @@ export class AuthService {
   public curUser= new BehaviorSubject(this.user);
   sharedUser = this.curUser.asObservable();
   constructor(private http: HttpClient, private userService: UserService, private router: Router) { }
-  list:User[];
 
   login(email:string, password: string){
     //I will check the local list however in the real case we need to communicate to a backend
     // that will check if the user is valid or not
-    this.userService.getListUserService().subscribe(
-      (data:User[])=>this.list=data
-    )
-    this.list.forEach((user)=>{
+    this.userService.list.forEach((user)=>{
       if((user.email===email) && (user.password===password)){
         this.validUser= true;
-        localStorage.setItem('loggedUserid',String(user.idUser));
-        localStorage.setItem('loggedUserFirstName',user.nom);
+        localStorage.setItem('loggedUserid',String(user.id));
+        localStorage.setItem('loggedUserFirstName',user.firstName);
         //console.log(localStorage.getItem('loggedUserFirstName'))
-        localStorage.setItem('loggedUserLastName',user.prenom);
-        //localStorage.setItem('loggedUserPicture',user.picture);
+        localStorage.setItem('loggedUserLastName',user.lastName);
+        localStorage.setItem('loggedUserPicture',user.picture);
         localStorage.setItem('isloggedIn',String(this.validUser));
         this.curUser.next(user);
       }
@@ -50,7 +46,7 @@ export class AuthService {
   //this method will check if the connected user is an admin or not in order to active
   //the backOffice app
   isAdmin(user:User):boolean{
-    if(user.categorieUser== 'Super_Admin')
+    if(user.accountCategory== 'Admin')
       return  true;
     else return false;
   }
@@ -60,9 +56,9 @@ export class AuthService {
   checkConnectedUser(){
     let user = new User();
     if(localStorage.getItem('loggedUserid')!=null && localStorage.getItem('loggedUserid')!=''){
-      user.nom=String(localStorage.getItem('loggedUserFirstName'));
-      user.prenom=String(localStorage.getItem('loggedUserLastName'));
-      //user.picture=String(localStorage.getItem('loggedUserPicture'));
+      user.firstName=String(localStorage.getItem('loggedUserFirstName'));
+      user.lastName=String(localStorage.getItem('loggedUserLastName'));
+      user.picture=String(localStorage.getItem('loggedUserPicture'));
      return user;
     }
     return null;

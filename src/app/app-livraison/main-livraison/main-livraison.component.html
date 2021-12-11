@@ -7,7 +7,7 @@
       <table class="table table-responsive table-striped table-hover table-bordered">
         <thead>
         <tr class="bg-light">
-          <th scope="col" >id livraison</th>
+          <th scope="col" >Id livraison</th>
           <th scope="col" >Date de livraison</th>
           <th scope="col" >Adresse de livraison</th>
           <th scope="col" >Statut de la livraison</th>
@@ -21,7 +21,17 @@
           <td>{{livraison.id}}</td>
           <td>{{livraison.dateLivraisonDate}}</td>
           <td>{{livraison.adresseLvr}}</td>
-          <td>{{livraison.status}}</td>
+            <td *ngIf="!livraison.status">
+              <span>
+              <i class="bg-warning">En cours</i> 
+            </span>
+          </td>
+          <td *ngIf="livraison.status==1">
+            <span>
+              <i class="bg-success">Deliveé</i> 
+            </span>         
+           </td>
+
           <td><button class="btn btn-danger" (click)="delete(livraison)" >Delete</button></td>
           <td><button class="btn btn-success" (click)="update(livraison)" >Update</button></td>
           <td><a class="btn btn-warning"  >view More</a></td>

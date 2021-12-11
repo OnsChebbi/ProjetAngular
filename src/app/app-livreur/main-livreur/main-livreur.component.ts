@@ -12,6 +12,8 @@ export class MainLivreurComponent implements OnInit {
 
   listLivreur: Livreur[];
   currentLivreur: Livreur;
+  searchText:any;
+
   constructor(private livreurService: LivreurService,private router: Router) { }
    
 

@@ -67,6 +67,7 @@ export class ShowAllProductComponent implements OnInit {
 /////////
   save(product: Produit): void{
 
+
     let i = this.listProduct.indexOf(product);
     if(i!=-1){
       //update Provider

@@ -19,7 +19,9 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let currentLivreur of listLivreur">
+
+      <tr *ngFor="let currentLivreur of listLivreur | filter:searchText">
+
         <td>{{currentLivreur.id}}</td>
         <td>{{currentLivreur.NomLiv}}</td>
         <td>{{currentLivreur.PrenomLiv}}</td>

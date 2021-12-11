@@ -9,6 +9,12 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class LivraisonService {
+  httpOptions = {
+    headers: new HttpHeaders({
+         'Content-Type': 'application/json',
+         'Access-Control-Allow-Origin':'*',
+   })
+ }
 url=environment.url+"livraison/";
 
   constructor(private http:HttpClient) {     console.log("dkhalna l service");
@@ -29,19 +35,18 @@ url=environment.url+"livraison/";
     return throwError(errorMessage);
  }
 
- getListLivraisonService(): Observable<Livraison>
+ getListLivraisonService()
  {
-  return this.http.get<Livraison>(this.url)
-  .pipe(
-    retry(1),
-    catchError(this.handleError)
-  );
+
+  return this.http.get<Livraison>(this.url+"retrieve-all-livraisons", this.httpOptions)
+
 
 }
  deleteLivraisonService(id:any)
  {
   return this.http.delete(this.url+id)
  }
+ 
  addLivraisonService(livraison:Livraison)
  {
    return this.http.post(this.url,livraison)

@@ -16,8 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
         BrowserModule,
         CommonModule,
         HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule
     ]
 })
 export class AppLivraisonModule { }

@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AppProductModule} from "./app-product/app-product.module";
 import {AppSharedModule} from "./app-shared/app-shared.module";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { SidenavComponent } from './app-shared/sidenav/sidenav.component';
 import { TopnavComponent } from './app-shared/topnav/topnav.component';
@@ -18,6 +18,12 @@ import { CommonModule } from '@angular/common';
 import { LivreurComponent } from './app-livreur/livreur/livreur.component';
 import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
+import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.component';
+import { AppLivraisonRoutingModule } from './app-livraison/app-livraison-routing.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
+
 
 
 import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
@@ -37,18 +43,11 @@ import { AppFactureModule } from './app-facture/app-facture.module';
     FormAddProviderComponent,
     MainStockComponent,
     FormAddStockComponent,
-
-
     LivreurComponent,
     MainLivreurComponent,
     FormLivreurComponent,
-    MainLivraisonComponent,
+    MainLivraisonComponent 
   
-
-    LivreurComponent,
-    MainLivreurComponent,
-    FormLivreurComponent,
-    MainLivraisonComponent,
   
 
 
@@ -61,12 +60,15 @@ import { AppFactureModule } from './app-facture/app-facture.module';
     AppSharedModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     UserModule,
     LandingPageModule,
-    AppLivraisonModule,
+    AppLivraisonRoutingModule,
     PanierModule,
     AppCartModule ,
-    AppFactureModule 
+    AppFactureModule,
+   Ng2SearchPipeModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

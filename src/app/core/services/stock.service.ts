@@ -28,6 +28,7 @@ export class StockService {
     
     }
     addStockService(stock: Stock){
+
       return this.http.post(this.url+'add-stock', stock)
     }
     deleteStockService(id:string){

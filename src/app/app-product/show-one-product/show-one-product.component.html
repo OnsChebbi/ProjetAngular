@@ -54,6 +54,7 @@
 
         <h1 class="display-5 fw-bolder text-uppercase">{{product.libelle}}</h1>
         <h2 class="display-5">{{product.code}}</h2>
+
         <!--<div class="product-brand">{{product.detailproduit.CategorieProduit}}</div>-->
 
         <div class="fs-5 mb-5">
@@ -64,7 +65,9 @@
           </div>
 
         </div>
+        <p class="text-primary">Like: {{product.nbrLike}}</p>
         <p class="lead">{{product.description}}</p>
+
       <!--  <div class=" aaaa d-flex">
 
           <input class="product-cart-button button button-primary button-large" id="inputQuantity" type="number" value="1" style="max-width: 3rem" />

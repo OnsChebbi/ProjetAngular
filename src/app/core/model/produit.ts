@@ -5,6 +5,7 @@ import {DetailProduit} from "./DetailProduit";
 
 
 
+
 export class Produit{
   id: number;
   libelle: string;

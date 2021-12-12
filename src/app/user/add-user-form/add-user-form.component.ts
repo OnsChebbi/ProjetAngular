@@ -11,7 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class AddUserFormComponent implements OnInit {
   user:User=new User();
   status_add:string="";
-
+  test_email:string="";
   constructor(private userService : UserService,private router: Router,private activated:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -37,5 +37,17 @@ export class AddUserFormComponent implements OnInit {
   }
   return(){
     this.router.navigate(['/show-all-user']);
+  }
+  TestEmail(email:string){
+    let test:boolean;
+    this.userService.VerifyEmail(email).subscribe(
+      (data:boolean)=>{
+    if (data==true){
+      this.test_email="existe";
+    }else {
+      this.test_email="existe pas";
+    }
+      }
+    )
   }
 }

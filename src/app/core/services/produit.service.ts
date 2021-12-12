@@ -40,8 +40,13 @@ export class ProduitService {
     return this.http.delete(this.url+'remove-produit/'+id);
   }
   getProductServiceById(id:any){
-    return this.http.get<Produit>(this.url+id);
+    return this.http.get<Produit>(this.url+'getProduit/'+id);
   }
+
+
+
+
+
   updateProductService(id:number,product:Produit){
     return this.http.put(this.url+"modifier_produit/"+id,product);
   }

@@ -8,7 +8,7 @@
             <a class="btn btn-light text-black" (click)="return()"><i class="bi bi-arrow-left"></i></a>
           </div>
           <div class="col-8">
-            <h5 class=" mt-3">Updating Admin User informations</h5>
+            <h5 class=" mt-3">Adding An Admin User </h5>
           </div>
         </div>
         <form class="form-card" #f="ngForm">
@@ -39,30 +39,28 @@
                 <div *ngIf="em.hasError('pattern')"> respect this format test@gmail.com</div>
               </div>
             </div>
-            <div class="form-group col-6 flex-column d-flex">
-              <label class="form-control-label px-3">picture </label>
-              <input type="file" id="picture" name="picture" [(ngModel)]="user.picture" >
-            </div>
-            <!--<div class="form-group col-sm-6 flex-column d-flex">
+            <div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">password<span class="text-danger"> *</span></label>
-              <input type="password" id="pass" name="pass" [(ngModel)]="user.password" required  #pw="ngModel">
+              <input type="password" id="pass" name="pass" [(ngModel)]="user.password" required  #pw="ngModel" >
               <div class="alert alert-danger" *ngIf="pw.invalid && pw.touched">
                 <div *ngIf="pw.hasError('required')"> password is a required field</div>
               </div>
             </div>
-          -->
           </div>
-          <!--<div class="row justify-content-between text-left">
-            <div class="form-group col-sm-6 flex-column d-flex">
+          <div class="row justify-content-between text-left">
+            <!--<div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">Job<span class="text-danger"> *</span></label>
-              <input type="text" id="job" name="job" [(ngModel)]="user.profession" required minlength="3"  #jb="ngModel" disabled>
+              <input type="text" id="job" name="job" [(ngModel)]="user.profession" required minlength="3"  #jb="ngModel" >
               <div class="alert alert-danger" *ngIf="jb.invalid && jb.touched">
                 <div *ngIf="jb.hasError('required')"> job title is a required field</div>
                 <div *ngIf="jb.hasError('minlength')"> job title minlength ies equal to 3</div>
               </div>
+            </div>-->
+            <div class="form-group col-6 flex-column d-flex">
+              <label class="form-control-label px-3">picture </label>
+              <input type="file" id="picture" name="picture" [(ngModel)]="user.picture" >
             </div>
-
-          </div>-->
+          </div>
           <div class="row justify-content-between text-left">
             <div class="form-group col-6 flex-column d-flex">
               <label class="form-control-label px-3">Addresse<span class="text-danger">*</span></label>
@@ -89,18 +87,18 @@
               </div>
             </div>
           </div>
-         <!-- <div class="row justify-content-between text-left">
-            <div class="form-group col-12 flex-column d-flex">
-              <label class="form-control-label px-3">Role<span class="text-danger"> *</span></label>
-              &lt;!&ndash;<input type="text" id="role" name="role"  [(ngModel)]="user.role" required  #role="ngModel">&ndash;&gt;
-              <input  type="text" name="role" id="role" required [(ngModel)]="user.role" #role="ngModel">
-              <div class="alert alert-danger" *ngIf="role.invalid && role.touched">
-                <div *ngIf="role.hasError('required')"> Role is a required field</div>
-              </div>
-            </div>
-          </div>-->
+          <!-- <div class="row justify-content-between text-left">
+             <div class="form-group col-12 flex-column d-flex">
+               <label class="form-control-label px-3">Role<span class="text-danger"> *</span></label>
+               &lt;!&ndash;<input type="text" id="role" name="role"  [(ngModel)]="user.role" required  #role="ngModel">&ndash;&gt;
+               <input  type="text" name="role" id="role" required [(ngModel)]="user.role" #role="ngModel">
+               <div class="alert alert-danger" *ngIf="role.invalid && role.touched">
+                 <div *ngIf="role.hasError('required')"> Role is a required field</div>
+               </div>
+             </div>
+           </div>-->
           <div class="row justify-content-end">
-            <div class="form-group col-auto"> <button type="submit" class="btn-primary" (click)="save()"  [disabled]="f.invalid">Update</button> </div>
+            <div class="form-group col-auto"> <button type="submit" class="btn-primary" (click)="save()"  [disabled]="f.invalid">Register</button> </div>
           </div>
         </form>
       </div>

@@ -96,6 +96,9 @@ export class UserService {
   addUserService(user:User){
     return this.http.post(this.url+'add-user',user);
   }
+  addAdminUserService(user:User){
+    return this.http.post(this.url+'add-admin-user',user);
+  }
   deleteUserService(id:number){
     return this.http.delete(this.url+'remove-user/'+id);
   }

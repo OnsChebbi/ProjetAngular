@@ -10,10 +10,10 @@ import {Role} from "../../core/model/Role";
   styleUrls: ['./show-all.component.css']
 })
 export class ShowAllComponent implements OnInit {
-  list: User[];
-  new_list:User[];
+  list: User[]=[];
+  new_list:User[]=[];
   role:string='All Users';
-  roleUsers:Role[];
+  roleUsers:Role[]=[];
   constructor(private userService: UserService,private router: Router) { }
   ngOnInit(): void {
     this.userService.getListUserService().subscribe(

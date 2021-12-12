@@ -20,7 +20,9 @@ export class MainProductComponent implements OnInit {
     this.showFormTemplate = false;
     this.buttonValue="add new Product";
 
-
+    this.productService.getListProductService().subscribe(
+      (data:Produit[])=>this.listProduct=data
+    )
   }
 
   like(product: Produit): void{

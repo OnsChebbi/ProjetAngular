@@ -12,6 +12,7 @@ export class MainStockComponent implements OnInit {
   ListStock: Stock[];
   showFormTemplate: boolean;
   msg: string;
+  searchText:any;
   constructor(private serviceStock: StockService,private router: Router) { }
 
   ngOnInit(): void {

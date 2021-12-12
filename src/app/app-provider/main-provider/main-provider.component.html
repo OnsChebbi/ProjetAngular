@@ -1,8 +1,20 @@
 
 <div class="container mt-5 px-2">
-  <div class="mb-2 d-flex justify-content-between align-items-center">
+  <div class="mb-2  col-md-2 d-flex justify-content-between align-items-center">
     <button class="btn btn-success" (click)="AddProvider()">Add Provider</button>
-  </div>
+
+  
+
+    </div>
+    <div class="search-provider col-md-4 ">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" 
+      autocomplete="off" placeholder="&#61442;  Taper pour chercher..">
+    </div>
+
+  
+    <br>
+
+
   <div class="table-responsive">
     <table class="table table-responsive table-striped table-hover table-bordered">
       <thead>
@@ -21,7 +33,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let provider of ListProvider">
+      <tr *ngFor="let provider of ListProvider |filter:searchText">
         <td><img class="img-fluid" src="{{provider.logo}}"></td>
         <td>{{provider.id}}</td>
         <td>{{provider.name}}</td>

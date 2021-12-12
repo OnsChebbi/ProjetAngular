@@ -29,10 +29,10 @@ export class ProviderService {
     deleteProviderService(id:string){
       return this.http.delete(this.url+'remove-fournisseur/'+id)
     }
-    updateProviderService(provider:Provider, id:string){
+    updateProviderService(provider:Provider, id:any){
       return this.http.put(this.url+'modify-fournisseur/'+id,provider)
     }
     getProviderServiceById(id:any){
-      return this.http.get<Provider>(this.url+'retrouver-fournisseur-parLibelle/'+id);
+      return this.http.get<Provider>(this.url+'retrieve-fournisseur/'+id);
     }
 }

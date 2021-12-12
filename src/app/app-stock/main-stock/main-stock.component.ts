@@ -35,7 +35,7 @@ export class MainStockComponent implements OnInit {
   }
   ShowMore(stock: Stock){
     this.serviceStock.getStockServiceById(stock.id).subscribe(
-      (stockF:Stock)=>[this.serviceStock.MODProvider(stockF),this.router.navigate(['/show-stock'])]
+      (stockF:Stock)=>[this.serviceStock.MODStock(stockF),this.router.navigate(['/show-stock'])]
     )
   }
 

@@ -7,6 +7,7 @@ import { FormProductComponent } from './form-product/form-product.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ShowAllProductComponent } from './show-all-product/show-all-product.component';
 import { ShowOneProductComponent } from './show-one-product/show-one-product.component';
+import {Ng2SearchPipeModule} from "ng2-search-filter";
 
 @NgModule({
   declarations: [
@@ -16,11 +17,12 @@ import { ShowOneProductComponent } from './show-one-product/show-one-product.com
     ShowAllProductComponent,
     ShowOneProductComponent
   ],
-  imports: [
-    CommonModule,
-    AppProductRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        AppProductRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        Ng2SearchPipeModule
+    ]
 })
 export class AppProductModule { }

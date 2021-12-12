@@ -14,6 +14,7 @@ import swal from "sweetalert";
 })
 export class ShowAllProductComponent implements OnInit {
   buttonValue: string;
+  searchText:any;
   inputProduct: Produit;
   listProduct: Produit[];
   showFormTemplate: boolean;
@@ -85,6 +86,13 @@ export class ShowAllProductComponent implements OnInit {
 
       this.showFormTemplate = false
     }}
+
+
+
+
+
+
+
 
 
 }

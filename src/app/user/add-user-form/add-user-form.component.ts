@@ -39,7 +39,6 @@ export class AddUserFormComponent implements OnInit {
     this.router.navigate(['/show-all-user']);
   }
   TestEmail(email:string){
-    let test:boolean;
     this.userService.VerifyEmail(email).subscribe(
       (data:boolean)=>{
     if (data==true){

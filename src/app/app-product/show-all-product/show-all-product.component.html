@@ -9,8 +9,8 @@
       <tr class="bg-light">
         <th scope="col" width="5%">picture</th>
         <th scope="col" >id</th>
-        <th scope="col" >libelle</th>
-        <th scope="col">code</th>
+        <th scope="col" >code</th>
+        <th scope="col">libelle</th>
         <th scope="col" >Description</th>
 
         <!--<th scope="col" >Quantity</th>-->
@@ -29,8 +29,8 @@
       <tr *ngFor="let product of listProduct">
         <td><img class="img-fluid" src="{{product.picture}}"></td>
         <td>{{product.id}}</td>
-        <td>{{product.libelle}}</td>
         <td>{{product.code}}</td>
+        <td>{{product.libelle}}</td>
         <td>{{product.description}}</td>
        <!-- <td>{{product.s.qte}}</td>-->
         <td>{{product.prixUnitaire}}</td>

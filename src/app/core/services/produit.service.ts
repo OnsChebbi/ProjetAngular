@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../../environments/environment";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Produit} from "../model/produit";
 import {User} from "../model/user";
 import {Provider} from "../model/provider";
@@ -11,7 +11,12 @@ import {Stock} from "../model/stock";
 })
 export class ProduitService {
   url="http://localhost:8090/SpringMVC/produit/"
-
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin':'*',
+    })
+  }
   currentProduct:Produit;
   status:boolean=false;
   modProduct(product:Produit){
@@ -48,7 +53,7 @@ export class ProduitService {
 
 
   updateProductService(id:number,product:Produit){
-    return this.http.put(this.url+"modifier_produit/"+id,product);
+    return this.http.put(this.url+"modifier_produit/"+id,product,this.httpOptions);
   }
 
 

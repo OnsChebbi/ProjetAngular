@@ -56,7 +56,7 @@ export class ShowAllProductComponent implements OnInit {
   }
   update(product:Produit){
     this.productService.UpdateProduct(product);
-    this.router.navigate(['/modifier_produit']);
+    this.router.navigate(['/add-product']);
   }
 
 

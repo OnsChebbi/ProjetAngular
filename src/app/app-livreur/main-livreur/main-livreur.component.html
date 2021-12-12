@@ -1,8 +1,14 @@
 
 <div class="container mt-5 px-2">
-  <div class="mb-2 d-flex justify-content-between align-items-center">
+  <div class="mb-2">
     <button class="btn btn-success" [routerLink]="['/add-livreur']" >Ajouter livreur</button>
+    <div class="search-livreur">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" 
+      autocomplete="off" placeholder="&#61442;  Taper pour chercher..">
+    </div>
   </div>
+ 
+
   <div class="table-responsive">
     <table class="table table-responsive table-striped table-hover table-bordered">
       <thead>
@@ -11,17 +17,15 @@
           <th scope="col">Identifiant</th>
           <th scope="col">Nom</th>
           <th scope="col">Prénom</th>
-          <th scope="col">Ville</th>
           <th scope="col">Adresse E-mail</th>
+          <th scope="col">Ville</th>
           <th scope="col">delete</th>
           <th scope="col">Update</th>
           <th scope="col">view more</th>
       </tr>
       </thead>
       <tbody>
-
-      <tr *ngFor="let currentLivreur of listLivreur | filter:searchText">
-
+      <tr *ngFor="let currentLivreur of listLivreur| filter:searchText">
         <td>{{currentLivreur.id}}</td>
         <td>{{currentLivreur.nomLiv}}</td>
         <td>{{currentLivreur.prenomLiv}}</td>

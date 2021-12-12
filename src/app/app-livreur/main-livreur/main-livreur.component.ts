@@ -26,10 +26,7 @@ export class MainLivreurComponent implements OnInit {
   }
  
   delete(id: number){
-/* 
-  let i = this.listLivreur.indexOf(livreur);
-    console.log("the i is:"+i) */
-  
+
    this.livreurService.deleteListLivreurService(id).subscribe()
    console.log(id)    
    this.load()

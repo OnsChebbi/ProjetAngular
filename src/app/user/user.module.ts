@@ -7,7 +7,8 @@ import { ShowAllComponent } from './show-all/show-all.component';
 import {BrowserModule} from "@angular/platform-browser";
 import { ShowOneComponent } from './show-one/show-one.component';
 import { ShowComponent } from './show/show.component';
-import { AddAdminFormComponent } from './add-admin-form/add-admin-form.component';
+import { AddUserFormComponent } from './add-user-form/add-user-form.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AddAdminFormComponent } from './add-admin-form/add-admin-form.component
     ShowAllComponent,
     ShowOneComponent,
     ShowComponent,
-    AddAdminFormComponent,
+    AddUserFormComponent,
+    LoginFormComponent,
 
   ],
     imports: [

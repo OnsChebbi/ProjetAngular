@@ -5,26 +5,35 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-admin-form',
-  templateUrl: './add-admin-form.component.html',
-  styleUrls: ['./add-admin-form.component.css']
+  templateUrl: './add-user-form.component.html',
+  styleUrls: ['./add-user-form.component.css']
 })
-export class AddAdminFormComponent implements OnInit {
+export class AddUserFormComponent implements OnInit {
   user:User=new User();
+  status_add:string="";
 
   constructor(private userService : UserService,private router: Router,private activated:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activated.paramMap.subscribe(
+      (params)=> {
+        this.status_add= params.get('add');
+      }
+    )
   }
 
-  save(){
+  save_Admin(){
     this.user.categorieUser='CAT_ADM';
     this.user.profession='PROF_ADM';
     this.userService.addAdminUserService(this.user).subscribe(
       ()=>this.router.navigate(['/show-all-user'])
     )
-    /*this.userService.changeRoleUser(this.user,'ADMIN').subscribe(
-      ()=>this.router.navigate(['/show-all-user'])
-    )*/
+  }
+  save_Simple(){
+    this.user.categorieUser='Ordianire';
+    this.userService.addSimpleUserService(this.user).subscribe(
+      ()=>this.router.navigate(['/Dashbord'])
+    )
   }
   return(){
     this.router.navigate(['/show-all-user']);

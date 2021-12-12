@@ -6,7 +6,7 @@
 <div  *ngIf="listOfUsers.length!=0">
   <div class="row">
   <div class="col-10"><h2 class="text-start text-gray">{{role}}</h2></div>
-    <div class="col-2"><button class="btn btn-info " *ngIf="role=='Admin Users'" [routerLink]="['/add-admin-user']"> Add Admin User</button></div>
+    <div class="col-2"><button class="btn btn-info " *ngIf="role=='Admin Users'" [routerLink]="['/add-user','add-admin']"> Add Admin User</button></div>
   </div>
   <table class="table table-responsive  table-hover ">
     <thead>

@@ -5,10 +5,12 @@
       <div class="card">
         <div class="row">
           <div class="col-2">
-            <a class="btn btn-light text-black" (click)="return()"><i class="bi bi-arrow-left"></i></a>
+            <a class="btn btn-light text-black" [routerLink]="'/Dashbord'"  *ngIf="status_add=='add-simple'"><i class="bi bi-arrow-left"></i></a>
+            <a class="btn btn-light text-black" [routerLink]="'/show-all-user'"  *ngIf="status_add=='add-admin'"><i class="bi bi-arrow-left"></i></a>
           </div>
           <div class="col-8">
-            <h5 class=" mt-3">Adding An Admin User </h5>
+            <h5 class=" mt-3" *ngIf="status_add=='add-admin'">Adding An Admin User </h5>
+            <h5 class=" mt-3" *ngIf="status_add=='add-simple'">Register</h5>
           </div>
         </div>
         <form class="form-card" #f="ngForm">
@@ -48,14 +50,21 @@
             </div>
           </div>
           <div class="row justify-content-between text-left">
-            <!--<div class="form-group col-sm-6 flex-column d-flex">
+            <div class="form-group col-sm-6 flex-column d-flex" *ngIf="status_add=='add-simple'">
               <label class="form-control-label px-3">Job<span class="text-danger"> *</span></label>
-              <input type="text" id="job" name="job" [(ngModel)]="user.profession" required minlength="3"  #jb="ngModel" >
+              <!--<input type="text" id="job" name="job" [(ngModel)]="user.profession" required   #jb="ngModel" >-->
+              <select class="form-select" id="job" name="job" [(ngModel)]="user.profession" required   #jb="ngModel" >
+                <option value="Docteur">Docteur</option>
+                <option value="Ingenieur">Ingenieur</option>
+                <option value="Etudiant">Etudiant</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Cadre">Cadre</option>
+                <option value="Autre">Autre...</option>
+              </select>
               <div class="alert alert-danger" *ngIf="jb.invalid && jb.touched">
                 <div *ngIf="jb.hasError('required')"> job title is a required field</div>
-                <div *ngIf="jb.hasError('minlength')"> job title minlength ies equal to 3</div>
               </div>
-            </div>-->
+            </div>
             <div class="form-group col-6 flex-column d-flex">
               <label class="form-control-label px-3">picture </label>
               <input type="file" id="picture" name="picture" [(ngModel)]="user.picture" >
@@ -98,7 +107,10 @@
              </div>
            </div>-->
           <div class="row justify-content-end">
-            <div class="form-group col-auto"> <button type="submit" class="btn-primary" (click)="save()"  [disabled]="f.invalid">Register</button> </div>
+            <div class="form-group col-auto">
+              <button type="submit" class="btn-primary" (click)="save_Admin()"  [disabled]="f.invalid" *ngIf="status_add=='add-admin'">Register</button>
+              <button type="submit" class="btn-primary" (click)="save_Simple()"  [disabled]="f.invalid" *ngIf="status_add=='add-simple'">Register</button>
+            </div>
           </div>
         </form>
       </div>

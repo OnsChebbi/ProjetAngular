@@ -6,7 +6,7 @@
 <div  *ngIf="listOfUsers.length!=0">
   <div class="row">
   <div class="col-10"><h2 class="text-start text-gray">{{role}}</h2></div>
-    <div class="col-2"><button class="btn btn-info " *ngIf="role=='Admin Users'"> Add Admin User</button></div>
+    <div class="col-2"><button class="btn btn-info " *ngIf="role=='Admin Users'" [routerLink]="['/add-admin-user']"> Add Admin User</button></div>
   </div>
   <table class="table table-responsive  table-hover ">
     <thead>
@@ -42,7 +42,7 @@
         <button class="btn  bg-orange" *ngIf="user.role[0].role=='BLOCKED'" (click)="Block_UnBlock(user,'SIMPLE')"><i class="bi bi-lock-fill"></i> UnBlock</button>
       </td>
       <td><button class="btn btn-danger" (click)="delete(user)">Delete</button></td>
-      <td><button class="btn btn-success" [routerLink]="['/update-user',user.idUser]">Update</button></td>
+      <td><button class="btn btn-success" [routerLink]="['/update-user',user.idUser]" [disabled]="user.role[0].role=='SIMPLE'||user.role[0].role=='BLOCKED'">Update</button></td>
       <td><a class="btn btn-warning" [routerLink]="['/user',user.idUser]" >view More</a></td>
     </tr>
     </tbody>

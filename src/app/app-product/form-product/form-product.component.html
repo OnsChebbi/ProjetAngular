@@ -14,7 +14,7 @@
               <a class="btn btn-light text-black" (click)="return()"><i class="bi bi-arrow-left"></i></a>
             </div>
             <div class="col-8">
-              <h5 class=" mt-3">Updating Product informations</h5>
+              <h5 class=" mt-3"> Product informations</h5>
             </div>
           </div>
           <form id="contact-form" role="form"  #f="ngForm"  >
@@ -23,13 +23,13 @@
                 <div class="col-md-12">
                   <div class="form-group"><label for="code">Code of the Product</label>
                     <input type="text" name="code" id="code" class="form-control"
-                           [(ngModel)]="produit.code" formControlName="code">
+                           [(ngModel)]="produit.code" >
                   </div>
                 </div>
                   <div class="col-md-12">
                     <div class="form-group"><label for="libelle">libelle of the Product</label>
                       <input type="text" name="libelle" id="libelle" class="form-control"
-                             [(ngModel)]="produit.libelle" formControlName="libelle">
+                             [(ngModel)]="produit.libelle" >
                     </div>
                   </div>
                   <div class="col-md-12">
@@ -55,7 +55,7 @@
                           <div *ngIf="nprice.hasError('required')">price required</div>
                         </div>
                       </div>
-                    </div>
+                    </div><!--
                       <div class="col-md-6">
                         <label for=" category">Category of the product</label>
                         <select class="form-select" aria-label="Default select example" id=" category" name="category " #ct="ngModel" [(ngModel)]="produit.detailproduit.CategorieProduit">
@@ -65,10 +65,10 @@
                           <option value="ELECTROMENAGER">Electromenager</option>
                           <option value="QUINCAILLERIE">Quincaillerie</option>
                         </select>
-                      </div>
+                      </div>-->
                     </div>
                       <div class="row">
-                    <div class="col-md-12">
+                    <!--<div class="col-md-12">
                       <div class="form-group">
                         <label for="quantity">Quantity</label>
                         <input type="number" name="quantity" id="quantity" class="form-control"
@@ -78,7 +78,7 @@
                           <div *ngIf="nq.hasError('required')">quantity required</div>
                         </div>
                       </div>
-                    </div>
+                    </div>-->
 
 
 
@@ -94,14 +94,24 @@
                   ></textarea>
                   </div>
                 </div>
-                  <div class="col-md-12">
-                    <label for="dateDerniereModification">Start date:</label>
+              <div class="col-md-12">
+              <div class="form-group col-6 flex-column d-flex">
 
-                    <input type="date" id="start" name="trip-start"
+                    <label class="form-control-label px-3">Start date:<span class="text-danger"> *</span></label>
+
+                    <input type="date" id="dateDerniereModification" name="dateDerniereModification"
                            [(ngModel)]="produit.detailproduit.dateDerniereModification"
                            min="2021-01-01" max="2030-12-31">
+              </div>
+              </div>
 
-                  </div>
+
+
+
+
+
+
+
 
                   <div class="form-group">
                     <label for="pourcentage">Pourcentge Remise:</label>

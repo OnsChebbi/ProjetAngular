@@ -15,7 +15,7 @@ export class Produit{
   prixUnitaire: number;
   picture : string;
   nbrLike: number;
-  //category : Categories;
+  category : string;
   //detailFacture:any[];
   rayon:Rayon;
   s:Stock;

@@ -15,24 +15,41 @@ import {UserService} from "../../core/services/user.service";
 export class FormProductComponent implements OnInit {
   /* @Input() product:Produit;
    @Output() addEvent=new EventEmitter<Produit>();
-   status:boolean;
+
    myForm:FormGroup;*/
-  produit: Produit=new Produit();
+
+  status:boolean;
+  produit:Produit;
   constructor(private productService:ProduitService, private router: Router, private activated:ActivatedRoute) { }
 
 
 
   ngOnInit(): void {
     //this.status=this.userService.status;
-    this.activated.paramMap.subscribe(
+   /* this.activated.paramMap.subscribe(
       (params)=> {
         let id = params.get('id');
         this.productService.getProductServiceById(id).subscribe(
           (data) => this.produit = data
         )
       }
-    )
+    )*/
+
+    this.status=this.productService.status;
+    console.log(this.status)
+    if (this.productService.status){
+      this.produit =  this.productService.currentProduct;
+    }else {
+      this.produit =  new Produit();
+    }
+
+    console.log(this.produit)
   }
+
+
+
+
+
 
 
 

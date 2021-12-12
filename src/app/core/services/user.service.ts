@@ -5,6 +5,7 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {Role} from "../model/Role";
 import {RoleUser} from "../model/UserModels/RoleUser";
 import {UserRole} from "../model/UserRole";
+import {ModelUser} from "../model/UserModels/ModelUser";
 
 @Injectable({
   providedIn: 'root'
@@ -120,6 +121,12 @@ export class UserService {
   }
   VerifyEmail(email:string){
     return this.http.get<boolean>(this.url+'email-exists?email='+email);
+  }
+
+  /*==========================================Authentication========================================*/
+
+  authenticate(modelUser:ModelUser){
+    return this.http.post<User>(this.url+'authenticate-user',modelUser);
   }
 
 /*  updateUserService1(user:UserRole){

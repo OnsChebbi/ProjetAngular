@@ -12,6 +12,7 @@ export class MainProviderComponent implements OnInit {
   ListProvider: Provider[];
   showFormTemplate: boolean;
   msg: string;
+  searchText:any;
   constructor(private serviceProvider: ProviderService,private router: Router) { }
 
   ngOnInit(): void {

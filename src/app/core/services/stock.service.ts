@@ -16,7 +16,7 @@ export class StockService {
   constructor(private http: HttpClient) { }
   CurrentStock:Stock;
   status:boolean=false;
-  MODProvider(stock : Stock){
+  MODStock(stock : Stock){
     this.CurrentStock=stock;
   }
   UpdateStock(stock :Stock){
@@ -34,7 +34,7 @@ export class StockService {
     deleteStockService(id:string){
       return this.http.delete(this.url+'remove-stock/'+id)
     }
-    updateStockService(stock: Stock, id:string){
+    updateStockService(stock: Stock, id:any){
       return this.http.put(this.url+'modify-stock/'+id,stock)
     }
     getStockServiceById(id:any){

@@ -14,7 +14,7 @@
               
               <div class="form-group col-sm-6 flex-column d-flex">
                 <label class="form-control-label px-3">Date de livraison<span class="text-danger"> *</span></label>
-                <input type="date" name="ldate"  id="ldate" class="form-control" [(ngModel)]="livraison.dateLivraisonDate" required minlength="3"  #ld="ngModel">
+                <input type="date" name="ldate" min="2021-01-01" max="2030-12-31" id="ldate" class="form-control" [(ngModel)]="livraison.dateLivraisonDate" required minlength="3"  #ld="ngModel">
                 <div class="alert alert-danger" *ngIf="ld.invalid && ld.touched">
                   <div *ngIf="ld.hasError('required')"> Date is a required field</div>
                 </div>

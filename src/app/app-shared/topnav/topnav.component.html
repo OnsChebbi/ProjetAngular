@@ -20,9 +20,11 @@
           </a>
         </li>
       </ul>
+      <div *ngIf="IsLogedIn=='Notactive'">
       <button class="btn btn-primary" [routerLink]="['/add-user','add-simple']" >Register</button>
       <button class="btn btn-primary" [routerLink]="'/login'">Login</button>
-      <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+      </div>
+      <ul class="navbar-nav align-items-center  ml-auto ml-md-0 " *ngIf="IsLogedIn=='active'">
         <li class="nav-item dropdown">
           <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
@@ -30,7 +32,7 @@
                     <img alt="Image placeholder" src="assets/img/theme/team-4.jpg">
                   </span>
               <div class="media-body  ml-2  d-none d-lg-block">
-                <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                <span class="mb-0 text-sm  font-weight-bold">{{Firstname+' '+LastName}}</span>
               </div>
             </div>
           </a>
@@ -43,7 +45,7 @@
               <span>My profile</span>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#!" class="dropdown-item">
+            <a (click)="Logout()" class="dropdown-item">
               <i class="ni ni-user-run"></i>
               <span>Logout</span>
             </a>

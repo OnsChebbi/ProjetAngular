@@ -40,7 +40,7 @@ export class AuthService {
   logOut(){
       this.validUser= false;
       this.curUser.complete();
-      localStorage.removeItem('loggedUser');
+      localStorage.removeItem('loggedUserid');
       localStorage.removeItem('loggedUserFirstName');
       localStorage.removeItem('loggedUserLastName');
       localStorage.removeItem('loggedUserPicture');

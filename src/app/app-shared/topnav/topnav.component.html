@@ -45,6 +45,16 @@
               <span>My profile</span>
             </a>
             <div class="dropdown-divider"></div>
+            <a [routerLink]="['/update-user',idUser]"  class="dropdown-item">
+              <i class="ni ni-single-02"></i>
+              <span>Upadate My Profile</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a [routerLink]="['/reset-password',idUser]"  class="dropdown-item">
+              <i class="bi bi-shield-lock-fill"></i>
+              <span>Reset password</span>
+            </a>
+            <div class="dropdown-divider"></div>
             <a (click)="Logout()" class="dropdown-item">
               <i class="ni ni-user-run"></i>
               <span>Logout</span>

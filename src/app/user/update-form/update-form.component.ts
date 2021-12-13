@@ -30,7 +30,17 @@ export class UpdateFormComponent implements OnInit {
   }
   save(){
       this.userService.updateUserService(this.user).subscribe(
-        ()=>this.router.navigate(['/show-all-user'])
+        ()=>
+        {
+          if (this.user.idUser==Number(localStorage.getItem('loggedUserid'))){
+            localStorage.setItem('loggedUserFirstName',this.user.nom);
+            localStorage.setItem('loggedUserLastName',this.user.prenom);
+            location.reload();
+            location.assign('/Dashbord');
+          }else {
+            this.router.navigate(['/show-all-user']);
+          }
+        }
       )
     }
 
@@ -46,5 +56,13 @@ export class UpdateFormComponent implements OnInit {
       }
     )
   }}
+
+  return(){
+    if (this.user.idUser==Number(localStorage.getItem('loggedUserid'))){
+      this.router.navigate(['/Dashbord']);
+    }else {
+      this.router.navigate(['/show-all-user']);
+    }
+  }
 
 }

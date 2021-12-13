@@ -5,7 +5,6 @@
       <div class="card">
         <div class="row">
           <div class="col-2">
-            <a class="btn btn-light text-black" [routerLink]="'/Dashbord'"  *ngIf="status_add=='add-simple'"><i class="bi bi-arrow-left"></i></a>
             <a class="btn btn-light text-black" [routerLink]="'/show-all-user'"  *ngIf="status_add=='add-admin'"><i class="bi bi-arrow-left"></i></a>
           </div>
           <div class="col-8">
@@ -37,7 +36,7 @@
               <label class="form-control-label px-3">email<span class="text-danger"> *</span></label>
               <div class="input-group">
               <input type="text" id="email" name="email" [(ngModel)]="user.email"  required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" #em="ngModel">
-              <button class="btn-sm btn-success " (click)="TestEmail(user.email)"><i class="bi bi-check2"></i></button>
+              <button class="btn-sm btn-success " (click)="TestEmail(user.email)" [disabled]="em.invalid" ><i class="bi bi-check2"></i></button>
               </div>
               <div class="alert alert-danger" *ngIf="em.invalid && em.touched">
                 <div *ngIf="em.hasError('required')"> email is a required field</div>

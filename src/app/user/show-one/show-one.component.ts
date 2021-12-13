@@ -23,6 +23,10 @@ export class ShowOneComponent implements OnInit {
     )
   }
   fixUser(){
-    this.router.navigate(['/show-all-user']);
+    if (this.user.idUser==Number(localStorage.getItem('loggedUserid'))){
+      this.router.navigate(['/Dashbord']);
+    }else {
+      this.router.navigate(['/show-all-user']);
+    }
   }
 }

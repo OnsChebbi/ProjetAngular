@@ -22,6 +22,7 @@ export class TopnavComponent implements OnInit {
     }
     else if (this.IsLogedIn!='Notactive'){
       localStorage.setItem('isloggedIn','Notactive');
+      this.IsLogedIn='Notactive';
     }
   }
 

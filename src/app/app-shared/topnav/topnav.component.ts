@@ -12,6 +12,7 @@ export class TopnavComponent implements OnInit {
   LastName:string="";
   IsLogedIn:string="";
   idUser:number=null;
+  role:string="";
   constructor(private router: Router) { }
   ngOnInit(): void {
     this.IsLogedIn=localStorage.getItem('isloggedIn');
@@ -19,6 +20,7 @@ export class TopnavComponent implements OnInit {
       this.Firstname=localStorage.getItem('loggedUserFirstName');
       this.LastName=localStorage.getItem('loggedUserLastName');
       this.idUser=Number(localStorage.getItem('loggedUserid'));
+      this.role=localStorage.getItem('loggedUserRole');
     }
     else if (this.IsLogedIn!='Notactive'){
       localStorage.setItem('isloggedIn','Notactive');

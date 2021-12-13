@@ -21,8 +21,15 @@ export class LoginFormComponent implements OnInit {
   Authenticate(){
     this.userService.authenticate(this.userModel).subscribe(
       (data:User)=>{
-        console.log(this.userModel)
-        console.log(data);
+        this.user=data;
+        localStorage.setItem('loggedUserid',String(this.user.idUser));
+        localStorage.setItem('loggedUserFirstName',this.user.nom);
+        localStorage.setItem('loggedUserLastName',this.user.prenom);
+        localStorage.setItem('loggedUserRole',String(this.user.role[0].role));
+        localStorage.setItem('isloggedIn','active');
+        console.log(localStorage.getItem('loggedUserRole'));
+        location.reload();
+        location.assign('/Dashbord');
       }
     )
   }

@@ -17,19 +17,28 @@
               <h5 class=" mt-3"> Product informations</h5>
             </div>
           </div>
-          <form id="contact-form" role="form"  #f="ngForm"  >
+          <form  id="contact-form" role="form"  #f="ngForm"  >
             <div class="controls">
 
                 <div class="col-md-12">
                   <div class="form-group"><label for="code">Code of the Product</label>
                     <input type="text" name="code" id="code" class="form-control"
-                           [(ngModel)]="produit.code" >
+                           [(ngModel)]="produit.code" required minlength="2"  #fp="ngModel" >
+                    <div class="alert alert-info" *ngIf="fp.invalid && fp.touched">
+                      <div *ngIf="fp.hasError('required')"> Code is a required field</div>
+
+                      <div *ngIf="fp.hasError('minlength')"> Code minlength is equal to 2</div>
+                    </div>
                   </div>
                 </div>
                   <div class="col-md-12">
                     <div class="form-group"><label for="libelle">libelle of the Product</label>
                       <input type="text" name="libelle" id="libelle" class="form-control"
-                             [(ngModel)]="produit.libelle" >
+                             [(ngModel)]="produit.libelle" required minlength="2"  #pb="ngModel" >
+                      <div class="alert alert-info" *ngIf="pb.invalid && pb.touched">
+                        <div *ngIf="pb.hasError('required')"> Libelle is a required field</div>
+                        <div *ngIf="pb.hasError('minlength')"> Libelle minlength ies equal to 2</div>
+                      </div>
                     </div>
                   </div>
                   <div class="col-md-12">
@@ -51,11 +60,24 @@
                       <div class="form-group">  <label for="prixUnitaire">prixUnitaire</label>
                         <input type="number" name="prixUnitaire" id="prixUnitaire" class="form-control"
                                #nprice="ngModel" required  [(ngModel)]="produit.prixUnitaire">
+
                         <div class="alert alert-danger" *ngIf="nprice.touched&&nprice.invalid">
                           <div *ngIf="nprice.hasError('required')">price required</div>
                         </div>
                       </div>
-                    </div><!--
+                    </div>
+                    <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="pourcentageRemise">Pourcentge Remise:</label>
+                      <input type="number" name="pourcentageRemise" id="pourcentageRemise" class="form-control"
+                             #nprice="ngModel" required  [(ngModel)]="produit.pourcentageRemise">
+                      <div class="alert alert-danger" *ngIf="nprice.touched&&nprice.invalid">
+                        <div *ngIf="nprice.hasError('required')">prourcentage required</div>
+                      </div>
+                    </div>
+                    </div>
+
+                    <!--
                       <div class="col-md-6">
                         <label for=" category">Category of the product</label>
                         <select class="form-select" aria-label="Default select example" id=" category" name="category " #ct="ngModel" [(ngModel)]="produit.detailproduit.CategorieProduit">
@@ -89,12 +111,12 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea id="form_description"  input type="text" name="description"  class="form-control"
+                    <textarea id="description"  input type="text" name="description"  class="form-control"
                                                                                                     #nd="ngModel" required minlength="3" [(ngModel)]="produit.description"
                   ></textarea>
                   </div>
                 </div>
-              <div class="col-md-12">
+              <!--<div class="col-md-12">
               <div class="form-group col-6 flex-column d-flex">
 
                     <label class="form-control-label px-3">Start date:<span class="text-danger"> *</span></label>
@@ -103,7 +125,7 @@
                            [(ngModel)]="produit.detailproduit.dateDerniereModification"
                            min="2021-01-01" max="2030-12-31">
               </div>
-              </div>
+              </div>-->
 
 
 
@@ -113,14 +135,7 @@
 
 
 
-                  <div class="form-group">
-                    <label for="pourcentage">Pourcentge Remise:</label>
-                    <input type="number" name="pourcentageRemise" id="pourcentageRemise" class="form-control"
-                           #nprice="ngModel" required  [(ngModel)]="produit.pourcentageRemise">
-                    <div class="alert alert-danger" *ngIf="nprice.touched&&nprice.invalid">
-                      <div *ngIf="nprice.hasError('required')">price required</div>
-                    </div>
-                  </div>
+
                   <br>
                   <br>
                   <button class="btn btn-outline-success " (click)="save()"

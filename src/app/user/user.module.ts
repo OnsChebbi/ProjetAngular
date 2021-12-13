@@ -9,6 +9,7 @@ import { ShowOneComponent } from './show-one/show-one.component';
 import { ShowComponent } from './show/show.component';
 import { AddUserFormComponent } from './add-user-form/add-user-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { ResetPasswordFormComponent } from './reset-password-form/reset-password-form.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
     ShowComponent,
     AddUserFormComponent,
     LoginFormComponent,
+    ResetPasswordFormComponent,
 
   ],
     imports: [

@@ -31,6 +31,7 @@ export class TopnavComponent implements OnInit {
     localStorage.removeItem('loggedUserFirstName');
     localStorage.removeItem('loggedUserLastName');
     localStorage.removeItem('loggedUserRole');
+    localStorage.removeItem('loggedUserEmail');
     localStorage.setItem('isloggedIn','Notactive');
     location.reload();
     location.assign('/login');

@@ -128,6 +128,12 @@ export class UserService {
   authenticate(modelUser:ModelUser){
     return this.http.post<User>(this.url+'authenticate-user',modelUser);
   }
+  verifyPassword(modelUser:ModelUser){
+    return this.http.post<boolean>(this.url+'verify-password-user',modelUser);
+  }
+  resetPassword(modelUser:ModelUser){
+    return this.http.post(this.url+'reset-password-user',modelUser);
+  }
 
 /*  updateUserService1(user:UserRole){
     console.log(user);

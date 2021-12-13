@@ -10,7 +10,6 @@
               <div *ngIf="em.hasError('required')"> email is a required field</div>
               <div *ngIf="em.hasError('pattern')"> respect this format test@gmail.com</div>
             </div>
-            <div class="invalid-feedback">A valid email is required!</div>
           </div>
           <div class="forms-inputs mb-4"> <span>Password</span>
             <input  type="password" class="form-control" id="pass" name="pass" [(ngModel)]="userModel.password" required  #pw="ngModel">

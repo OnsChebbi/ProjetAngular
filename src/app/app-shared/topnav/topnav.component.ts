@@ -20,6 +20,9 @@ export class TopnavComponent implements OnInit {
       this.LastName=localStorage.getItem('loggedUserLastName');
       this.idUser=Number(localStorage.getItem('loggedUserid'));
     }
+    else if (this.IsLogedIn!='Notactive'){
+      localStorage.setItem('isloggedIn','Notactive');
+    }
   }
 
   Logout(){

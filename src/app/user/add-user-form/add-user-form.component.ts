@@ -32,7 +32,7 @@ export class AddUserFormComponent implements OnInit {
   save_Simple(){
     this.user.categorieUser='Ordianire';
     this.userService.addSimpleUserService(this.user).subscribe(
-      ()=>this.router.navigate(['/Dashbord'])
+      ()=>this.router.navigate(['/login'])
     )
   }
   return(){

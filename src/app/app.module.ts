@@ -22,9 +22,9 @@ import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.co
 
 import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
 import { AppLivraisonModule } from './app-livraison/app-livraison.module';
-import { PanierModule } from './app-panier/panier.module';
 import { AppCartModule } from './app-cart/app-cart.module';
 import { AppFactureModule } from './app-facture/app-facture.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -64,9 +64,9 @@ import { AppFactureModule } from './app-facture/app-facture.module';
     UserModule,
     LandingPageModule,
     AppLivraisonModule,
-    PanierModule,
     AppCartModule ,
-    AppFactureModule 
+    AppFactureModule ,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

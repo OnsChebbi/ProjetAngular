@@ -1,8 +1,10 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CartProduct } from 'src/app/core/model/CartProduct';
+import { DetailFacture } from 'src/app/core/model/DetailFacture';
 import { Facture } from 'src/app/core/model/Facture';
 import { CartService } from 'src/app/core/services/cart-service/cart.service';
+import { DetailFactureService } from 'src/app/core/services/detailFacture-service/detail-facture.service';
 import { FactureService } from 'src/app/core/services/facture-service/facture.service';
 
 @Component({
@@ -14,7 +16,7 @@ import { FactureService } from 'src/app/core/services/facture-service/facture.se
 export class CartComponent implements OnInit {
   
 
-  constructor(private cartService:CartService,private factureService:FactureService) { 
+  constructor(private cartService:CartService,private factureService:FactureService, private detailFactureService:DetailFactureService) { 
     
   }
 
@@ -73,19 +75,28 @@ export class CartComponent implements OnInit {
         this.discount=disc;
       
     }
+     id:number;
 
     generateFacture(){
       let date=new Date()
-      /*let f:Facture={
-        montantRemise: 0,
+      let f:Facture={
+       idFacture:null,
+        montantRemise: 1,
         montantFacture: 0,
         dateFacture: date,
         active: true, 
+        user:null,
+        detailFacture:null
       };      
-      console.log(this.cartItems);
-      console.log(f);
-      
-      this.factureService.addFactureService(1,f);
-      */
+       this.factureService.addFactureService(f,1).subscribe(
+        data=>{
+          this.id=data.valueOf()["idFacture"]
+          for(var i=0;i<this.cartItems.length;i++){
+              this.detailFactureService.addDetailFactureService(this.cartItems[i].id,this.id,this.cartItems[i].qte).subscribe(
+                (data)=>this.factureService.setPrixTotalFacture(this.id).subscribe()
+              )
+          }
+       }
+      )
     }
 }

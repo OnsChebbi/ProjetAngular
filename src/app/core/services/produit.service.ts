@@ -19,7 +19,7 @@ export class ProduitService {
     this.currentProduct=produit;
     this.status=true;
   }
-  url=environment.url+"product/";
+  url=environment.url+"produit/";
   constructor(private http:HttpClient) { }
   getListProductService(){
     return this.http.get<Produit[]>(this.url+"retrieve-all-produits");

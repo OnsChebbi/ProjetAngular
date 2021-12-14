@@ -5,10 +5,11 @@ import { ProductDetailTestComponent } from './product-detail-test/product-detail
 import { ProductTestComponent } from './product-test/product-test.component';
 
 const routes: Routes = [
-  {path: 'cart',component:CartComponent},
+
+  /*{path: 'cart',component:CartComponent},
   {path: 'test-products',component:ProductTestComponent},
   {path: 'test-products/:id',component:ProductDetailTestComponent},
-
+*/
 
    
 ];

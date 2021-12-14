@@ -48,6 +48,7 @@ import { ChildLivreurComponent } from './app-livreur/child-livreur/child-livreur
     LivreurComponent,
     MainLivreurComponent,
     FormLivreurComponent,
+
     MainLivraisonComponent,
     AssignLivraisonComponent,
     HiringLivreurComponent,
@@ -71,11 +72,13 @@ import { ChildLivreurComponent } from './app-livreur/child-livreur/child-livreur
 
     AppLivraisonModule,
     AppCartModule ,
+
     AppFactureModule ,
     Ng2SearchPipeModule
     
     
    
+
 
 
   ],

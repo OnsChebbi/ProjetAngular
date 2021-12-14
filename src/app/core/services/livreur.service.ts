@@ -45,9 +45,17 @@ export class LivreurService {
 
 
     }
+    acceptLivreur(livreur:Livreur)
+    {
+      return this.http.put(this.url+"accept-Livreur/", livreur,this.httpOptions)
+    }
 
+    hiredLivreurs()
+    {
+      return this.http.get<Livreur[]>(this.url+"show-hired/")
+    }
     deleteListLivreurService(id:number){
-      return this.http.delete(this.url+id)
+      return this.http.delete(this.url+"remove-livreur/"+id)
     }
    
   // Error handling 
@@ -64,7 +72,7 @@ export class LivreurService {
     return throwError(errorMessage);
  }
     updateListLivreurService(livreur: Livreur){
-      return this.http.put(this.url+livreur.id,livreur)
+      return this.http.put(this.url+"modify-livreur/",livreur)
     }
 
     getLivreurServiceById(id:any){

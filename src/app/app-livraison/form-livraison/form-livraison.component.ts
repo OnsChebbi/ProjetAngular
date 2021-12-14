@@ -14,6 +14,7 @@ export class FormLivraisonComponent implements OnInit {
   livraison: Livraison;
   listLivraison: Livraison[]
   status: boolean
+  id:number
   ngOnInit(): void {
     this.status=this.livraisonService.status;
     if (this.livraisonService.status){
@@ -34,7 +35,7 @@ export class FormLivraisonComponent implements OnInit {
     }
     else {
       this.livraison.status=false;
-      this.livraisonService.addLivraisonService(this.livraison).subscribe(
+      this.livraisonService.addLivraisonService(this.livraison,this.id).subscribe(
         ()=>this.router.navigate(['/livraison'])
       )
     }

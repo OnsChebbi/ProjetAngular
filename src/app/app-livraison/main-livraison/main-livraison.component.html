@@ -1,8 +1,6 @@
 
 <div class="container mt-5 px-2">
   <div class="mb-2">
-    <button class="btn btn-success" [routerLink]="['/add-livraison']">Add livraison</button>
-    <button class="btn btn-info">Trier </button>
   </div>
 
   <div class="table-responsive">
@@ -23,7 +21,7 @@
         <td>{{livraison.id}}</td>
         <td>{{livraison.dateLivraisonDate}}</td>
         <td>{{livraison.adresseLvr}}</td>
-          <td *ngIf="!livraison.status">
+          <td *ngIf="!livraison.status ">
             <span>
             <i class="bg-warning">En cours</i> 
           </span>
@@ -39,6 +37,11 @@
       </tr>
       </tbody>
     </table>
+  </div>
+  <div class="container">
+    <div class="divChart">
+    <canvas id="myChart" width="100px" height="100vh">
+    </canvas>
   </div>
 
 </div>

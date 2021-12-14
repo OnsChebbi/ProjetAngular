@@ -46,9 +46,9 @@ import { AppFactureModule } from './app-facture/app-facture.module';
     LivreurComponent,
     MainLivreurComponent,
     FormLivreurComponent,
-    MainLivraisonComponent 
-  
-  
+    MainLivraisonComponent
+
+
 
 
   ],
@@ -68,7 +68,6 @@ import { AppFactureModule } from './app-facture/app-facture.module';
     AppCartModule ,
     AppFactureModule,
    Ng2SearchPipeModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

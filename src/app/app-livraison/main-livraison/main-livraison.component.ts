@@ -24,6 +24,7 @@ export class MainLivraisonComponent implements OnInit {
   undelivered: number;
   sum: number;
   Livraison: any = [];
+  searchText:any;
   http: HttpClient;
   y: Subscription
   i: number

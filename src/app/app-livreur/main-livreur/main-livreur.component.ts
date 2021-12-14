@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Livreur } from 'src/app/core/model/livreur';
 import { LivreurService } from 'src/app/core/services/livreur.service';
+import swal from "sweetalert";
 
 @Component({
   selector: 'app-main-livreur',
@@ -12,6 +13,8 @@ export class MainLivreurComponent implements OnInit {
 
   listLivreur: Livreur[];
   currentLivreur: Livreur;
+  searchText:any;
+
   constructor(private livreurService: LivreurService,private router: Router) { }
    
 
@@ -23,15 +26,33 @@ export class MainLivreurComponent implements OnInit {
     console.log(this.listLivreur)
   }
  
-  delete(id: number){
-/* 
-  let i = this.listLivreur.indexOf(livreur);
-    console.log("the i is:"+i) */
-  
-   this.livreurService.deleteListLivreurService(id).subscribe()
-   console.log(id)    
-   this.load()
+  delete(livreur: Livreur){
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this product!",
+      icon: "warning",
+      buttons: ["Cancel","Confirm"],
+      dangerMode: true,
+    })
+      .then((willDelete) => {
 
+        if (willDelete) {
+          //this.livreurService.deleteListLivreurService(livreur.id);
+          let i =this.listLivreur.indexOf(livreur)
+          console.log(i);
+          
+          this.livreurService.deleteListLivreurService(livreur.id).subscribe(
+            ()=>this.listLivreur.splice(i,1)
+          )
+          this.ngOnInit()
+          swal("Product has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Product  is safe!");
+        }
+      });
+ 
    }
   load()
   {

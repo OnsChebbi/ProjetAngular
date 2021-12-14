@@ -14,6 +14,7 @@ import swal from "sweetalert";
 })
 export class ShowAllProductComponent implements OnInit {
   buttonValue: string;
+  searchText:any;
   inputProduct: Produit;
   listProduct: Produit[];
   showFormTemplate: boolean;
@@ -26,6 +27,7 @@ export class ShowAllProductComponent implements OnInit {
   }
 
   delete(product:Produit){
+
     swal({
       title: "Are you sure?",
       text: "Once deleted, you will not be able to recover this product!",
@@ -36,7 +38,9 @@ export class ShowAllProductComponent implements OnInit {
       .then((willDelete) => {
 
         if (willDelete) {
-          let i =this.listProduct.indexOf(product);
+          this.productService.deleteProductService(product.id);
+            let i =this.listProduct.indexOf(product);
+          console.log(product.id)
           this.productService.deleteProductService(product.id).subscribe(
             ()=>this.listProduct.splice(i,1)
           );
@@ -66,10 +70,18 @@ export class ShowAllProductComponent implements OnInit {
   }
 /////////
   save(product: Produit): void{
+
+
     let i = this.listProduct.indexOf(product);
-    if(i!= -1){
-      this.listProduct[i]= product
+    if(i!=-1){
+      //update Provider
+      this.productService.updateProductService(product.id,product).subscribe(
+        () => {this.listProduct[i]=product
+          this.showFormTemplate =false}
+      )
     }
+
+
     else {
       this.productService.addProductService(product).subscribe((data)=>{
         this.listProduct.push(product);
@@ -77,6 +89,13 @@ export class ShowAllProductComponent implements OnInit {
 
       this.showFormTemplate = false
     }}
+
+
+
+
+
+
+
 
 
 }

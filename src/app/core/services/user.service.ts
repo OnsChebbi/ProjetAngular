@@ -5,6 +5,7 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {Role} from "../model/Role";
 import {RoleUser} from "../model/UserModels/RoleUser";
 import {UserRole} from "../model/UserRole";
+import {ModelUser} from "../model/UserModels/ModelUser";
 
 @Injectable({
   providedIn: 'root'
@@ -96,6 +97,12 @@ export class UserService {
   addUserService(user:User){
     return this.http.post(this.url+'add-user',user);
   }
+  addAdminUserService(user:User){
+    return this.http.post(this.url+'add-admin-user',user);
+  }
+  addSimpleUserService(user:User){
+    return this.http.post(this.url+'add-simple-user',user);
+  }
   deleteUserService(id:number){
     return this.http.delete(this.url+'remove-user/'+id);
   }
@@ -106,12 +113,26 @@ export class UserService {
     console.log(user);
     return this.http.put(this.url+"modify-user",user);
   }
-
   changeRoleUser(user:User,role:string){
     let roleUser=new RoleUser();
     roleUser.Role=role;
     roleUser.idUser=user.idUser;
     return this.http.post(this.url+"change-role-user",roleUser);
+  }
+  VerifyEmail(email:string){
+    return this.http.get<boolean>(this.url+'email-exists?email='+email);
+  }
+
+  /*==========================================Authentication========================================*/
+
+  authenticate(modelUser:ModelUser){
+    return this.http.post<User>(this.url+'authenticate-user',modelUser);
+  }
+  verifyPassword(modelUser:ModelUser){
+    return this.http.post<boolean>(this.url+'verify-password-user',modelUser);
+  }
+  resetPassword(modelUser:ModelUser){
+    return this.http.post(this.url+'reset-password-user',modelUser);
   }
 
 /*  updateUserService1(user:UserRole){

@@ -11,6 +11,8 @@ import {Router} from "@angular/router";
 export class MainProductComponent implements OnInit {
 
   listProduct: Produit[];
+  p:Produit;
+  liked:boolean=false;
   showFormTemplate: boolean;
   buttonValue: string;
   inputProduct: Produit // the parent component will send this input to the child (formProduct)
@@ -18,29 +20,51 @@ export class MainProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.showFormTemplate = false;
-    this.buttonValue="add new Product";
+    this.buttonValue = "add new Product";
+
+    /* this.productService.getListProductService().subscribe(
+       (data:Produit[])=>this.listProduct=data
+     )*/
+    this.productService.getListProductService().subscribe(
+      (data: Produit[]) => this.listProduct = data
+    )
 
 
   }
-
   like(product: Produit): void{
-    let i = this.listProduct.indexOf(product);
+
+    /*let i = this.listProduct.indexOf(product);
     this.listProduct[i].nbrLike++
-    //console.log(this.listProduct)
-  }
-  //the method save will check if is an update case or adding a new product case
-  save(product: Produit): void{
+    *///console.log(this.listProduct)
     let i = this.listProduct.indexOf(product);
-    if(i!= -1){
-      this.listProduct[i]= product
+    this.productService.getProductServiceLiked(this.listProduct[i].id).subscribe(
+      (data: Produit) => this.listProduct[i] = data
+    )
+    if(this.liked) {
+      this.liked = false;
+      this.listProduct[i].nbrLike--
+
     }
     else {
-      this.productService.addProductService(product).subscribe((data)=>{
-        this.listProduct.push(product);
-      });
+      this.liked = true
+      this.listProduct[i].nbrLike++
+    }
+    console.log(this.liked)
+  }
 
-    this.showFormTemplate = false
-  }}
+  //the method save will check if is an update case or adding a new product case
+  // save(product: Produit): void{
+  //   let i = this.listProduct.indexOf(product);
+  //   if(i!= -1){
+  //     this.listProduct[i]= product
+  //   }
+  //   else {
+  //     this.productService.addProductService(product).subscribe((data)=>{
+  //       this.listProduct.push(product);
+  //     });
+  //
+  //   this.showFormTemplate = false
+  // }}
   showForm(){
     if (this.showFormTemplate ===false){
       this.showFormTemplate = true

@@ -6,12 +6,15 @@ import {FormProductComponent} from "./form-product/form-product.component";
 import {ShowAllProductComponent} from "./show-all-product/show-all-product.component";
 import {ShowOneComponent} from "../user/show-one/show-one.component";
 import {ShowOneProductComponent} from "./show-one-product/show-one-product.component";
+import {ProductComponent} from "./product/product.component";
 const routes: Routes = [
+
   {path: 'product', component: ShowAllProductComponent},
   {path:'add-product', component: FormProductComponent},
   {path:'product/:id', component: ShowOneProductComponent},
   {path: 'productUser' , component: MainProductComponent},
-
+  {path:'modifier_produit',component: FormProductComponent},
+  {path:'produit',component: ProductComponent}
 
 ];
 

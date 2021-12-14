@@ -9,6 +9,8 @@ import { ShowOneProviderComponent } from './show-one-provider/show-one-provider.
     {path:'show-all-provider', component: MainProviderComponent},
     {path:'show-provider', component: ShowOneProviderComponent},
     {path:'add-provider', component:FormAddProviderComponent},
+    {path:'update-provider', component:FormAddProviderComponent},
+    
     {path:'provider/:id', component: ShowOneProviderComponent},
   
   

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Livreur } from '../model/livreur';
 import { environment } from '../../../environments/environment';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -9,6 +9,12 @@ import { throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class LivreurService {
+  httpOptions = {
+    headers: new HttpHeaders({
+         'Content-Type': 'application/json',
+         'Access-Control-Allow-Origin':'*',
+   })
+ }
   url=environment.url+"livreur/";
   constructor(private http: HttpClient) { }
   currentLivreur:Livreur;
@@ -20,20 +26,36 @@ export class LivreurService {
     this.currentLivreur=livreur;
     this.status=true;
   }
-    getListLivreurService(){
-    return this.http.get<Livreur[]>(this.url)
+     getListLivreurService(){
+    return this.http.get<Livreur[]>(this.url+"retrieve-all-livreurs")
     }
 
-    getById(idLiv:number){
-      return this.http.get<Livreur>(`${this.url}/${idLiv}`)
+
+    getListLivraisonById(id:any){
+      return this.http.get<Livreur[]>(this.url+"retrieve-livraisons/"+id)
+      }
+      //aaa
+    getById(id:any){
+      return this.http.get<Livreur>(this.url+"retrieve-livreur/"+id)
     }
 
     addListLivreurService(livreur: Livreur){
-      return this.http.post(this.url, livreur)
+
+      return this.http.post(this.url+"add-livreur", livreur,this.httpOptions)
+
+
+    }
+    acceptLivreur(livreur:Livreur)
+    {
+      return this.http.put(this.url+"accept-Livreur/", livreur,this.httpOptions)
     }
 
+    hiredLivreurs()
+    {
+      return this.http.get<Livreur[]>(this.url+"show-hired/")
+    }
     deleteListLivreurService(id:number){
-      return this.http.delete(this.url+id)
+      return this.http.delete(this.url+"remove-livreur/"+id)
     }
    
   // Error handling 
@@ -50,7 +72,7 @@ export class LivreurService {
     return throwError(errorMessage);
  }
     updateListLivreurService(livreur: Livreur){
-      return this.http.put(this.url+livreur.id,livreur)
+      return this.http.put(this.url+"modify-livreur/",livreur)
     }
 
     getLivreurServiceById(id:any){

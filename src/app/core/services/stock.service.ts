@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Stock } from '../model/stock';
 import { environment } from 'src/environments/environment';
+import {Produit} from "../../core/model/produit";
 import {
   HttpClient
 } from '@angular/common/http';
@@ -16,7 +17,7 @@ export class StockService {
   constructor(private http: HttpClient) { }
   CurrentStock:Stock;
   status:boolean=false;
-  MODProvider(stock : Stock){
+  MODStock(stock : Stock){
     this.CurrentStock=stock;
   }
   UpdateStock(stock :Stock){
@@ -28,16 +29,20 @@ export class StockService {
     
     }
     addStockService(stock: Stock){
+
       return this.http.post(this.url+'add-stock', stock)
     }
     deleteStockService(id:string){
       return this.http.delete(this.url+'remove-stock/'+id)
     }
-    updateStockService(stock: Stock, id:string){
+    updateStockService(stock: Stock, id:any){
       return this.http.put(this.url+'modify-stock/'+id,stock)
     }
     getStockServiceById(id:any){
-      return this.http.get<Stock>(this.url+id);
+      return this.http.get<Stock>(this.url+'retrieve-stock/'+id);
+    }
+    getListPrduitServiceById(id:any){
+      return this.http.get<Produit[]>(this.url+'stat-stock/'+id);
     }
 
 }

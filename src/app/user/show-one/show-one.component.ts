@@ -11,8 +11,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class ShowOneComponent implements OnInit {
   constructor(private userService: UserService,private router: Router,private activated:ActivatedRoute) { }
   user:User=new User();
+  role:string="";
   ngOnInit(): void {
     //this.user=this.userService.CurrentUser;
+    this.role=localStorage.getItem('loggedUserRole');
     this.activated.paramMap.subscribe(
       (params)=> {
         let id = params.get('id');
@@ -23,6 +25,10 @@ export class ShowOneComponent implements OnInit {
     )
   }
   fixUser(){
-    this.router.navigate(['/show-all-user']);
+    if (this.user.idUser==Number(localStorage.getItem('loggedUserid'))){
+      this.router.navigate(['/Dashbord']);
+    }else {
+      this.router.navigate(['/show-all-user']);
+    }
   }
 }

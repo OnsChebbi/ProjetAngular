@@ -6,6 +6,7 @@ import { AppLivraisonRoutingModule } from './app-livraison-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormLivraisonComponent } from './form-livraison/form-livraison.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -16,8 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
         BrowserModule,
         CommonModule,
         HttpClientModule,
+        ReactiveFormsModule,
         FormsModule,
-        ReactiveFormsModule
+        Ng2SearchPipeModule
+
     ]
 })
 export class AppLivraisonModule { }

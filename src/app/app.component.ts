@@ -16,16 +16,16 @@ export class AppComponent implements OnInit{
 
   itemInCart:number;
   ngOnInit() {
-    
+
     this.cartService.cartItems.subscribe(d=>{
       this.itemInCart=d.length;
-      console.log(this.itemInCart);
-            
+      //console.log(this.itemInCart);
+
     })
 
 
   }
 
-  
+
 
 }

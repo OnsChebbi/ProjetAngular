@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AppProductModule} from "./app-product/app-product.module";
 import {AppSharedModule} from "./app-shared/app-shared.module";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { SidenavComponent } from './app-shared/sidenav/sidenav.component';
 import { TopnavComponent } from './app-shared/topnav/topnav.component';
@@ -18,13 +18,23 @@ import { CommonModule } from '@angular/common';
 import { LivreurComponent } from './app-livreur/livreur/livreur.component';
 import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
+import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.component';
+import { AppLivraisonRoutingModule } from './app-livraison/app-livraison-routing.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
+
 
 
 import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
 import { AppLivraisonModule } from './app-livraison/app-livraison.module';
 import { AppCartModule } from './app-cart/app-cart.module';
 import { AppFactureModule } from './app-facture/app-facture.module';
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AssignLivraisonComponent } from './app-livreur/assign-livraison/assign-livraison.component';
+import { HiringLivreurComponent } from './app-livreur/hiring-livreur/hiring-livreur.component';
+import { ChildLivreurComponent } from './app-livreur/child-livreur/child-livreur.component';
 
 
 
@@ -37,18 +47,14 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormAddProviderComponent,
     MainStockComponent,
     FormAddStockComponent,
-
-
     LivreurComponent,
     MainLivreurComponent,
     FormLivreurComponent,
     MainLivraisonComponent,
+    AssignLivraisonComponent,
+    HiringLivreurComponent,
+    ChildLivreurComponent 
   
-
-    LivreurComponent,
-    MainLivreurComponent,
-    FormLivreurComponent,
-    MainLivraisonComponent,
   
 
 
@@ -61,12 +67,20 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AppSharedModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     UserModule,
     LandingPageModule,
+
     AppLivraisonModule,
     AppCartModule ,
     AppFactureModule ,
     Ng2SearchPipeModule
+    AppLivraisonRoutingModule,
+    
+    AppFactureModule,
+   
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

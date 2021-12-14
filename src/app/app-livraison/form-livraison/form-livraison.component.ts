@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Livraison } from 'src/app/core/model/livraison';
 import { LivraisonService } from 'src/app/core/services/livraison.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form-livraison',
@@ -13,6 +14,7 @@ export class FormLivraisonComponent implements OnInit {
   livraison: Livraison;
   listLivraison: Livraison[]
   status: boolean
+  id:number
   ngOnInit(): void {
     this.status=this.livraisonService.status;
     if (this.livraisonService.status){
@@ -33,7 +35,7 @@ export class FormLivraisonComponent implements OnInit {
     }
     else {
       this.livraison.status=false;
-      this.livraisonService.addLivraisonService(this.livraison).subscribe(
+      this.livraisonService.addLivraisonService(this.livraison,this.id).subscribe(
         ()=>this.router.navigate(['/livraison'])
       )
     }

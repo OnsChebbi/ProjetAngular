@@ -8,15 +8,15 @@ import { Stock } from 'src/app/core/model/stock';
   styleUrls: ['./show-one-stock.component.css']
 })
 export class ShowOneStockComponent implements OnInit {
-stock :Stock;
-  constructor(private ServiceStock: StockService,private router: Router,private activated:ActivatedRoute) { }
 
+  constructor(private ServiceStock: StockService,private router: Router,private activated:ActivatedRoute) { }
+  stock :Stock;
   ngOnInit(): void {
     this.stock=this.ServiceStock.CurrentStock;
     this.activated.paramMap.subscribe(
       (params)=> {
-        let idStock = params.get('idStock');
-        this.ServiceStock.getStockServiceById(idStock).subscribe(
+        let id = params.get('id');
+        this.ServiceStock.getStockServiceById(id).subscribe(
           (data) => this.stock = data
         )
       }

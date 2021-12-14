@@ -7,6 +7,10 @@ import { ShowAllComponent } from './show-all/show-all.component';
 import {BrowserModule} from "@angular/platform-browser";
 import { ShowOneComponent } from './show-one/show-one.component';
 import { ShowComponent } from './show/show.component';
+import { AddUserFormComponent } from './add-user-form/add-user-form.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { ResetPasswordFormComponent } from './reset-password-form/reset-password-form.component';
+import {Ng2SearchPipeModule} from "ng2-search-filter";
 
 
 @NgModule({
@@ -15,6 +19,9 @@ import { ShowComponent } from './show/show.component';
     ShowAllComponent,
     ShowOneComponent,
     ShowComponent,
+    AddUserFormComponent,
+    LoginFormComponent,
+    ResetPasswordFormComponent,
 
   ],
     imports: [
@@ -22,7 +29,8 @@ import { ShowComponent } from './show/show.component';
         CommonModule,
         UserRoutingModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        Ng2SearchPipeModule
     ]
 })
 export class UserModule { }

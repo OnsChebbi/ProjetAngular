@@ -12,6 +12,8 @@ import {UserRole} from "../../core/model/UserRole";
 export class UpdateFormComponent implements OnInit {
   user: User=new User();
   //modelUSer:UserRole=new UserRole();
+  ancien_email:string="";
+  test_email:string="";
   constructor(private userService : UserService,private router: Router,private activated:ActivatedRoute) {  }
 
   ngOnInit(): void {
@@ -20,29 +22,47 @@ export class UpdateFormComponent implements OnInit {
         (params)=> {
           let id = params.get('id');
           this.userService.getUserServiceById(id).subscribe(
-            (data) => this.user = data
+            (data) => {this.user = data;
+                   this.ancien_email=this.user.email;}
           )
         }
       )
   }
   save(){
       this.userService.updateUserService(this.user).subscribe(
-        ()=>this.router.navigate(['/show-all-user'])
+        ()=>
+        {
+          if (this.user.idUser==Number(localStorage.getItem('loggedUserid'))){
+            localStorage.setItem('loggedUserFirstName',this.user.nom);
+            localStorage.setItem('loggedUserLastName',this.user.prenom);
+            location.reload();
+            location.assign('/Dashbord');
+          }else {
+            this.router.navigate(['/show-all-user']);
+          }
+        }
       )
     }
 
-      /*this.user.categorieUser='Fidele';
-      this.user.role='Super_Admin';
-      this.user.facture=[];
-      this.user.avisUser=[];
-      this.userService.addUserService(this.user).subscribe(
-        ()=>this.router.navigate(['/show-all-user'])
-      )*/
+  TestEmail(email:string){
+    if (this.ancien_email!=email){
+    this.userService.VerifyEmail(email).subscribe(
+      (data:boolean)=>{
+        if (data==true){
+          this.test_email="existe";
+        }else {
+          this.test_email="existe pas";
+        }
+      }
+    )
+  }}
 
   return(){
-    this.router.navigate(['/show-all-user']);
+    if (this.user.idUser==Number(localStorage.getItem('loggedUserid'))){
+      this.router.navigate(['/Dashbord']);
+    }else {
+      this.router.navigate(['/show-all-user']);
+    }
   }
-
-
 
 }

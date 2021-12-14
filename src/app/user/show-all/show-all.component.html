@@ -8,5 +8,5 @@
     <button type="button" class="btn btn-primary" (click)="TargetAdminUser()">Administration User</button>
   </div>
 </div>
-<app-show [listOfUsers]="new_list" [role]="role" ></app-show>
+<app-show [listOfUsers]="new_list" [role]="role" (DeleteEvent)="delete($event)" ></app-show>
 

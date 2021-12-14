@@ -3,6 +3,8 @@ import {UserService} from "../../core/services/user.service";
 import {User} from "../../core/model/user";
 import {Router} from "@angular/router";
 import {Role} from "../../core/model/Role";
+import swal from "sweetalert";
+
 
 @Component({
   selector: 'app-show-all',
@@ -10,22 +12,22 @@ import {Role} from "../../core/model/Role";
   styleUrls: ['./show-all.component.css']
 })
 export class ShowAllComponent implements OnInit {
-  list: User[];
-  new_list:User[];
+  list: User[]=[];
+  new_list:User[]=[];
   role:string='All Users';
-  roleUsers:Role[];
+  roleUsers:Role[]=[];
   constructor(private userService: UserService,private router: Router) { }
   ngOnInit(): void {
     this.userService.getListUserService().subscribe(
       (data:User[])=>[this.list=data,this.new_list=data]
     )
   }
-  delete(user:User){
+/*  delete(user:User){
     let i =this.list.indexOf(user);
     this.userService.deleteUserService(user.idUser).subscribe(
       ()=>this.list.splice(i,1)
     )
-  }
+  }*/
 
  /* update(user:User){
     //this.stauts='update';
@@ -47,4 +49,36 @@ export class ShowAllComponent implements OnInit {
     this.role='All Users';
     this.new_list=this.list;
   }
+ /* delete(user:User){
+    let i =this.list.indexOf(user);
+    let j=this.new_list.indexOf(user);
+    this.userService.deleteUserService(user.idUser).subscribe(
+      ()=>{this.list.splice(i,1)
+                this.new_list.splice(j,1);
+      }
+    )
+    //this.DeleteEvent.emit(user);
+  }*/
+  delete(user:User){
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this user!",
+      icon: "warning",
+      buttons: ["Cancel","Confirm"],
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+
+        if (willDelete) {
+          let i =this.list.indexOf(user);
+          this.userService.deleteUserService(user.idUser).subscribe(
+            ()=>this.list.splice(i,1)
+          );
+          swal("User has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("User  is safe!");
+        }
+      });}
 }

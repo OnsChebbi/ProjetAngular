@@ -1,4 +1,3 @@
-
 <div class="container-fluid px-1 py-2 mx-auto">
 
   <div class="row d-flex justify-content-center">
@@ -11,15 +10,17 @@
           <div class="row justify-content-between text-left">
             <div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">Id Provider<span class="text-danger"> *</span></label>
-              <input type="number" name="number"  id="fname" class="form-control" [(ngModel)]="provider.id" required  #fn="ngModel">
+              <input type="number" name="number" id="fname" class="form-control" [(ngModel)]="provider.id" required
+                #fn="ngModel">
               <div class="alert alert-danger" *ngIf="fn.invalid && fn.touched">
                 <div *ngIf="fn.hasError('required')"> id Provider is a required field</div>
-           
+
               </div>
             </div>
             <div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">Name<span class="text-danger"> *</span></label>
-              <input type="text" id="lname" name="lname" [(ngModel)]="provider.name" required minlength="3"  #ln="ngModel">
+              <input type="text" id="lname" name="lname" [(ngModel)]="provider.name" required minlength="3"
+                #ln="ngModel">
               <div class="alert alert-danger" *ngIf="ln.invalid && ln.touched">
                 <div *ngIf="ln.hasError('required')"> Name is a required field</div>
                 <div *ngIf="ln.hasError('minlength')"> Name minlength ies equal to 3</div>
@@ -29,7 +30,8 @@
           <div class="row justify-content-between text-left">
             <div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label>
-              <input type="text" id="email" name="email" [(ngModel)]="provider.email"  required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" #em="ngModel">
+              <input type="text" id="email" name="email" [(ngModel)]="provider.email" required
+                pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" #em="ngModel">
               <div class="alert alert-danger" *ngIf="em.invalid && em.touched">
                 <div *ngIf="em.hasError('required')"> email is a required field</div>
                 <div *ngIf="em.hasError('pattern')"> respect this format test@gmail.com</div>
@@ -37,7 +39,7 @@
             </div>
             <div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">Code<span class="text-danger"> *</span></label>
-              <input type="text" id="code" name="code" [(ngModel)]="provider.code" required  #pw="ngModel">
+              <input type="text" id="code" name="code" [(ngModel)]="provider.code" required #pw="ngModel">
               <div class="alert alert-danger" *ngIf="pw.invalid && pw.touched">
                 <div *ngIf="pw.hasError('required')"> Code is a required field</div>
               </div>
@@ -47,7 +49,8 @@
           <div class="row justify-content-between text-left">
             <div class="form-group col-sm-6 flex-column d-flex">
               <label class="form-control-label px-3">Libelle<span class="text-danger"> *</span></label>
-              <input type="text" id="libelle" name="libelle" [(ngModel)]="provider.libelle" required minlength="2"  #jb="ngModel" >
+              <input type="text" id="libelle" name="libelle" [(ngModel)]="provider.libelle" required minlength="2"
+                #jb="ngModel">
               <div class="alert alert-danger" *ngIf="jb.invalid && jb.touched">
                 <div *ngIf="jb.hasError('required')"> Libelle is a required field</div>
                 <div *ngIf="jb.hasError('minlength')"> Libelle minlength ies equal to 2</div>
@@ -55,23 +58,25 @@
             </div>
             <div class="form-group col-6 flex-column d-flex">
               <label class="form-control-label px-3">Logo URL</label>
-              <input type="file" id="picture" name="picture" [(ngModel)]="provider.logo">
+              <input type="text" id="picture" name="picture" [(ngModel)]="provider.logo">
             </div>
           </div>
           <div class="form-group  flex-column d-flex">
             <label class="form-control-label px-3">Adresse <span class="text-danger"> *</span></label>
-            <input type="text" id="adresse" name="adresse" [(ngModel)]="provider.adresse"required minlength="3"  #ad="ngModel">
+            <input type="text" id="adresse" name="adresse" [(ngModel)]="provider.adresse" required minlength="3"
+              #ad="ngModel">
             <div class="alert alert-danger" *ngIf="ad.invalid && ad.touched">
               <div *ngIf="ad.hasError('required')"> Adresse is a required field</div>
               <div *ngIf="ad.hasError('minlength')">Adresse minlength ies equal to 3</div>
             </div>
           </div>
 
-          
-          
+
+
           <div class="row justify-content-end">
-            <div class="form-group col-auto"> <button  class="btn-primary" (click)="f.reset()">Reset</button> </div>
-            <div class="form-group col-auto"> <button type="submit" class="btn-primary" (click)="save()"  [disabled]="f.invalid">Register</button> </div>
+            <div class="form-group col-auto"> <button class="btn-primary" (click)="f.reset()">Reset</button> </div>
+            <div class="form-group col-auto"> <button type="submit" class="btn-primary" (click)="save()"
+                [disabled]="f.invalid">Register</button> </div>
           </div>
         </form>
       </div>

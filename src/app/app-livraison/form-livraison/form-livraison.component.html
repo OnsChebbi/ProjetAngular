@@ -11,23 +11,23 @@
           <div class="container">
           <form class="form-card" #f="ngForm">
             <div class="row justify-content-between text-left">
-              
+             
               <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3">Date de livraison<span class="text-danger"> *</span></label>
-                <input type="date" name="ldate" min="2021-01-01" max="2030-12-31" id="ldate" class="form-control" [(ngModel)]="livraison.dateLivraisonDate" required minlength="3"  #ld="ngModel">
-                <div class="alert alert-danger" *ngIf="ld.invalid && ld.touched">
-                  <div *ngIf="ld.hasError('required')"> Date is a required field</div>
+                <label class="form-control-label px-3">Date Livraison<span class="text-danger"> *</span></label>
+                <input type="date" name="date"  id="date" class="form-control" [(ngModel)]="livraison.dateLivraisonDate"! #date="ngModel">
+                <div class="alert alert-danger" *ngIf="date.invalid && date.touched">
+                  <div *ngIf="date.hasError('required')"> Date is a required field</div>
                 </div>
               </div>
               <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3">Adresse de livraison<span class="text-danger"> *</span></label>
-                <input type="text" name="lvr"  id="lvr" class="form-control" [(ngModel)]="livraison.adresseLvr" required minlength="3"  #add="ngModel">
+                <label class="form-control-label px-3">Adresse de la livraison<span class="text-danger"> *</span></label>
+                <input type="text" name="add"  id="add" class="form-control" [(ngModel)]="livraison.adresseLvr" required minlength="3"  #add="ngModel">
                 <div class="alert alert-danger" *ngIf="add.invalid && add.touched">
                   <div *ngIf="add.hasError('required')"> Adresse is a required field</div>
                   <div *ngIf="add.hasError('minlength')"> Adresse minlength ies equal to 3</div>
-
                 </div>
               </div>
+              
             </div>
    
               <div class="row justify-content-end">

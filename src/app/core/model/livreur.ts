@@ -9,6 +9,7 @@ export class Livreur{
     mdpLiv : string;
     lngLiv: number;
     latLiv: number;
+    status: boolean;
     listlivraison: Livraison[]
 
   }

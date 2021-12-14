@@ -10,7 +10,6 @@ import {Stock} from "../model/stock";
   providedIn: 'root'
 })
 export class ProduitService {
-  url="http://localhost:8090/SpringMVC/produit/"
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -26,6 +25,7 @@ export class ProduitService {
     this.currentProduct=produit;
     this.status=true;
   }
+  url=environment.url+"produit/";
 
   constructor(private http:HttpClient) { }
   getListProductService(){
@@ -62,6 +62,11 @@ export class ProduitService {
 //added by adem
   getSingleProduct(id:number){
     return this.http.get(`${this.url}getProduit/${id}`);
+  }
+
+
+  getProductServiceLiked(id:number){
+    return this.http.get(this.url+"modifierLike/"+id);
   }
 
 

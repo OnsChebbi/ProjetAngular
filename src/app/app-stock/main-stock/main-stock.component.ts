@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Stock } from 'src/app/core/model/stock';
 import { StockService } from 'src/app/core/services/stock.service';
 import {Router} from "@angular/router";
+import swal from 'sweetalert';
 @Component({
   selector: 'app-main-stock',
   templateUrl: './main-stock.component.html',
@@ -22,10 +23,29 @@ export class MainStockComponent implements OnInit {
     )
   }
   delete(stock: Stock): void{
+    swal({
+  
+      title:"Are you sure?",
+      text:"Once deleted, you will not be able to recover this stock!",
+          icon: "warning",
+          buttons: ["Cancel","Confirm"],
+          dangerMode: true,
+    
+      })
+      .then((willDelete)=>{
+    
+            if (willDelete) {
     let i = this.ListStock.indexOf(stock);
     this.serviceStock.deleteStockService(stock.id).subscribe(
       ( )=>this.ListStock.splice(i,1)
-    )
+    );
+    swal("Stock has been deleted!", {
+      icon: "success",
+    });
+  } else {
+    swal("Stock  is safe!");
+  }
+});
   }
   update(stock: Stock){
     this.serviceStock.UpdateStock(stock);

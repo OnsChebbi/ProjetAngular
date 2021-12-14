@@ -1,3 +1,10 @@
+
+.divChart{
+    display: block;
+    width: 600px;
+    height: 600px;
+}
+
 .search-livreur {
     max-width: 500px;
     padding-bottom: 10px;

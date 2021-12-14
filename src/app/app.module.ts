@@ -18,9 +18,7 @@ import { CommonModule } from '@angular/common';
 import { LivreurComponent } from './app-livreur/livreur/livreur.component';
 import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
-import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.component';
 import { AppLivraisonRoutingModule } from './app-livraison/app-livraison-routing.module';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
 
@@ -28,9 +26,13 @@ import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livr
 
 import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
 import { AppLivraisonModule } from './app-livraison/app-livraison.module';
-import { PanierModule } from './app-panier/panier.module';
 import { AppCartModule } from './app-cart/app-cart.module';
 import { AppFactureModule } from './app-facture/app-facture.module';
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AssignLivraisonComponent } from './app-livreur/assign-livraison/assign-livraison.component';
+import { HiringLivreurComponent } from './app-livreur/hiring-livreur/hiring-livreur.component';
+import { ChildLivreurComponent } from './app-livreur/child-livreur/child-livreur.component';
 
 
 
@@ -46,9 +48,13 @@ import { AppFactureModule } from './app-facture/app-facture.module';
     LivreurComponent,
     MainLivreurComponent,
     FormLivreurComponent,
-    MainLivraisonComponent
 
-
+    MainLivraisonComponent,
+    AssignLivraisonComponent,
+    HiringLivreurComponent,
+    ChildLivreurComponent 
+  
+  
 
 
   ],
@@ -63,11 +69,18 @@ import { AppFactureModule } from './app-facture/app-facture.module';
     ReactiveFormsModule,
     UserModule,
     LandingPageModule,
-    AppLivraisonRoutingModule,
-    PanierModule,
+
+    AppLivraisonModule,
     AppCartModule ,
-    AppFactureModule,
-   Ng2SearchPipeModule
+
+    AppFactureModule ,
+    Ng2SearchPipeModule
+    
+    
+   
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

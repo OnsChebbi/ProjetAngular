@@ -12,6 +12,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import { MainStockComponent } from "./main-stock/main-stock.component";
 import { FormAddStockComponent} from './form-add-stock/form-add-stock.component'
 import { ShowOneStockComponent } from "./show-one-stock/show-one-stock.component";
+import { ProStockComponent } from './pro-stock/pro-stock.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { ShowOneStockComponent } from "./show-one-stock/show-one-stock.component
       MainStockComponent,
       FormAddStockComponent,
       ShowOneStockComponent,
+      ProStockComponent,
       
     ],
     imports: [

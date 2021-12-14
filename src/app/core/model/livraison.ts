@@ -1,7 +1,13 @@
+import { Facture } from "./Facture";
+import { Livreur } from "./livreur";
+
 export class Livraison{
     id: number;
     dateLivraisonDate: any;
     adresseLvr: String;
-    status: boolean
+    status: false
+    f: Facture;
+    l: Livreur
+    
 
 }

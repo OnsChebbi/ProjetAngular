@@ -23,7 +23,7 @@ export class LivreurComponent implements OnInit {
     this.activated.paramMap.subscribe(
       (params)=> {
         let id = params.get('id');
-        this.livreurService.getLivreurServiceById(id).subscribe(
+        this.livreurService.getById(id).subscribe(
           (data) => this.livreur = data
         )
       }

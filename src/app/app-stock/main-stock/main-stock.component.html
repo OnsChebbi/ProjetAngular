@@ -30,6 +30,7 @@
           <th scope="col" >delete</th>
           <th scope="col"  >Update</th>
           <th scope="col"  >view more</th>
+          <th scope="col"  >List product</th>
         </tr>
         </thead>
         <tbody>
@@ -46,11 +47,16 @@
           <td><button class="btn btn-danger" (click)="delete(stock)">Delete</button></td>
           <td><button class="btn btn-success" (click)="update(stock)">Update</button></td>
           <td><a class="btn btn-warning" [routerLink]="['/stock',stock.id]" >view More</a></td>
+          <td><a class="btn btn-danger" [routerLink]="['/stock-ref',stock.ref]" >List Product</a></td>
         </tr>
         </tbody>
       </table>
     </div>
   
+
+
+
+    
   </div>
   
   

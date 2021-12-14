@@ -26,6 +26,7 @@ export class ProduitService {
     this.currentProduct=produit;
     this.status=true;
   }
+  url=environment.url+"produit/";
 
   constructor(private http:HttpClient) { }
   getListProductService(){

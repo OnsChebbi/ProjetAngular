@@ -1,6 +1,6 @@
 import { Facture } from "./Facture";
 import { Panier } from "./Panier";
-import { Product } from "./produit";
+import { Produit } from "./produit";
 
 export class DetailFacture{
     idDetailFacture: string;
@@ -9,6 +9,6 @@ export class DetailFacture{
     porcentageRemise: number;
     montantRemise : number;
     facture:Facture;
-    produit:Product;
+    produit:Produit;
     panier:Panier;
 }

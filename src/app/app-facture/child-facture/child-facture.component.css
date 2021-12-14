@@ -59,3 +59,8 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+.search-livreur {
+  max-width: 500px;
+  padding-bottom: 10px;
+  margin: 20px;
+}

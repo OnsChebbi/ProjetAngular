@@ -28,9 +28,10 @@ import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livr
 
 import { MainLivraisonComponent } from './app-livraison/main-livraison/main-livraison.component';
 import { AppLivraisonModule } from './app-livraison/app-livraison.module';
-import { PanierModule } from './app-panier/panier.module';
 import { AppCartModule } from './app-cart/app-cart.module';
 import { AppFactureModule } from './app-facture/app-facture.module';
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AssignLivraisonComponent } from './app-livreur/assign-livraison/assign-livraison.component';
 import { HiringLivreurComponent } from './app-livreur/hiring-livreur/hiring-livreur.component';
 import { ChildLivreurComponent } from './app-livreur/child-livreur/child-livreur.component';
@@ -69,11 +70,16 @@ import { ChildLivreurComponent } from './app-livreur/child-livreur/child-livreur
     ReactiveFormsModule,
     UserModule,
     LandingPageModule,
-    AppLivraisonRoutingModule,
-    PanierModule,
+
+    AppLivraisonModule,
     AppCartModule ,
+    AppFactureModule ,
+    Ng2SearchPipeModule
+    AppLivraisonRoutingModule,
+    
     AppFactureModule,
-   Ng2SearchPipeModule
+   
+
 
   ],
   providers: [],

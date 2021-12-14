@@ -19,6 +19,9 @@
           </div>
           <div class="mb-3"> <button  class="btn btn-primary w-100" [disabled]="f.invalid" (click)="Authenticate()">Login</button> </div>
           <p class="text-center">Not a member? <a data-toggle="tab" [routerLink]="['/add-user','add-simple']">Register</a></p>
+          <div class="alert alert-danger" *ngIf="msg!=''">
+            <div>{{msg}}</div>
+          </div>
         </form>
       </div>
     </div>

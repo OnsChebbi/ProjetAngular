@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { Livreur } from 'src/app/core/model/livreur';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-child-livreur',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildLivreurComponent implements OnInit {
 
+
+  @Input()listLivreur:Livreur[];
+  @Output()deleteEvent=new EventEmitter<Livreur>();
+  @Output()updateEvent=new EventEmitter<Livreur>();
+  
   constructor() { }
+
+
+  searchText:any;
+
 
   ngOnInit(): void {
   }
-
+  delete(currentLivreur:Livreur){
+    this.deleteEvent.emit(currentLivreur);
+  }
+  update(currentLivreur:Livreur){
+    this.updateEvent.emit(currentLivreur);
+  }
 }

@@ -31,6 +31,7 @@ export class FormLivreurComponent implements OnInit {
       )
     }
     else {
+      this.lvr.status=true;
       this.livreurService.addListLivreurService(this.lvr).subscribe(
         ()=>this.router.navigate(['/livreur'])
       )

@@ -26,7 +26,7 @@ export class MainLivreurComponent implements OnInit {
     console.log(this.listLivreur)
   }
  
-  delete(id: number){
+  delete(livreur: Livreur){
     swal({
       title: "Are you sure?",
       text: "Once deleted, you will not be able to recover this product!",
@@ -37,8 +37,12 @@ export class MainLivreurComponent implements OnInit {
       .then((willDelete) => {
 
         if (willDelete) {
-          this.livreurService.deleteListLivreurService(id).subscribe(
-
+          //this.livreurService.deleteListLivreurService(livreur.id);
+          let i =this.listLivreur.indexOf(livreur)
+          console.log(i);
+          
+          this.livreurService.deleteListLivreurService(livreur.id).subscribe(
+            ()=>this.listLivreur.splice(i,1)
           )
           this.ngOnInit()
           swal("Product has been deleted!", {

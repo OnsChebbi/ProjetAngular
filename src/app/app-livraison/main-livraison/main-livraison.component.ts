@@ -101,7 +101,11 @@ export class MainLivraisonComponent implements OnInit {
       .then((willDelete) => {
 
         if (willDelete) {
-          this.livraisonService.deleteLivraisonService(livraison.id).subscribe()
+          let i =this.Livraison.indexOf(livraison)
+          
+          this.livraisonService.deleteLivraisonService(livraison.id).subscribe(
+            ()=>this.Livraison.splice(i,1)
+          )
          ;
           swal("Delivery has been deleted!", {
             icon: "success",

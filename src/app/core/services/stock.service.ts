@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Stock } from '../model/stock';
 import { environment } from 'src/environments/environment';
+import {Produit} from "../../core/model/produit";
 import {
   HttpClient
 } from '@angular/common/http';
@@ -39,6 +40,9 @@ export class StockService {
     }
     getStockServiceById(id:any){
       return this.http.get<Stock>(this.url+'retrieve-stock/'+id);
+    }
+    getListPrduitServiceById(id:any){
+      return this.http.get<Produit[]>(this.url+'stat-stock/'+id);
     }
 
 }

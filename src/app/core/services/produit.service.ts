@@ -10,7 +10,6 @@ import {Stock} from "../model/stock";
   providedIn: 'root'
 })
 export class ProduitService {
-  url="http://localhost:8090/SpringMVC/produit/"
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

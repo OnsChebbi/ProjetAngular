@@ -18,9 +18,7 @@ import { CommonModule } from '@angular/common';
 import { LivreurComponent } from './app-livreur/livreur/livreur.component';
 import { MainLivreurComponent } from './app-livreur/main-livreur/main-livreur.component';
 import { FormLivreurComponent } from './app-livreur/form-livreur/form-livreur.component';
-import { DetailPanierComponent } from './app-panier/detail-panier/detail-panier.component';
 import { AppLivraisonRoutingModule } from './app-livraison/app-livraison-routing.module';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { FormLivraisonComponent } from './app-livraison/form-livraison/form-livraison.component';
 
@@ -75,9 +73,8 @@ import { ChildLivreurComponent } from './app-livreur/child-livreur/child-livreur
     AppCartModule ,
     AppFactureModule ,
     Ng2SearchPipeModule
-    AppLivraisonRoutingModule,
     
-    AppFactureModule,
+    
    
 
 

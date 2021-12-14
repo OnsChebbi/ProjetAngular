@@ -7,6 +7,8 @@ import { LivraisonService } from 'src/app/core/services/livraison.service';
 import { Chart } from 'node_modules/chart.js'
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import swal from "sweetalert";
+
 
 
 @Component({
@@ -31,7 +33,6 @@ export class MainLivraisonComponent implements OnInit {
   ngOnInit(): void {
     
     this.loadLivraisons()
-    this.generateChart()
 
     let countliv = Number(localStorage.getItem('countLivraison')) ;
     console.log("from ngoninit " +  countliv)
@@ -90,8 +91,26 @@ export class MainLivraisonComponent implements OnInit {
   
   // Delete livraison
   delete(livraison: Livraison) {
-    this.livraisonService.deleteLivraisonService(livraison.id).subscribe()
-    this.loadLivraisons()
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this delivery!",
+      icon: "warning",
+      buttons: ["Cancel","Confirm"],
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+
+        if (willDelete) {
+          this.livraisonService.deleteLivraisonService(livraison.id).subscribe()
+         ;
+          swal("Delivery has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Delivery  is safe!");
+        }
+      });
+ 
   }
 
 

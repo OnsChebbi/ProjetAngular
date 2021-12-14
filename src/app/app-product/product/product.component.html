@@ -1,6 +1,6 @@
 
 <br>
-<div class="card" style=" width: 18rem; height: 40rem">
+<div class="card" style=" width: 18rem; height: 45rem">
   <img src="{{product.picture}}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title   text-uppercase">{{product.libelle}}
@@ -21,20 +21,26 @@
       </div>
 
     </div>
-    <div class="py">
-    <button class="btn btn-primary" (click)="notifierParent()">
+<div class="pb-4">
+    <button class=" btn  btn-primary" (click)="notifierParent()">
       <i class="far fa-heart"></i>
-      {{product.nbrLike}} like
-    </button>
+      like
+    </button><span>{{product.nbrLike}} </span>
     &nbsp;
-    <button class="btn btn-outline-dark flex-shrink-0" type="button" style="float: right"
-            >
+    <button class=" btn btn-outline-dark flex-shrink-0" type="button" style="float: right">
       <i class="bi-cart-fill me-1"></i>
       Add to Cart
     </button>
+    <br><br>
 
-    </div>
-
+<div class="row">
+    <button class="btn btn-outline-dark flex-shrink-0" type="button" style="float: right"
+    >
+      <i class="bi-cart-fill me-1"></i>
+      Add to Cart
+    </button>
+</div>
+</div>
   </div>
 </div>
 <!--

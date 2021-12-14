@@ -65,4 +65,9 @@ export class ProduitService {
   }
 
 
+  getProductServiceLiked(id:number){
+    return this.http.get(this.url+"modifierLike/"+id);
+  }
+
+
 }

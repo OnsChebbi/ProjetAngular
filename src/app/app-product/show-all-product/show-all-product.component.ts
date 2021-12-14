@@ -27,6 +27,7 @@ export class ShowAllProductComponent implements OnInit {
   }
 
   delete(product:Produit){
+
     swal({
       title: "Are you sure?",
       text: "Once deleted, you will not be able to recover this product!",
@@ -37,7 +38,9 @@ export class ShowAllProductComponent implements OnInit {
       .then((willDelete) => {
 
         if (willDelete) {
-          let i =this.listProduct.indexOf(product);
+          this.productService.deleteProductService(product.id);
+            let i =this.listProduct.indexOf(product);
+          console.log(product.id)
           this.productService.deleteProductService(product.id).subscribe(
             ()=>this.listProduct.splice(i,1)
           );
